@@ -89,8 +89,9 @@ def test_patient_service_data_is_minimal_and_ownership_checked(client):
     detail=client.get('/api/patient/orders/1').json()
     assert 'history' in detail and all('actor' not in h for h in detail['history'])
     with database.SessionLocal() as db:
-        db.add(User(id=20,username='patient2',display_name='Pasien Lain Fiktif',role='patient',org_id=1,password_hash=pwd_hash('DemoNAM2026!'),active=True))
-        db.add(Patient(id=3,public_id='DEMO-P-003',display_name='Pasien Lain Fiktif',phone='00000000',org_id=1,user_id=20))
+        other=User(username='patient2',display_name='Pasien Lain Fiktif',role='patient',org_id=1,password_hash=pwd_hash('DemoNAM2026!'),active=True)
+        db.add(other);db.flush()
+        db.add(Patient(id=3,public_id='DEMO-P-003',display_name='Pasien Lain Fiktif',phone='00000000',org_id=1,user_id=other.id))
         db.add(Notification(patient_id=1,org_id=2,order_id=1,channel='portal',kind='test',message='Tenant salah',status='queued'))
         db.commit()
     assert 'Tenant salah' not in client.get('/api/patient/notifications').text

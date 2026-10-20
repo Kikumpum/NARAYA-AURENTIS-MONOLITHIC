@@ -73,14 +73,14 @@ def test_portal_users_cannot_read_staff_sops_structure_or_reports(client,usernam
     post(client,'/api/sop-reports',h,{'sop_code':'INC-01','report_day':str(date.today()),'request_key':key()},403)
 
 
-def test_all_chart_roles_have_sop_but_vacancies_do_not_create_logins(client):
+def test_all_chart_roles_have_sop_and_explicit_demo_logins(client):
     assert all(any(role in s['roles'] for s in CATALOG) for role in ADDITIONAL_ROLES)
     with database.SessionLocal() as db:
-        assert db.scalar(select(func.count()).select_from(User))==19
-        assert db.scalar(select(func.count()).select_from(UserPosition))==17
+        assert db.scalar(select(func.count()).select_from(User))==34
+        assert db.scalar(select(func.count()).select_from(UserPosition))==32
     login(client,'direktur')
     positions=client.get('/api/organization').json()['positions']
-    assert not next(p for p in positions if p['code']=='commissioner')['accounts']
+    assert next(p for p in positions if p['code']=='commissioner')['accounts'][0]['name']=='Komisaris Demo'
     assert next(p for p in positions if p['code']=='reception')['accounts'][0]['name']=='Resepsionis Demo'
 
 

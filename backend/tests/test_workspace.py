@@ -82,7 +82,7 @@ def test_detail_is_scoped_audited_and_does_not_expose_raw_audit(client):
 def test_second_partner_cannot_read_other_tenant(client):
     with database.SessionLocal() as db:
         db.add(Org(id=3,name='Mitra terpisah (DEMO)',kind='partner'))
-        db.add(User(id=20,username='mitra-lain',display_name='Mitra lain',role='partner',org_id=3,
+        db.add(User(username='mitra-lain',display_name='Mitra lain',role='partner',org_id=3,
                     password_hash=pwd_hash('DemoNAM2026!'),active=True))
         db.commit()
     login(client,'mitra-lain')

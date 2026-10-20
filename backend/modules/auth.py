@@ -17,6 +17,7 @@ from backend.models import Org, Patient, User, UserSession
 from backend.security import patient_record, session_csrf
 from backend.modules.audit import audit
 from backend.utils import pwd_valid, utcnow
+from backend.demo_accounts import LOGIN_ALIASES
 
 class LoginIn(BaseModel):
     username: str
@@ -31,16 +32,25 @@ def verify_credentials(payload: LoginIn, request: Request, db: Session):
     ip = request.client.host if request.client else '?'
     if _failed_logins.get(ip, 0) >= 25:
         raise HTTPException(429, 'Terlalu banyak percobaan; restart demo untuk mereset')
-    user = db.scalar(select(User).where(User.username == payload.username))
+    identifier = payload.username.strip().lower()
+    matches = db.scalars(select(User).where(func.lower(User.username) == identifier).limit(2)).all()
+    if not matches and identifier in LOGIN_ALIASES:
+        matches = db.scalars(select(User).where(func.lower(User.username) == LOGIN_ALIASES[identifier]).limit(2)).all()
+    # A legacy database may contain names that differ only by case. Fail closed
+    # rather than silently select another user's role or organization.
+    user = matches[0] if len(matches) == 1 else None
     if not user or not user.active or not pwd_valid(payload.password, user.password_hash):
         _failed_logins[ip] = _failed_logins.get(ip, 0) + 1
-        raise HTTPException(401, 'Username atau kata sandi salah')
+        raise HTTPException(401, 'Nama pengguna atau kata sandi salah')
     _failed_logins.pop(ip, None)
     return user
 
 
 def patient_credentials(payload: LoginIn, db: Session):
-    reference = db.scalar(select(Patient).where(Patient.public_id == payload.username, Patient.org_id == 1))
+    matches = db.scalars(select(Patient).where(func.lower(Patient.public_id) == payload.username.strip().lower(), Patient.org_id == 1).limit(2)).all()
+    if len(matches) > 1:
+        raise HTTPException(401, 'Nama pengguna atau kata sandi salah')
+    reference = matches[0] if matches else None
     linked = db.get(User, reference.user_id) if reference and reference.user_id else None
     return payload.model_copy(update={'username': linked.username}) if linked else payload
 

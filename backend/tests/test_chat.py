@@ -102,9 +102,9 @@ def test_claim_rejects_wrong_workflow_and_role(client):
     assert client.get(path).status_code==404
 
 
-def add_agent(username,ident,org=1):
+def add_agent(username,org=1):
     with database.SessionLocal() as db:
-        db.add(User(id=ident,username=username,display_name='Petugas simulasi',role='customer_service',
+        db.add(User(username=username,display_name='Petugas simulasi',role='customer_service',
                     org_id=org,password_hash=pwd_hash('DemoNAM2026!'),active=True))
         db.commit()
 
@@ -112,7 +112,7 @@ def add_agent(username,ident,org=1):
 def test_only_one_agent_can_claim_and_other_agent_cannot_read(client):
     patient=login(client,'pasien'); ident=start(client,patient)['id']
     post(client,f'/api/chat/conversations/{ident}/handoff',patient)
-    add_agent('cs2',20)
+    add_agent('cs2')
     agent1=TestClient(appmod.app); agent2=TestClient(appmod.app)
     first=login(agent1,'cs'); second=login(agent2,'cs2')
     path=f'/api/chat/conversations/{ident}'
@@ -132,7 +132,7 @@ def test_only_one_agent_can_claim_and_other_agent_cannot_read(client):
 def test_patient_handoff_has_explicit_service_routing(client):
     patient=login(client,'pasien'); ident=start(client,patient,1)['id']
     post(client,f'/api/chat/conversations/{ident}/handoff',patient)
-    add_agent('cs-mitra',20,2)
+    add_agent('cs-mitra',2)
     bad=login(client,'cs-mitra')
     assert client.get('/api/chat/queue').status_code==403
     post(client,f'/api/chat/conversations/{ident}/claim',bad,expected=403)

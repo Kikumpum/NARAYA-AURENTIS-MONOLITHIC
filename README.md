@@ -28,18 +28,44 @@ Atas izin pengguna, tersedia demo online sementara melalui GitHub → Vercel den
 
 **Akun login DEMO** menggunakan kata sandi sama: `DemoNAM2026!`
 
-| Login | Divisi | Login | Divisi |
-| --- | --- | --- | --- |
-| `resepsionis` | Front Office | `dokter` | Dokter Klinik |
-| `lab` | Supervisor Lab | `teknisi` | Teknisi produksi |
-| `qc` | Quality Control | `fat` | Finance/FAT |
-| `direktur` | Manajemen | `mitra` | Klinik eksternal |
-| `pasien` | Portal pasien | `it` | IT (tidak melihat data klinis) |
-| `dokter2` | Dokter kedua | `lab2` | Supervisor Lab kedua |
-| `perawat` | Perawat | `cadcam` | CAD/CAM (laporan harian) |
-| `cs` | Customer Service | `gudang` | Inventaris (laporan harian) |
-| `purchasing` | Pembelian | `hr` | HRD |
-| `marketing` | Marketing | | |
+| Jabatan / layanan | Nama pengguna |
+| --- | --- |
+| Komisaris | `komisaris` |
+| Direktur Utama | `direktur_utama` |
+| Direktur | `direktur` |
+| Business Development | `business_development` |
+| IT | `it` |
+| Auditor | `auditor` |
+| Corporate | `corporate` |
+| HR | `hr` |
+| IC / GA | `ga` |
+| FAT | `fat` |
+| Insurance | `insurance` |
+| Operation | `operation` |
+| Procurement | `purchasing` |
+| Branch Head | `branch_head` |
+| Branch Manager | `branch_manager` |
+| Kepala Lab | `lab` |
+| Senior Lab | `lab2` |
+| Kepala Klinik | `kepala_klinik` |
+| Marketing and Sales | `marketing` |
+| Editor | `editor` |
+| Content Planner | `content_planner` |
+| Sales | `sales` |
+| Customer Service | `cs` |
+| Resepsionis | `resepsionis` |
+| Housekeeping | `housekeeping` |
+| Dokter Gigi | `dokter` |
+| Dokter Gigi (akun kedua) | `dokter2` |
+| Perawat | `perawat` |
+| Teknisi Lab | `teknisi` |
+| CAD/CAM | `cadcam` |
+| Quality Control | `qc` |
+| Gudang | `gudang` |
+| Klinik Mitra | `mitra` |
+| Pasien | `pasien` atau `DEMO-P-001` |
+
+Daftar lengkap dan penjelasan hak akun: [akun latihan](docs/DEMO_ACCOUNTS.md).
 
 Akun awal, pasien dan order adalah **simulasi**. Data tersimpan ke `nam_demo.db` di direktori tempat server dijalankan. Hapus file `.db` setelah server dihentikan untuk reset demo.
 

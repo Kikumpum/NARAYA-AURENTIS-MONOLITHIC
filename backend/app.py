@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from backend import database
 from backend.config import BASE_DIR, runtime
 from backend.runtime import DEMO_COOKIE, demo_access_gate, gate_cookie, has_demo_access
-from backend.demo import seed
+from backend.demo import seed, seed_staff_accounts
 from backend.modules import auth, clinic, lab, finance, communication, operations, audit, chat, organization, sop_reports
 from backend.modules import patient_portal, training
 
@@ -20,7 +20,7 @@ async def lifespan(app: FastAPI):
     if runtime.hosted and runtime.problem():
         yield
         return
-    database.bootstrap_demo(seed, organization.seed_structure)
+    database.bootstrap_demo(seed, organization.seed_structure, seed_staff_accounts)
     yield
 
 

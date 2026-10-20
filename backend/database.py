@@ -30,7 +30,7 @@ def upgrade_schema(connection=None):
             command.upgrade(config, 'head')
 
 
-def bootstrap_demo(seed, seed_structure):
+def bootstrap_demo(seed, seed_structure, seed_accounts=None):
     """Serialize shared database initialization across Vercel instances.
 
     The transaction-scoped advisory lock also works through Neon's transaction
@@ -41,6 +41,8 @@ def bootstrap_demo(seed, seed_structure):
         upgrade_schema()
         with SessionLocal() as db:
             seed(db)
+            if seed_accounts:
+                seed_accounts(db)
             seed_structure(db)
         return
     with engine.begin() as connection:
@@ -57,4 +59,6 @@ def bootstrap_demo(seed, seed_structure):
                         "SELECT setval(pg_get_serial_sequence(:table, 'id'), "
                         f'COALESCE(MAX(id), 1), MAX(id) IS NOT NULL) FROM {quoted}'
                     ), {'table': table})
+            if seed_accounts:
+                seed_accounts(db)
             seed_structure(db)

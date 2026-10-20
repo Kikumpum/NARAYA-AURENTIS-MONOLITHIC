@@ -5,26 +5,15 @@ from sqlalchemy.orm import Session
 from backend.config import DEMO_PASSWORD
 from backend.models import Appointment, LabOrder, Org, Patient, Shift, User
 from backend.utils import pwd_hash, utcnow
+from backend.demo_accounts import BASE_USERS, EXTRA_STAFF
 
 def seed(db: Session):
     if db.scalar(select(func.count()).select_from(User)):
         return False
     db.add_all([Org(id=1, name='Klinik Naraya (DEMO)', kind='internal'), Org(id=2, name='Klinik Mitra Contoh (DEMO)', kind='partner')])
     db.flush()
-    people = [
-        (1,'resepsionis','Resepsionis Demo','reception',1), (2,'dokter','Dokter Klinik Demo','dentist',1),
-        (3,'lab','Supervisor Lab Demo','lab_supervisor',1), (4,'teknisi','Teknisi Demo','technician',1),
-        (5,'qc','QC Demo','qc',1), (6,'fat','FAT Demo','finance',1),
-        (7,'direktur','Direktur Demo','director',1), (8,'mitra','Klinik Mitra Demo','partner',2),
-        (9,'pasien','Pasien Demo','patient',1), (10,'it','IT Demo','it_admin',1),
-        (11,'dokter2','Dokter Klinik 2 Demo','dentist',1), (12,'lab2','Supervisor Lab 2 Demo','lab_supervisor',1),
-        (13,'perawat','Perawat Demo','nurse',1), (14,'cadcam','CAD CAM Demo','cadcam',1),
-        (15,'cs','Customer Service Demo','customer_service',1), (16,'gudang','Gudang Demo','warehouse',1),
-        (17,'purchasing','Purchasing Demo','purchasing',1), (18,'hr','HR Demo','hr',1),
-        (19,'marketing','Marketing Demo','marketing',1),
-    ]
     demo_hash = pwd_hash(DEMO_PASSWORD)
-    for ident, uname, name, role, org in people:
+    for ident, uname, name, role, org in BASE_USERS:
         db.add(User(id=ident, username=uname, display_name=name, role=role, org_id=org, password_hash=demo_hash, active=True))
     db.flush()
     db.add_all([
@@ -43,3 +32,22 @@ def seed(db: Session):
     db.add(Appointment(id=1, patient_id=1, dentist_id=2, scheduled_at=utcnow()+timedelta(days=7), status='confirmed'))
     db.commit()
     return True
+
+
+def seed_staff_accounts(db: Session):
+    """Add only the explicit test fixtures; preserve all existing identities.
+
+    Never reactivate an account, reset its password, change its tenant or role,
+    or generate accounts from new/vacant organization positions.
+    """
+    if not db.get(Org, 1):
+        return
+    names = {name.strip().lower() for name in db.scalars(select(User.username))}
+    missing = [spec for spec in EXTRA_STAFF if spec[0] not in names]
+    if not missing:
+        return
+    password_hash = pwd_hash(DEMO_PASSWORD)
+    for username, name, role, _ in missing:
+        db.add(User(username=username, display_name=name, role=role, org_id=1,
+                    password_hash=password_hash, active=True))
+    db.commit()

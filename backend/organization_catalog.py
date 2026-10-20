@@ -56,3 +56,6 @@ DEMO_POSITION = {
 ADDITIONAL_ROLES = ('commissioner','chief_executive','auditor','corporate','business_development',
                     'general_affairs','insurance','operations_manager','branch_manager','clinic_head',
                     'editor','content_planner','sales','housekeeping')
+
+from backend.demo_accounts import EXTRA_STAFF
+DEMO_POSITION.update({username: position for username, _, _, position in EXTRA_STAFF})
