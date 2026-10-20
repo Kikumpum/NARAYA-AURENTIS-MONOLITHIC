@@ -1,0 +1,15 @@
+{
+  "version": "0.4",
+  "pages": 6,
+  "format": "A3 landscape",
+  "pdf": "NAM_Flowchart_Lengkap_Demo_0.4.pdf",
+  "editable_svg": [
+    "01_pintu_masuk.svg",
+    "02_klinik_dan_laboratorium.svg",
+    "03_persetujuan_perubahan.svg",
+    "04_bantuan_pasien.svg",
+    "05_keuangan.svg",
+    "06_materi_sop_dan_laporan.svg"
+  ],
+  "data": "Fiktif; tanpa pembacaan database"
+}

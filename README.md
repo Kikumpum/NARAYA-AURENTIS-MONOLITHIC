@@ -140,3 +140,7 @@ Paket diberikan sebagai source code siap dijalankan, bukan file .exe/APK. Buka f
 
 Portal pasien khusus tersedia di http://127.0.0.1:8000/pasien dengan akun fiktif DEMO-P-001 / DemoNAM2026!. Ruang pegawai di / memakai nama pengguna biasa tanpa daftar akun divisi. Lihat docs/WORKSPACE_DEMO_0.4.md untuk sesi terpisah, chat khusus pasien dan materi pegawai.
 
+## Flowchart untuk presentasi
+
+[PDF enam halaman](output/flowchart/NAM_Flowchart_Lengkap_Demo_0.4.pdf) memisahkan akses pasien/pegawai/mitra, Klinik-Lab-QC, persetujuan perubahan, chat pasien, keuangan, serta SOP dan laporan. Tersedia [paket PNG dan SVG yang dapat disunting](output/NAM_Flowchart_Demo_0.4.zip). Lihat [panduan diagram](docs/FLOWCHART_DEMO_0.4.md) untuk rincian dan cara membuat ulang.
+

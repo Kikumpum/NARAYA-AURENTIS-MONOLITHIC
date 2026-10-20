@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190.55" height="841.89" viewBox="0 0 1190.55 841.89">
+<style>text{font-family:"Segoe UI",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1190.5511811023623" height="841.8897637795277" rx="0" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="44" y="49" font-size="13" fill="#203F35" font-weight="700" text-anchor="start">NARAYA AURENTIS</text>
+<text x="44" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">MONOLITHIC / DENTAL MANAGEMENT SYSTEM</text>
+<text x="1146.5511811023623" y="48" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">FLOWCHART  06 / 06</text>
+<text x="1146.5511811023623" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="end">Demo 0.4 / 20 Oktober 2026</text>
+<polyline points="44,76 1146.5511811023623,76" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="126" font-size="26" fill="#203F35" font-weight="700" text-anchor="start">Materi divisi, checklist, bukti, dan laporan</text>
+<text x="44" y="141.5" font-size="11.5" fill="#61716A" font-weight="400" text-anchor="start">Draf 32 SOP memuat 192 item pemeriksaan. Hak pelaksana dan peninjau mengikuti peran, organisasi, order, dan tahap kerja.</text>
+<polyline points="44,783 1146.5511811023623,783" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="809.5" font-size="8.5" fill="#203F35" font-weight="700" text-anchor="start">DEMO LOKAL / DATA FIKTIF</text>
+<text x="340" y="809.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">Kotak: proses     Belah ketupat: keputusan     Panah: urutan kerja</text>
+<text x="1146.5511811023623" y="811" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">06</text>
+<rect x="44" y="223" width="230" height="78" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="159.0" y="251.35000000000002" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Buka Materi divisi</text>
+<text x="159.0" y="267.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Baca urutan dan batas kewenangan</text>
+<text x="159.0" y="282.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Contoh bukti serta latihan</text>
+<rect x="330" y="223" width="230" height="78" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="445.0" y="259.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Pilih SOP sesuai peran</text>
+<text x="445.0" y="275.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Ringkasan divisi lain bersifat umum</text>
+<rect x="616" y="223" width="230" height="78" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="731.0" y="251.35000000000002" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Buat draf laporan</text>
+<text x="731.0" y="267.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Versi SOP disimpan</text>
+<text x="731.0" y="282.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Hubungkan order jika diwajibkan</text>
+<rect x="902" y="223" width="244" height="78" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="1024.0" y="251.35000000000002" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Lengkapi checklist dan bukti</text>
+<text x="1024.0" y="267.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Hasil per item, temuan, tindakan</text>
+<text x="1024.0" y="282.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Penanggung jawab dan tenggat</text>
+<polygon points="1024.0,384 1136,434.0 1024.0,484 912,434.0" fill="#F7F0DF" stroke="#BEA46F"/>
+<text x="1024.0" y="430.5" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Lengkap dan</text>
+<text x="1024.0" y="447.8" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">tahap sesuai?</text>
+<rect x="616" y="395" width="230" height="78" rx="10" fill="#F8EEEA" stroke="#D8B9AE" stroke-width="0.9"/>
+<text x="731.0" y="431.25" font-size="12.3" fill="#885247" font-weight="700" text-anchor="middle">Perbaiki draf dan bukti</text>
+<text x="731.0" y="447.05" font-size="10.8" fill="#885247" font-weight="400" text-anchor="middle">Versi pengajuan lama dipertahankan</text>
+<rect x="902" y="621" width="244" height="78" rx="10" fill="#EDF2F6" stroke="#C9D3DC" stroke-width="0.9"/>
+<text x="1024.0" y="657.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Ajukan laporan</text>
+<text x="1024.0" y="673.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Snapshot pengajuan disimpan</text>
+<polygon points="731.0,610 846,660.0 731.0,710 616,660.0" fill="#F7F0DF" stroke="#BEA46F"/>
+<text x="731.0" y="656.5" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Hasil</text>
+<text x="731.0" y="673.8" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">peninjauan?</text>
+<rect x="330" y="621" width="230" height="78" rx="10" fill="#203F35" stroke="#203F35" stroke-width="0.9"/>
+<text x="445.0" y="649.3499999999999" font-size="12.3" fill="#FFFFFF" font-weight="700" text-anchor="middle">Laporan ditinjau dan dikunci</text>
+<text x="445.0" y="665.1499999999999" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Peninjau berwenang</text>
+<text x="445.0" y="680.9499999999998" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Berbeda dari pembuat laporan</text>
+<rect x="44" y="621" width="230" height="78" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="159.0" y="649.3499999999999" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Ekspor sesuai hak akses</text>
+<text x="159.0" y="665.1499999999999" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">HTML atau ZIP</text>
+<text x="159.0" y="680.9499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Laporan, bukti dan riwayat</text>
+<polyline points="274,262.0 330,262.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="330,262.0 323.60837741781387,264.854323171417 323.60837741781387,259.145676828583" fill="#71867A"/>
+<polyline points="560,262.0 616,262.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="616,262.0 609.6083774178138,264.854323171417 609.6083774178138,259.145676828583" fill="#71867A"/>
+<polyline points="846,262.0 902,262.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="902,262.0 895.6083774178138,264.854323171417 895.6083774178138,259.145676828583" fill="#71867A"/>
+<polyline points="1024.0,301 1024.0,384" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="1024.0,384 1021.145676828583,377.60837741781387 1026.854323171417,377.6083774178138" fill="#71867A"/>
+<polyline points="912,434.0 846,434.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="846,434.0 852.3916225821862,431.145676828583 852.3916225821862,436.854323171417" fill="#71867A"/>
+<rect x="858.0634765625" y="410" width="43.873046875" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="880" y="422" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Belum</text>
+<polyline points="731.0,395 731.0,301" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="731.0,301 733.854323171417,307.3916225821862 728.145676828583,307.39162258218613" fill="#71867A"/>
+<rect x="704.8056640625" y="339" width="52.388671875" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="731" y="351" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Perbaiki</text>
+<polyline points="1024.0,484 1024.0,621" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="1024.0,621 1021.145676828583,614.6083774178138 1026.854323171417,614.6083774178138" fill="#71867A"/>
+<rect x="1011.27490234375" y="541" width="25.4501953125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="1024" y="553" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Ya</text>
+<polyline points="902,660.0 846,660.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="846,660.0 852.3916225821862,657.145676828583 852.3916225821862,662.854323171417" fill="#71867A"/>
+<polyline points="616,660.0 560,660.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="560,660.0 566.3916225821862,657.145676828583 566.3916225821862,662.854323171417" fill="#71867A"/>
+<rect x="562.36474609375" y="635" width="51.2705078125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="588" y="647" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Ditinjau</text>
+<polyline points="731.0,610 731.0,473" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="731.0,473 733.854323171417,479.3916225821862 728.145676828583,479.39162258218613" fill="#71867A"/>
+<rect x="686.890625" y="535" width="88.21875" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="731" y="547" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Perlu perbaikan</text>
+<polyline points="330,660.0 274,660.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="274,660.0 280.39162258218613,657.145676828583 280.3916225821862,662.854323171417" fill="#71867A"/>
+<text x="44" y="419.5" font-size="10.5" fill="#A58448" font-weight="700" text-anchor="start">BELUM ADA PENINJAU?</text>
+<text x="44" y="443.5" font-size="11.5" fill="#61716A" font-weight="400" text-anchor="start">Laporan tetap menunggu.</text>
+<text x="44" y="464.5" font-size="10.5" fill="#61716A" font-weight="400" text-anchor="start">Pembuat tidak meninjau laporannya sendiri.</text>
+<rect x="44" y="726" width="1102.5511811023623" height="47" rx="6" fill="#EDF3EF" stroke="#D8E1D9" stroke-width="0.9"/>
+<text x="58" y="744" font-size="10" fill="#203F35" font-weight="700" text-anchor="start">Materi divisi saat ini merupakan modul baca, belum LMS dengan ujian atau sertifikat.</text>
+<text x="58" y="761" font-size="10" fill="#61716A" font-weight="400" text-anchor="start">Peninjauan laporan tidak mengesahkan diagnosis, meloloskan QC, atau memverifikasi pembayaran. Ekspor dan unduhan tercatat di audit.</text>
+</svg>

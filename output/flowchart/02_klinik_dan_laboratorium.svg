@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190.55" height="841.89" viewBox="0 0 1190.55 841.89">
+<style>text{font-family:"Segoe UI",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1190.5511811023623" height="841.8897637795277" rx="0" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="44" y="49" font-size="13" fill="#203F35" font-weight="700" text-anchor="start">NARAYA AURENTIS</text>
+<text x="44" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">MONOLITHIC / DENTAL MANAGEMENT SYSTEM</text>
+<text x="1146.5511811023623" y="48" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">FLOWCHART  02 / 06</text>
+<text x="1146.5511811023623" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="end">Demo 0.4 / 20 Oktober 2026</text>
+<polyline points="44,76 1146.5511811023623,76" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="126" font-size="26" fill="#203F35" font-weight="700" text-anchor="start">Dari surat kerja sampai siap diserahkan</text>
+<text x="44" y="141.5" font-size="11.5" fill="#61716A" font-weight="400" text-anchor="start">Dokter bertanggung jawab atas instruksi klinis. Setelah diterima, Lab mengelola produksi, progres, dan risiko keterlambatan.</text>
+<polyline points="44,783 1146.5511811023623,783" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="809.5" font-size="8.5" fill="#203F35" font-weight="700" text-anchor="start">DEMO LOKAL / DATA FIKTIF</text>
+<text x="340" y="809.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">Kotak: proses     Belah ketupat: keputusan     Panah: urutan kerja</text>
+<text x="1146.5511811023623" y="811" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">02</text>
+<rect x="44" y="178" width="230" height="60" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="159.0" y="205.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Klinik internal</text>
+<text x="159.0" y="221.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Dokter membuat surat kerja</text>
+<rect x="44" y="270" width="230" height="60" rx="10" fill="#EDF2F6" stroke="#C9D3DC" stroke-width="0.9"/>
+<text x="159.0" y="297.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Klinik mitra</text>
+<text x="159.0" y="313.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Order dengan referensi kasus</text>
+<rect x="330" y="224" width="230" height="68" rx="10" fill="#203F35" stroke="#203F35" stroke-width="0.9"/>
+<text x="445.0" y="255.25" font-size="12.3" fill="#FFFFFF" font-weight="700" text-anchor="middle">Antrean order Lab</text>
+<text x="445.0" y="271.05" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Sumber dan organisasi tercatat</text>
+<rect x="616" y="224" width="230" height="68" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="731.0" y="255.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Resepsionis menugaskan</text>
+<text x="731.0" y="271.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">PJ Lab yang tersedia</text>
+<polygon points="1028.0,213 1140,258.0 1028.0,303 916,258.0" fill="#F7F0DF" stroke="#BEA46F"/>
+<text x="1028.0" y="254.5" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">PJ Lab</text>
+<text x="1028.0" y="271.8" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">menerima?</text>
+<rect x="616" y="350" width="230" height="60" rx="10" fill="#F8EEEA" stroke="#D8B9AE" stroke-width="0.9"/>
+<text x="731.0" y="377.25" font-size="12.3" fill="#885247" font-weight="700" text-anchor="middle">Tolak dengan alasan</text>
+<text x="731.0" y="393.05" font-size="10.8" fill="#885247" font-weight="400" text-anchor="middle">Tugaskan kembali</text>
+<rect x="916" y="480" width="224" height="76" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="1028.0" y="515.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Supervisor validasi rencana</text>
+<text x="1028.0" y="531.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Teknisi, jadwal dan estimasi</text>
+<rect x="616" y="480" width="230" height="76" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="731.0" y="507.35" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Teknisi mengerjakan</text>
+<text x="731.0" y="523.15" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Desain, produksi, finishing</text>
+<text x="731.0" y="538.9499999999999" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Ajukan pemeriksaan QC</text>
+<polygon points="445.0,473 560,518.0 445.0,563 330,518.0" fill="#F7F0DF" stroke="#BEA46F"/>
+<text x="445.0" y="523.15" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">QC lulus?</text>
+<rect x="44" y="480" width="230" height="76" rx="10" fill="#203F35" stroke="#203F35" stroke-width="0.9"/>
+<text x="159.0" y="515.25" font-size="12.3" fill="#FFFFFF" font-weight="700" text-anchor="middle">Siap diserahkan</text>
+<text x="159.0" y="531.05" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Hasil teknis lolos pemeriksaan</text>
+<rect x="330" y="641" width="230" height="65" rx="10" fill="#F8EEEA" stroke="#D8B9AE" stroke-width="0.9"/>
+<text x="445.0" y="670.75" font-size="12.3" fill="#885247" font-weight="700" text-anchor="middle">Rework tercatat</text>
+<text x="445.0" y="686.55" font-size="10.8" fill="#885247" font-weight="400" text-anchor="middle">Alasan gagal dan perbaikan</text>
+<polyline points="274,208.0 300,208 300,258 330,258.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="330,258.0 323.60837741781387,260.854323171417 323.60837741781387,255.14567682858302" fill="#71867A"/>
+<polyline points="274,300.0 300,300 300,258 330,258.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="330,258.0 323.60837741781387,260.854323171417 323.60837741781387,255.14567682858302" fill="#71867A"/>
+<polyline points="560,258.0 616,258.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="616,258.0 609.6083774178138,260.854323171417 609.6083774178138,255.14567682858302" fill="#71867A"/>
+<polyline points="846,258.0 916,258.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="916,258.0 909.6083774178138,260.854323171417 909.6083774178138,255.14567682858302" fill="#71867A"/>
+<polyline points="1028.0,303 1028,380 846,380.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="846,380.0 852.3916225821862,377.145676828583 852.3916225821862,382.854323171417" fill="#71867A"/>
+<rect x="930.06787109375" y="359" width="39.8642578125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="950" y="371" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Tidak</text>
+<polyline points="731.0,350 731.0,292" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="731.0,292 733.854323171417,298.3916225821862 728.145676828583,298.39162258218613" fill="#71867A"/>
+<rect x="706.12158203125" y="309" width="49.7568359375" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="731" y="321" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Alihkan</text>
+<polyline points="1140,258.0 1170,258 1170,518 1140,518.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="1140,518.0 1146.391622582186,515.145676828583 1146.391622582186,520.854323171417" fill="#71867A"/>
+<rect x="1155.27490234375" y="397" width="25.4501953125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="1168" y="409" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Ya</text>
+<polyline points="916,518.0 846,518.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="846,518.0 852.3916225821862,515.145676828583 852.3916225821862,520.854323171417" fill="#71867A"/>
+<polyline points="616,518.0 560,518.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="560,518.0 566.3916225821862,515.145676828583 566.3916225821862,520.854323171417" fill="#71867A"/>
+<polyline points="330,518.0 274,518.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="274,518.0 280.39162258218613,515.145676828583 280.3916225821862,520.854323171417" fill="#71867A"/>
+<rect x="289.27490234375" y="493" width="25.4501953125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="302" y="505" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Ya</text>
+<polyline points="445.0,563 445.0,641" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="445.0,641 442.145676828583,634.6083774178138 447.854323171417,634.6083774178138" fill="#71867A"/>
+<rect x="425.06787109375" y="594" width="39.8642578125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="445" y="606" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Tidak</text>
+<polyline points="560,673.5 731,673.5 731.0,556" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="731.0,556 733.854323171417,562.3916225821862 728.145676828583,562.3916225821862" fill="#71867A"/>
+<rect x="649.8056640625" y="652" width="52.388671875" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="676" y="664" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Perbaiki</text>
+<rect x="44" y="719" width="1102.5511811023623" height="47" rx="6" fill="#EDF3EF" stroke="#D8E1D9" stroke-width="0.9"/>
+<text x="58" y="737" font-size="10" fill="#203F35" font-weight="700" text-anchor="start">Pemberitahuan mengikuti penerima yang berwenang.</text>
+<text x="58" y="754" font-size="10" fill="#61716A" font-weight="400" text-anchor="start">Internal: pasien sesuai verifikasi kontak dan izin. Eksternal: klinik mitra menjadi penerima utama. Status ready berarti siap diserahkan.</text>
+</svg>

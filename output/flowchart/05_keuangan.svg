@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190.55" height="841.89" viewBox="0 0 1190.55 841.89">
+<style>text{font-family:"Segoe UI",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1190.5511811023623" height="841.8897637795277" rx="0" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="44" y="49" font-size="13" fill="#203F35" font-weight="700" text-anchor="start">NARAYA AURENTIS</text>
+<text x="44" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">MONOLITHIC / DENTAL MANAGEMENT SYSTEM</text>
+<text x="1146.5511811023623" y="48" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">FLOWCHART  05 / 06</text>
+<text x="1146.5511811023623" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="end">Demo 0.4 / 20 Oktober 2026</text>
+<polyline points="44,76 1146.5511811023623,76" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="126" font-size="26" fill="#203F35" font-weight="700" text-anchor="start">Pencatatan uang dan verifikasi dipisahkan</text>
+<text x="44" y="141.5" font-size="11.5" fill="#61716A" font-weight="400" text-anchor="start">Tagihan hanya menghitung dana yang berstatus verified. Screenshot bukti pembayaran tidak otomatis membuat tagihan lunas.</text>
+<polyline points="44,783 1146.5511811023623,783" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="809.5" font-size="8.5" fill="#203F35" font-weight="700" text-anchor="start">DEMO LOKAL / DATA FIKTIF</text>
+<text x="340" y="809.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">Kotak: proses     Belah ketupat: keputusan     Panah: urutan kerja</text>
+<text x="1146.5511811023623" y="811" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">05</text>
+<rect x="44" y="210" width="300" height="78" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="194.0" y="238.35000000000002" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Buat invoice per order</text>
+<text x="194.0" y="254.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Resepsionis atau FAT</text>
+<text x="194.0" y="269.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Internal cost / external invoice</text>
+<rect x="445" y="210" width="300" height="78" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="595.0" y="238.35000000000002" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Resepsionis mencatat pembayaran</text>
+<text x="595.0" y="254.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Nominal, metode dan referensi</text>
+<text x="595.0" y="269.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Tidak boleh melampaui tagihan</text>
+<rect x="846" y="210" width="300" height="78" rx="10" fill="#EDF2F6" stroke="#C9D3DC" stroke-width="0.9"/>
+<text x="996.0" y="238.35000000000002" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Menunggu verifikasi</text>
+<text x="996.0" y="254.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Status pending_verification</text>
+<text x="996.0" y="269.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Belum dihitung sebagai dana masuk</text>
+<polygon points="996.0,419 1126,474.0 996.0,529 866,474.0" fill="#F7F0DF" stroke="#BEA46F"/>
+<text x="996.0" y="461.85" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">FAT berwenang</text>
+<text x="996.0" y="479.15000000000003" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">dan berbeda</text>
+<text x="996.0" y="496.45000000000005" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">dari pencatat?</text>
+<rect x="445" y="435" width="300" height="78" rx="10" fill="#F8EEEA" stroke="#D8B9AE" stroke-width="0.9"/>
+<text x="595.0" y="463.35" font-size="12.3" fill="#885247" font-weight="700" text-anchor="middle">Tetap menunggu verifikasi</text>
+<text x="595.0" y="479.15000000000003" font-size="10.8" fill="#885247" font-weight="400" text-anchor="middle">Tanpa pemeriksa yang sah,</text>
+<text x="595.0" y="494.95000000000005" font-size="10.8" fill="#885247" font-weight="400" text-anchor="middle">pembayaran tidak disahkan</text>
+<rect x="846" y="626" width="300" height="78" rx="10" fill="#203F35" stroke="#203F35" stroke-width="0.9"/>
+<text x="996.0" y="654.3499999999999" font-size="12.3" fill="#FFFFFF" font-weight="700" text-anchor="middle">FAT memverifikasi simulasi</text>
+<text x="996.0" y="670.1499999999999" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Rekonsiliasi manual demo</text>
+<text x="996.0" y="685.9499999999998" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Status menjadi verified</text>
+<rect x="445" y="626" width="300" height="78" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="595.0" y="654.3499999999999" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Sistem menghitung ulang</text>
+<text x="595.0" y="670.1499999999999" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Dana terverifikasi dan sisa tagihan</text>
+<text x="595.0" y="685.9499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Riwayat transaksi tetap tersimpan</text>
+<rect x="44" y="626" width="300" height="78" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="194.0" y="654.3499999999999" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Status invoice ditampilkan</text>
+<text x="194.0" y="670.1499999999999" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Belum lunas / sebagian / lunas</text>
+<text x="194.0" y="685.9499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Sesuai total dana terverifikasi</text>
+<polyline points="344,249.0 445,249.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="445,249.0 438.60837741781387,251.85432317141698 438.60837741781387,246.14567682858302" fill="#71867A"/>
+<polyline points="745,249.0 846,249.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="846,249.0 839.6083774178138,251.85432317141698 839.6083774178138,246.14567682858302" fill="#71867A"/>
+<polyline points="996.0,288 996.0,419" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="996.0,419 993.145676828583,412.60837741781387 998.854323171417,412.6083774178138" fill="#71867A"/>
+<rect x="938.68505859375" y="341" width="114.6298828125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="996" y="353" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Pemeriksaan terpisah</text>
+<polyline points="866,474.0 745,474.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="745,474.0 751.3916225821862,471.145676828583 751.3916225821862,476.854323171417" fill="#71867A"/>
+<rect x="780.06787109375" y="450" width="39.8642578125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="800" y="462" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Tidak</text>
+<polyline points="996.0,529 996.0,626" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="996.0,626 993.145676828583,619.6083774178138 998.854323171417,619.6083774178138" fill="#71867A"/>
+<rect x="983.27490234375" y="568" width="25.4501953125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="996" y="580" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Ya</text>
+<polyline points="846,665.0 745,665.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="745,665.0 751.3916225821862,662.145676828583 751.3916225821862,667.854323171417" fill="#71867A"/>
+<polyline points="445,665.0 344,665.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="344,665.0 350.39162258218613,662.145676828583 350.3916225821862,667.854323171417" fill="#71867A"/>
+<rect x="44" y="726" width="1102.5511811023623" height="47" rx="6" fill="#EDF3EF" stroke="#D8E1D9" stroke-width="0.9"/>
+<text x="58" y="744" font-size="10" fill="#203F35" font-weight="700" text-anchor="start">Verifikasi ini hanya simulasi lokal, bukan konfirmasi bank atau payment gateway.</text>
+<text x="58" y="761" font-size="10" fill="#61716A" font-weight="400" text-anchor="start">Peninjauan SOP tidak melunaskan tagihan. Integrasi settlement dan kontrol produksi perlu diselesaikan sebelum transaksi nyata.</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190.55" height="841.89" viewBox="0 0 1190.55 841.89">
+<style>text{font-family:"Segoe UI",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1190.5511811023623" height="841.8897637795277" rx="0" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="44" y="49" font-size="13" fill="#203F35" font-weight="700" text-anchor="start">NARAYA AURENTIS</text>
+<text x="44" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">MONOLITHIC / DENTAL MANAGEMENT SYSTEM</text>
+<text x="1146.5511811023623" y="48" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">FLOWCHART  04 / 06</text>
+<text x="1146.5511811023623" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="end">Demo 0.4 / 20 Oktober 2026</text>
+<polyline points="44,76 1146.5511811023623,76" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="126" font-size="26" fill="#203F35" font-weight="700" text-anchor="start">Bantuan pasien: asisten, lalu petugas</text>
+<text x="44" y="141.5" font-size="11.5" fill="#61716A" font-weight="400" text-anchor="start">Percakapan pribadi tersedia untuk pasien internal. CS memakai kotak masuk layanan; pegawai lain memakai materi divisi.</text>
+<polyline points="44,783 1146.5511811023623,783" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="809.5" font-size="8.5" fill="#203F35" font-weight="700" text-anchor="start">DEMO LOKAL / DATA FIKTIF</text>
+<text x="340" y="809.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">Kotak: proses     Belah ketupat: keputusan     Panah: urutan kerja</text>
+<text x="1146.5511811023623" y="811" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">04</text>
+<rect x="44" y="226" width="230" height="76" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="159.0" y="261.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Masuk portal pasien</text>
+<text x="159.0" y="277.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Identitas dan data sendiri</text>
+<rect x="330" y="226" width="230" height="76" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="445.0" y="261.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Buka Bantuan</text>
+<text x="445.0" y="277.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Konteks umum atau layanan sendiri</text>
+<rect x="616" y="226" width="230" height="76" rx="10" fill="#203F35" stroke="#203F35" stroke-width="0.9"/>
+<text x="731.0" y="261.25" font-size="12.3" fill="#FFFFFF" font-weight="700" text-anchor="middle">Asisten layanan</text>
+<text x="731.0" y="277.05" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Jawaban simulasi lokal</text>
+<polygon points="1028.0,219 1140,264.0 1028.0,309 916,264.0" fill="#F7F0DF" stroke="#BEA46F"/>
+<text x="1028.0" y="260.5" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Meminta</text>
+<text x="1028.0" y="277.8" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">petugas?</text>
+<rect x="916" y="366" width="224" height="65" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="1028.0" y="395.75" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Lanjut dengan asisten</text>
+<text x="1028.0" y="411.55" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Selama status masih assistant</text>
+<rect x="916" y="532" width="224" height="76" rx="10" fill="#EDF2F6" stroke="#C9D3DC" stroke-width="0.9"/>
+<text x="1028.0" y="567.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Antrean CS</text>
+<text x="1028.0" y="583.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Status waiting; hanya metadata</text>
+<rect x="616" y="532" width="230" height="76" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="731.0" y="567.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Satu CS mengambil</text>
+<text x="731.0" y="583.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Penugasan dikunci secara atomik</text>
+<rect x="330" y="532" width="230" height="76" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="445.0" y="567.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Petugas membalas</text>
+<text x="445.0" y="583.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Status human; asisten berhenti</text>
+<rect x="44" y="532" width="230" height="76" rx="10" fill="#203F35" stroke="#203F35" stroke-width="0.9"/>
+<text x="159.0" y="567.25" font-size="12.3" fill="#FFFFFF" font-weight="700" text-anchor="middle">Percakapan ditutup</text>
+<text x="159.0" y="583.05" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Riwayat tetap tersimpan</text>
+<polyline points="274,264.0 330,264.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="330,264.0 323.60837741781387,266.854323171417 323.60837741781387,261.145676828583" fill="#71867A"/>
+<polyline points="560,264.0 616,264.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="616,264.0 609.6083774178138,266.854323171417 609.6083774178138,261.145676828583" fill="#71867A"/>
+<polyline points="846,264.0 916,264.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="916,264.0 909.6083774178138,266.854323171417 909.6083774178138,261.145676828583" fill="#71867A"/>
+<polyline points="1028.0,309 1028.0,366" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="1028.0,366 1025.145676828583,359.60837741781387 1030.854323171417,359.6083774178138" fill="#71867A"/>
+<rect x="1008.06787109375" y="328" width="39.8642578125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="1028" y="340" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Tidak</text>
+<polyline points="916,398.5 731,398.5 731.0,302" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="731.0,302 733.854323171417,308.3916225821862 728.145676828583,308.39162258218613" fill="#71867A"/>
+<rect x="803.3369140625" y="377" width="43.326171875" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="825" y="389" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Lanjut</text>
+<polyline points="1140,264.0 1170,264 1170,570 1140,570.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="1140,570.0 1146.391622582186,567.145676828583 1146.391622582186,572.854323171417" fill="#71867A"/>
+<rect x="1155.27490234375" y="469" width="25.4501953125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="1168" y="481" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Ya</text>
+<polyline points="916,570.0 846,570.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="846,570.0 852.3916225821862,567.145676828583 852.3916225821862,572.854323171417" fill="#71867A"/>
+<polyline points="616,570.0 560,570.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="560,570.0 566.3916225821862,567.145676828583 566.3916225821862,572.854323171417" fill="#71867A"/>
+<polyline points="330,570.0 274,570.0" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="274,570.0 280.39162258218613,567.145676828583 280.3916225821862,572.854323171417" fill="#71867A"/>
+<rect x="44" y="663" width="1102.5511811023623" height="47" rx="6" fill="#EDF3EF" stroke="#D8E1D9" stroke-width="0.9"/>
+<text x="58" y="681" font-size="10" fill="#203F35" font-weight="700" text-anchor="start">Transkrip dibuka hanya oleh pasien pemilik dan CS yang ditugaskan.</text>
+<text x="58" y="698" font-size="10" fill="#61716A" font-weight="400" text-anchor="start">CS tidak otomatis memperoleh akses rekam medis. Riwayat dan audit dipertahankan; permintaan chat memakai kunci pencegah duplikasi.</text>
+<text x="58" y="746.5" font-size="10.5" fill="#61716A" font-weight="400" text-anchor="start">Batas demo: belum terhubung ke model AI eksternal, WhatsApp, SMS, atau email. Pertanyaan klinis diarahkan kepada dokter.</text>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190.55" height="841.89" viewBox="0 0 1190.55 841.89">
+<style>text{font-family:"Segoe UI",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1190.5511811023623" height="841.8897637795277" rx="0" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="44" y="49" font-size="13" fill="#203F35" font-weight="700" text-anchor="start">NARAYA AURENTIS</text>
+<text x="44" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">MONOLITHIC / DENTAL MANAGEMENT SYSTEM</text>
+<text x="1146.5511811023623" y="48" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">FLOWCHART  01 / 06</text>
+<text x="1146.5511811023623" y="63.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="end">Demo 0.4 / 20 Oktober 2026</text>
+<polyline points="44,76 1146.5511811023623,76" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="126" font-size="26" fill="#203F35" font-weight="700" text-anchor="start">Dua pintu masuk, akses sesuai kebutuhan</text>
+<text x="44" y="141.5" font-size="11.5" fill="#61716A" font-weight="400" text-anchor="start">Pasien memakai portal sendiri. Pegawai dan klinik mitra masuk melalui ruang kerja dengan hak yang berbeda.</text>
+<polyline points="44,783 1146.5511811023623,783" fill="none" stroke="#DADFD7" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="44" y="809.5" font-size="8.5" fill="#203F35" font-weight="700" text-anchor="start">DEMO LOKAL / DATA FIKTIF</text>
+<text x="340" y="809.5" font-size="8.5" fill="#61716A" font-weight="400" text-anchor="start">Kotak: proses     Belah ketupat: keputusan     Panah: urutan kerja</text>
+<text x="1146.5511811023623" y="811" font-size="10" fill="#A58448" font-weight="700" text-anchor="end">01</text>
+<text x="44" y="178.5" font-size="10.5" fill="#A58448" font-weight="700" text-anchor="start">PASIEN INTERNAL</text>
+<rect x="44" y="205" width="310" height="70" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="199.0" y="237.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Masuk melalui /pasien</text>
+<text x="199.0" y="253.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">ID pasien + kata sandi</text>
+<rect x="44" y="335" width="310" height="76" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="199.0" y="362.35" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Backend memeriksa akses</text>
+<text x="199.0" y="378.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Rekam pasien tertaut</text>
+<text x="199.0" y="393.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Hanya data milik sendiri</text>
+<rect x="44" y="475" width="310" height="102" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="199.0" y="507.45" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Ruang layanan</text>
+<text x="199.0" y="523.2499999999999" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Layanan dan perkembangan</text>
+<text x="199.0" y="539.0499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Jadwal, dokter, pemberitahuan</text>
+<text x="199.0" y="554.8499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Persetujuan dan Bantuan</text>
+<rect x="44" y="635" width="310" height="56" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="199.0" y="660.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Lanjut ke alur terkait</text>
+<text x="199.0" y="676.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Diagram 03 dan 04</text>
+<polyline points="199.0,275 199.0,335" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="199.0,335 196.14567682858302,328.60837741781387 201.85432317141698,328.6083774178138" fill="#71867A"/>
+<polyline points="199.0,411 199.0,475" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="199.0,475 196.14567682858302,468.60837741781387 201.85432317141698,468.6083774178138" fill="#71867A"/>
+<rect x="180.037109375" y="433" width="37.92578125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="199" y="445" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Valid</text>
+<polyline points="199.0,577 199.0,635" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="199.0,635 196.14567682858302,628.6083774178138 201.85432317141698,628.6083774178138" fill="#71867A"/>
+<text x="440" y="178.5" font-size="10.5" fill="#A58448" font-weight="700" text-anchor="start">PEGAWAI NARAYA</text>
+<rect x="440" y="205" width="310" height="70" rx="10" fill="#203F35" stroke="#203F35" stroke-width="0.9"/>
+<text x="595.0" y="237.25" font-size="12.3" fill="#FFFFFF" font-weight="700" text-anchor="middle">Masuk melalui /</text>
+<text x="595.0" y="253.05" font-size="10.8" fill="#FFFFFF" font-weight="400" text-anchor="middle">Akun kerja + kata sandi</text>
+<rect x="440" y="335" width="310" height="76" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="595.0" y="362.35" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Backend memeriksa akses</text>
+<text x="595.0" y="378.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Peran dan penugasan</text>
+<text x="595.0" y="393.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Organisasi dan tahap workflow</text>
+<rect x="440" y="475" width="310" height="102" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="595.0" y="507.45" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Ruang layanan</text>
+<text x="595.0" y="523.2499999999999" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Klinik, Lab, QC dan keuangan</text>
+<text x="595.0" y="539.0499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Materi divisi, SOP dan laporan</text>
+<text x="595.0" y="554.8499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Menu mengikuti jabatan</text>
+<rect x="440" y="635" width="310" height="56" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="595.0" y="660.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Lanjut ke alur terkait</text>
+<text x="595.0" y="676.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Diagram 02, 05 dan 06</text>
+<polyline points="595.0,275 595.0,335" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="595.0,335 592.145676828583,328.60837741781387 597.854323171417,328.6083774178138" fill="#71867A"/>
+<polyline points="595.0,411 595.0,475" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="595.0,475 592.145676828583,468.60837741781387 597.854323171417,468.6083774178138" fill="#71867A"/>
+<rect x="576.037109375" y="433" width="37.92578125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="595" y="445" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Valid</text>
+<polyline points="595.0,577 595.0,635" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="595.0,635 592.145676828583,628.6083774178138 597.854323171417,628.6083774178138" fill="#71867A"/>
+<text x="836" y="178.5" font-size="10.5" fill="#A58448" font-weight="700" text-anchor="start">KLINIK MITRA</text>
+<rect x="836" y="205" width="310" height="70" rx="10" fill="#EDF2F6" stroke="#C9D3DC" stroke-width="0.9"/>
+<text x="991.0" y="237.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Masuk melalui /</text>
+<text x="991.0" y="253.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Akun mitra + kata sandi</text>
+<rect x="836" y="335" width="310" height="76" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="991.0" y="362.35" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Backend memeriksa akses</text>
+<text x="991.0" y="378.15000000000003" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Organisasi klinik mitra</text>
+<text x="991.0" y="393.95000000000005" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Hanya kasus organisasi sendiri</text>
+<rect x="836" y="475" width="310" height="102" rx="10" fill="#EDF3EF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="991.0" y="507.45" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Ruang layanan</text>
+<text x="991.0" y="523.2499999999999" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Kirim order eksternal</text>
+<text x="991.0" y="539.0499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Pantau status dan tanggal</text>
+<text x="991.0" y="554.8499999999998" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Invoice serta pemberitahuan</text>
+<rect x="836" y="635" width="310" height="56" rx="10" fill="#FFFFFF" stroke="#C8D3CB" stroke-width="0.9"/>
+<text x="991.0" y="660.25" font-size="12.3" fill="#263A33" font-weight="700" text-anchor="middle">Lanjut ke alur terkait</text>
+<text x="991.0" y="676.05" font-size="10.8" fill="#263A33" font-weight="400" text-anchor="middle">Diagram 02, 03 dan 05</text>
+<polyline points="991.0,275 991.0,335" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="991.0,335 988.145676828583,328.60837741781387 993.854323171417,328.6083774178138" fill="#71867A"/>
+<polyline points="991.0,411 991.0,475" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="991.0,475 988.145676828583,468.60837741781387 993.854323171417,468.6083774178138" fill="#71867A"/>
+<rect x="972.037109375" y="433" width="37.92578125" height="18" rx="3" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="0.9"/>
+<text x="991" y="445" font-size="10" fill="#61716A" font-weight="700" text-anchor="middle">Valid</text>
+<polyline points="991.0,577 991.0,635" fill="none" stroke="#71867A" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="991.0,635 988.145676828583,628.6083774178138 993.854323171417,628.6083774178138" fill="#71867A"/>
+<rect x="44" y="719" width="1102.5511811023623" height="47" rx="6" fill="#EDF3EF" stroke="#D8E1D9" stroke-width="0.9"/>
+<text x="58" y="737" font-size="10" fill="#203F35" font-weight="700" text-anchor="start">Jika validasi gagal, akses ditolak.</text>
+<text x="58" y="754" font-size="10" fill="#61716A" font-weight="400" text-anchor="start">Pasien tidak melihat akun divisi, struktur organisasi, SOP, materi pegawai, atau laporan internal. IT tidak otomatis melihat data medis.</text>
+</svg>
