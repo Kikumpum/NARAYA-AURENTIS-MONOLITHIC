@@ -1,0 +1,50 @@
+NAM DMS — FIN-02 — Verifikasi dan rekonsiliasi penerimaan demo
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+FIN-02-01 — Daftar transaksi dan periode rekonsiliasi ditetapkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FIN-02-02 — Petugas pemeriksa berbeda dari pencatat penerimaan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FIN-02-03 — QRIS/transfer/kartu tidak dinyatakan sukses hanya dari screenshot.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FIN-02-04 — Rekap transaksi fiktif, sumber pemeriksaan, dan selisih dilampirkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+FIN-02-05 — Verifikasi di aplikasi diberi label manual demo; tidak digunakan untuk pembayaran nyata.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FIN-02-06 — Selisih dan piutang ditindaklanjuti tanpa menghapus atau menimpa riwayat pembayaran.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

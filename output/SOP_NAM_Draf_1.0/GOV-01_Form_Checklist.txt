@@ -1,0 +1,50 @@
+NAM DMS — GOV-01 — Pengawasan dan tindak lanjut manajemen
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+GOV-01-01 — Periode, unit, dan ruang lingkup pemeriksaan dicatat.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GOV-01-02 — Ringkasan kinerja diperiksa tanpa data identitas atau rincian medis pasien.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GOV-01-03 — Pemisahan pelaksana, pemeriksa, dan pemberi persetujuan ditinjau.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GOV-01-04 — Temuan, tingkat urgensi, dan bukti administratif dicatat.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+GOV-01-05 — Setiap temuan mempunyai penanggung jawab dan tenggat tindak lanjut.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GOV-01-06 — Tindak lanjut sebelumnya dicek; penutupan disertai bukti, bukan pernyataan lisan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

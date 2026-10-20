@@ -1,0 +1,50 @@
+NAM DMS — COM-01 — Pemeriksaan izin dan komunikasi layanan
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+COM-01-01 — Penerima utama mengikuti sumber layanan: pasien internal atau klinik mitra.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+COM-01-02 — Kontak, izin, kanal, dan frekuensi diperiksa melalui petugas berwenang; verifikasi tetap simulasi.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+COM-01-03 — Tidak mengirim data medis melalui kanal umum atau menghubungi pasien eksternal tanpa otorisasi yang tervalidasi.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+COM-01-04 — Pilihan notifikasi minimal tidak menghapus komunikasi layanan yang wajib.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+COM-01-05 — Ringkasan anonim dari pemberitahuan tertunda/gagal atau hasil pemeriksaan dilampirkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+COM-01-06 — Perubahan janji memerlukan respons tegas; pesan dibaca tidak dianggap persetujuan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

@@ -1,0 +1,13 @@
+flowchart TD
+ START["Pengguna membuka NAM DMS"] --> LOGIN["Autentikasi akun individual"]
+ LOGIN --> AUTH{"Sesi dan CSRF valid?"}
+ AUTH -->|Tidak| DENY["401/403 + catat anomali"]
+ AUTH -->|Ya| ROLE["Periksa role & organisasi"]
+ ROLE --> SCOPE{"Akses pada order pasien ini?"}
+ SCOPE -->|Tidak| DENY
+ SCOPE -->|Ya| ACTION["Validasi peran, status workflow, pemisahan tugas"]
+ ACTION --> RULE{"Aksi berwenang?"}
+ RULE -->|Tidak| DENY
+ RULE -->|Ya| COMMIT["Transaksi DB + audit event"]
+ COMMIT --> OUTBOX["Notifikasi aman melalui outbox (demo: antrean saja)"]
+ COMMIT --> DASH["Dashboard sesuai kewenangan"]

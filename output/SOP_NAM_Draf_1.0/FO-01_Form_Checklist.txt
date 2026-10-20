@@ -1,0 +1,50 @@
+NAM DMS — FO-01 — Registrasi dan pembukaan layanan pasien
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+FO-01-01 — Gunakan identitas fiktif; cocokkan referensi layanan sesuai prosedur verifikasi demo.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FO-01-02 — Jadwal dan dokter tujuan dikonfirmasi tanpa mengubah diagnosis.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FO-01-03 — Pilihan kanal serta frekuensi komunikasi dicatat; izin layanan dipisahkan dari pemasaran.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FO-01-04 — Status kontak dan izin diberi label simulasi, bukan dianggap verifikasi sungguhan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FO-01-05 — Penggantian dokter menunggu persetujuan pasien sebelum perubahan final.
+[ ] Sesuai  [ ] Ada temuan  [ ] Tidak relevan (alasan wajib)
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+FO-01-06 — Kendala registrasi dan tindak lanjut dicatat tanpa rincian medis pada laporan umum.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

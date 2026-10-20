@@ -1,0 +1,50 @@
+NAM DMS — CLI-02 — Koordinasi dan kesiapan pelayanan Klinik
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+CLI-02-01 — Jadwal ruang, dokter, dan petugas pendamping dikonfirmasi.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+CLI-02-02 — Kewenangan serta kompetensi petugas dikonfirmasi melalui penanggung jawab yang sah.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+CLI-02-03 — Daftar kesiapan ruang dan kendala dari Perawat ditinjau.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+CLI-02-04 — Risiko antrean dan serah terima dengan Lab ditindaklanjuti.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+CLI-02-05 — Ringkasan kesiapan anonim dan daftar tindakan operasional dilampirkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+CLI-02-06 — Keputusan klinis tetap pada dokter; manajemen hanya menerima ringkasan yang diperlukan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

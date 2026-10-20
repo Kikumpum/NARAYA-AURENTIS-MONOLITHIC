@@ -1,0 +1,50 @@
+NAM DMS — SLS-01 — Tindak lanjut prospek dan penawaran
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+SLS-01-01 — Sumber prospek dan izin komunikasi pemasaran dicatat.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+SLS-01-02 — Kebutuhan layanan bisnis diklarifikasi tanpa meminta rincian medis.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+SLS-01-03 — Penawaran menggunakan tarif serta ketentuan yang berwenang.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+SLS-01-04 — Diskon atau pengecualian menunggu persetujuan dan tidak dijanjikan terlebih dahulu.
+[ ] Sesuai  [ ] Ada temuan  [ ] Tidak relevan (alasan wajib)
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+SLS-01-05 — Ringkasan penawaran anonim serta tindak lanjut dilampirkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+SLS-01-06 — Prospek yang diteruskan ke Operasional mempunyai pemilik dan tenggat.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

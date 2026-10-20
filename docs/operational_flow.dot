@@ -1,0 +1,29 @@
+digraph NAM {
+ graph [fontname="DejaVu Sans",bgcolor="#ffffff",rankdir=TB,fontsize=22,label="NAM DMS  ·  Klinik, Lab, Keuangan",labelloc="t",labeljust="c",nodesep=.28,ranksep=.44,pad=.28];
+ node [fontname="DejaVu Sans",shape=box,style="rounded,filled",fillcolor="#eef5f3",color="#bfd3cf",fontcolor="#1c4650",fontsize=11,margin="0.19,0.11",penwidth=1.3];
+ edge [color="#6b9696",arrowsize=.75,penwidth=1.4,fontname="DejaVu Sans",fontsize=10,fontcolor="#416a70"];
+ clinic [label="KLINIK NARAYA\nDokter mengesahkan surat kerja",fillcolor="#d7eeea"];
+ partner [label="KLINIK MITRA\nOrder eksternal berkode kasus",fillcolor="#e6ecf9"];
+ intake [label="NAM LAB  ·  ORDER INTAKE\nAntrean gabungan, data dan akses terpisah",fillcolor="#123f46",fontcolor="white",color="#123f46",penwidth=2];
+ recommend [label="Rekomendasi PJ Lab\nJadwal • Kompetensi • Beban kerja"];
+ reception [label="Resepsionis memilih / menugaskan"];
+ confirm [shape=diamond,label="PJ Lab\nterima?",fillcolor="#ffefd5",color="#ddb676"];
+ reroute [label="Tolak + alasan\nAntrean ulang",fillcolor="#fff2ee"];
+ eta [label="ETA dihitung → divalidasi Supervisor Lab"];
+ production [label="Teknisi • CAD/CAM • Finishing"];
+ qc [shape=diamond,label="QC\nlulus?",fillcolor="#ffefd5",color="#ddb676"];
+ rework [label="Rework dan tindak lanjut",fillcolor="#fff2ee"];
+ ready [label="SIAP DISERAHKAN\nHasil teknis lolos QC",fillcolor="#d4f0e1"];
+ message [label="Pemberitahuan status & ETA\nPasien internal / Klinik mitra (utama)",fillcolor="#e7f2fb"];
+ delay [label="Risiko terlambat → usulan tanggal baru\nPersetujuan customer yang berwenang",fillcolor="#ffefd5"];
+ finance [label="Invoice → catat pembayaran → FAT verifikasi",fillcolor="#f3eaf6"];
+ report [label="Daily report seluruh divisi\nDashboard Direktur",fillcolor="#123f46",fontcolor="white",color="#123f46"];
+ {rank=same;clinic;partner}
+ clinic -> intake;partner -> intake;intake -> recommend -> reception -> confirm;
+ confirm -> reroute [label="Tidak"];reroute -> recommend;
+ confirm -> eta [label="Ya"];eta -> production -> qc;
+ qc -> rework [label="Tidak"];rework -> production;
+ qc -> ready [label="Ya"];ready -> message;
+ eta -> delay [style=dashed,label="Jika komitmen berubah"];delay -> production [style=dashed,label="Disetujui"];
+ intake -> finance [style=dashed];finance -> report;ready -> report [style=dashed];
+}

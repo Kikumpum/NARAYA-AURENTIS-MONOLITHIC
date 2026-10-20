@@ -1,0 +1,50 @@
+NAM DMS — HR-01 — Jadwal, kompetensi, dan serah terima personel
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+HR-01-01 — Jadwal dan kehadiran petugas dikonfirmasi tanpa membuat absensi rekaan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+HR-01-02 — Kebutuhan pengganti dan beban kerja unit dicatat.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+HR-01-03 — Kompetensi dan kewenangan tugas diverifikasi oleh penanggung jawab terkait.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+HR-01-04 — Pelatihan atau pembaruan kompetensi yang jatuh tempo ditindaklanjuti.
+[ ] Sesuai  [ ] Ada temuan  [ ] Tidak relevan (alasan wajib)
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+HR-01-05 — Ringkasan perubahan jadwal atau hasil pemeriksaan shift dilampirkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+HR-01-06 — Onboarding/offboarding diteruskan ke IT untuk penyesuaian akses yang disetujui.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

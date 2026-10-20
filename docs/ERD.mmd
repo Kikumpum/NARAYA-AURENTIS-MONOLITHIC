@@ -1,0 +1,23 @@
+erDiagram
+  ORGANIZATIONS ||--o{ USERS : contains
+  ORGANIZATIONS ||--o{ PATIENTS : owns
+  USERS ||--o{ SESSIONS : signs_in
+  USERS ||--o{ SHIFTS : scheduled_for
+  PATIENTS ||--o{ APPOINTMENTS : attends
+  PATIENTS ||--o{ LAB_ORDERS : associated_with
+  ORGANIZATIONS ||--o{ LAB_ORDERS : places
+  USERS ||--o{ LAB_ORDERS : clinician_supervisor_technician
+  LAB_ORDERS ||--o| INVOICES : invoiced_as
+  INVOICES ||--o{ PAYMENTS : receives
+  LAB_ORDERS ||--o{ NOTIFICATIONS : triggers
+  USERS ||--o{ DAILY_REPORTS : submits
+  USERS ||--o{ AUDIT_EVENTS : generates
+  ORGANIZATIONS ||--o{ ORGANIZATION_POSITIONS : defines
+  ORGANIZATION_POSITIONS ||--o{ USER_POSITIONS : maps_demo_accounts
+  USERS ||--o| USER_POSITIONS : assigned_position
+  USERS ||--o{ SOP_REPORTS : prepares
+  ORGANIZATIONS ||--o{ SOP_REPORTS : scopes
+  LAB_ORDERS o|--o{ SOP_REPORTS : contextualizes
+  SOP_REPORTS ||--o{ SOP_REPORT_VERSIONS : preserves
+  SOP_REPORTS ||--o{ REPORT_ATTACHMENTS : includes_private_evidence
+  USERS ||--o{ WORKFLOW_RECEIPTS : retries_idempotently

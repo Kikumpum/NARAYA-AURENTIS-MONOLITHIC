@@ -1,0 +1,50 @@
+NAM DMS — GA-01 — Pemeriksaan fasilitas dan pemeliharaan
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+GA-01-01 — Area kerja, akses keluar, penerangan, dan fasilitas umum diperiksa.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GA-01-02 — Peralatan yang rusak diberi penanda dan diteruskan kepada petugas berwenang.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GA-01-03 — Pekerjaan pemeliharaan tidak mengganggu keamanan area dan data.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GA-01-04 — Pihak luar yang masuk dicatat dan didampingi sesuai kebutuhan.
+[ ] Sesuai  [ ] Ada temuan  [ ] Tidak relevan (alasan wajib)
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+GA-01-05 — Temuan atau hasil inspeksi fasilitas dilampirkan tanpa foto pasien.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+GA-01-06 — Tindak lanjut perbaikan dan pemeriksaan ulang dicatat.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

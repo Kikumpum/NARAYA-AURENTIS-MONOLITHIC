@@ -1,0 +1,19 @@
+digraph ARCH {
+ graph [rankdir=TB,fontname="DejaVu Sans",bgcolor="#ffffff",pad=.25,nodesep=.4,ranksep=.6,labelloc=t,label="NAM DMS — Modular Monolith Target",fontsize=20];
+ node [fontname="DejaVu Sans",shape=box,style="rounded,filled",fillcolor="#e7f1ee",color="#b2ceca",fontcolor="#163d44",fontsize=11,margin=".25,.15"];
+ edge [color="#6f9c94",arrowsize=.75];
+ web [label="Browser HP / Laptop / Portal Mitra / Portal Pasien",fillcolor="#163e46",fontcolor=white];
+ api [label="Web + API Gateway\nAutentikasi • CSRF • RBAC • Tenant Policy",fillcolor="#d8ebe4"];
+ web -> api;
+ subgraph cluster_domains { label="MODULAR MONOLITH · satu deployment";style="rounded,dashed";color="#b2c5c5";
+ clinic [label="Klinik\nJanji temu • Dokter"];
+ lab [label="Lab\nOrder • ETA • CAD/CAM • QC"];
+ payments [label="Finance\nInvoice • Rekonsiliasi FAT"];
+ ops [label="Operasional\nHR • Gudang • Daily Report"];
+ notify [label="Notifikasi\nConsent • Outbox"];
+ }
+ api -> clinic;api -> lab;api -> payments;api -> ops;api -> notify;
+ data [label="PostgreSQL Target\nRelasi terotorisasi, tenant scope, audit",fillcolor="#fff0d7"];
+ queue [label="Worker antrean (target)\nWhatsApp Business / SMS / Email",fillcolor="#fff0d7"];
+ clinic -> data;lab -> data;payments -> data;ops -> data;notify -> data;notify -> queue;
+}

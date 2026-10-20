@@ -1,0 +1,50 @@
+NAM DMS — INV-01 — Pemeriksaan stok dan serah terima bahan
+Versi 1.0-draf · BELUM DISAHKAN · hanya bukti fiktif
+
+Tanggal / Shift: __________________
+Unit / Jabatan: __________________
+Penyusun: __________________
+Order / Referensi: __________________
+Ringkasan: __________________________________________________
+
+INV-01-01 — Jenis bahan, lokasi, dan satuan cocok dengan catatan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+INV-01-02 — Jumlah fisik diperiksa; selisih tidak ditutup dengan penyesuaian tanpa alasan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+INV-01-03 — Lot/batch dan kedaluwarsa diperiksa bila relevan.
+[ ] Sesuai  [ ] Ada temuan  [ ] Tidak relevan (alasan wajib)
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+INV-01-04 — Bahan rusak atau kedaluwarsa dipisahkan dan dilaporkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+INV-01-05 — Lembar hitung atau serah terima bahan sintetis dilampirkan.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________ (WAJIB)
+
+INV-01-06 — Kebutuhan pembelian dan ketidaksesuaian diteruskan ke petugas terkait.
+[ ] Sesuai  [ ] Ada temuan
+Catatan / Alasan: ___________________________________
+Tindakan / Penanggung jawab / Tenggat: ___________________________________
+Nama bukti: __________________
+
+Peninjau (orang berbeda): __________________
+Hasil: [ ] Ditinjau [ ] Perlu perbaikan
+Catatan: ___________________________________
+
+Checklist tidak menjalankan persetujuan bisnis, pembayaran, QC, atau instruksi klinis.

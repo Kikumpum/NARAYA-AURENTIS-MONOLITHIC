@@ -1,0 +1,65 @@
+flowchart TB
+  commissioner["Komisaris"]
+  chief_executive["Direktur Utama"]
+  commissioner --> chief_executive
+  director["Direktur"]
+  chief_executive --> director
+  business_development["Business Development"]
+  director --> business_development
+  it["IT"]
+  director --> it
+  auditor["Auditor"]
+  commissioner --> auditor
+  corporate["Corporate"]
+  director --> corporate
+  hr["HR"]
+  director --> hr
+  general_affairs["IC / GA"]
+  director --> general_affairs
+  finance["FAT"]
+  director --> finance
+  insurance["Insurance"]
+  hr --> insurance
+  operations["Operation"]
+  director --> operations
+  procurement["Procurement"]
+  operations --> procurement
+  branch_head["Branch Head"]
+  operations --> branch_head
+  branch_manager["Branch Manager"]
+  branch_head --> branch_manager
+  lab_head["Kepala Lab"]
+  operations --> lab_head
+  senior_lab["Senior Lab"]
+  lab_head --> senior_lab
+  clinic_head["Kepala Klinik"]
+  operations --> clinic_head
+  marketing["Marketing and Sales"]
+  operations --> marketing
+  editor["Editor"]
+  marketing --> editor
+  content_planner["Content Planner"]
+  marketing --> content_planner
+  sales["Sales"]
+  marketing --> sales
+  customer_service["Customer Service"]
+  operations --> customer_service
+  reception["Resepsionis"]
+  operations --> reception
+  housekeeping["Housekeeping"]
+  general_affairs --> housekeeping
+  dentist["Dokter Gigi"]
+  clinic_head --> dentist
+  nurse["Perawat"]
+  clinic_head --> nurse
+  technician["Teknisi Lab"]
+  senior_lab --> technician
+  cadcam["CAD/CAM"]
+  senior_lab --> cadcam
+  qc["Quality Control"]
+  lab_head --> qc
+  warehouse["Gudang"]
+  operations --> warehouse
+  lab_head -. "koordinasi teknis; QC independen" .-> qc
+  clinic_head -. "dukungan layanan" .-> reception
+  lab_head -. "dukungan layanan" .-> customer_service

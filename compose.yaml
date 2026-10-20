@@ -1,0 +1,14 @@
+# LOCAL DEMONSTRATION ONLY. Never deploy publicly with seeded accounts.
+services:
+  nam-demo:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      NAM_ENV: demo
+      DATABASE_URL: sqlite:////data/nam_demo.db
+      COOKIE_SECURE: "false"
+    volumes:
+      - demo-db:/data
+volumes:
+  demo-db:

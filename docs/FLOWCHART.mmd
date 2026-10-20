@@ -1,0 +1,39 @@
+flowchart TD
+  subgraph IN["KLINIK INTERNAL — Naraya"]
+    R["Resepsionis registrasi pasien dan verifikasi izin komunikasi"]
+    D["Dokter Klinik memeriksa dan mengesahkan surat kerja"]
+    R --> D
+  end
+  subgraph EX["KLINIK MITRA EKSTERNAL"]
+    E["Dokter atau klinik mitra membuat order dengan referensi kasus"]
+  end
+  D --> INTAKE["Order masuk antrean NAM Dental Laboratory"]
+  E --> INTAKE
+  INTAKE --> REC["Sistem merekomendasikan PJ Lab berdasarkan roster dan beban"]
+  REC --> ASSIGN["Resepsionis menugaskan PJ Lab"]
+  ASSIGN --> ACCEPT{"PJ Lab menerima?"}
+  ACCEPT -->|Tidak + alasan| REQUEUE["Order kembali ke antrean untuk dialihkan"]
+  REQUEUE --> REC
+  ACCEPT -->|Ya| ETA["Sistem menghitung estimasi awal"]
+  ETA --> VALID["Supervisor Lab validasi ETA dan teknisi"]
+  VALID --> PROD["Produksi / CAD-CAM / finishing"]
+  PROD --> QC{"Quality Control lulus?"}
+  QC -->|Tidak| REWORK["Rework dicatat dan dikerjakan ulang"]
+  REWORK --> PROD
+  QC -->|Ya| READY["Selesai teknis, siap diserahkan"]
+  READY --> NOTICE["Notifikasi sesuai izin dan kanal"]
+  VALID -.-> RISK{"Komitmen berisiko berubah?"}
+  RISK -->|Ya| DELAY["PJ Lab usulkan tanggal baru + alasan"]
+  DELAY --> APPROVE{"Penerima yang sah setuju?"}
+  APPROVE -->|Tidak| ESC["Eskalasi Supervisor / CS dan cari solusi"]
+  APPROVE -->|Ya| REV["Versi ETA baru disahkan & dikomunikasikan"]
+  REV --> PROD
+  RISK -->|Tidak| PROD
+  NOTICE --> PAT["Pasien internal melalui portal / notifikasi"]
+  NOTICE --> PARTNER["Klinik mitra eksternal via portal mitra"]
+  INTAKE -.-> BILL["Invoice internal cost atau external invoice"]
+  BILL --> PAY["Resepsionis mencatat pembayaran"]
+  PAY --> VERIFY["FAT verifikasi / rekonsiliasi independen"]
+  VERIFY --> REPORT["Daily report dan dashboard Direktur"]
+  READY --> REPORT
+  ESC --> REPORT

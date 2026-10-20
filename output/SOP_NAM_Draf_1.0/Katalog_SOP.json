@@ -1,0 +1,2006 @@
+[
+  {
+    "code": "GOV-01",
+    "version": "1.0-draf",
+    "title": "Pengawasan dan tindak lanjut manajemen",
+    "division": "Pengawasan",
+    "roles": [
+      "commissioner",
+      "auditor"
+    ],
+    "reviewers": [
+      "chief_executive"
+    ],
+    "purpose": "Menilai pengendalian dari ringkasan dan bukti administratif tanpa membuka rekam medis.",
+    "frequency": "Bulanan / saat temuan",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "GOV-01-01",
+        "text": "Periode, unit, dan ruang lingkup pemeriksaan dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "GOV-01-02",
+        "text": "Ringkasan kinerja diperiksa tanpa data identitas atau rincian medis pasien.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "GOV-01-03",
+        "text": "Pemisahan pelaksana, pemeriksa, dan pemberi persetujuan ditinjau.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "GOV-01-04",
+        "text": "Temuan, tingkat urgensi, dan bukti administratif dicatat.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "GOV-01-05",
+        "text": "Setiap temuan mempunyai penanggung jawab dan tenggat tindak lanjut.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "GOV-01-06",
+        "text": "Tindak lanjut sebelumnya dicek; penutupan disertai bukti, bukan pernyataan lisan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Ringkasan audit tanpa identitas pasien",
+      "Daftar temuan dan rencana perbaikan"
+    ],
+    "draft": true
+  },
+  {
+    "code": "DIR-01",
+    "version": "1.0-draf",
+    "title": "Evaluasi direksi dan keputusan operasional",
+    "division": "Direksi",
+    "roles": [
+      "director",
+      "chief_executive"
+    ],
+    "reviewers": [
+      "commissioner"
+    ],
+    "purpose": "Mencatat keputusan bisnis beserta dasar, pemilik tindakan, dan batas kewenangannya.",
+    "frequency": "Mingguan / saat keputusan",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "DIR-01-01",
+        "text": "Agenda, periode, dan unit yang dibahas ditetapkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "DIR-01-02",
+        "text": "Angka ringkasan diperiksa sumbernya; biaya internal tidak digandakan sebagai omzet.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "DIR-01-03",
+        "text": "Risiko layanan, keterlambatan, kapasitas, dan temuan terbuka ditinjau.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "DIR-01-04",
+        "text": "Keputusan dan alasan dicatat dalam notulen; pengecualian diberi batas waktu.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "DIR-01-05",
+        "text": "Penanggung jawab serta tenggat setiap keputusan ditetapkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "DIR-01-06",
+        "text": "Keputusan bisnis tidak mengganti persetujuan pasien atau instruksi klinis dokter.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Notulen rapat fiktif",
+      "Daftar keputusan dan tindak lanjut"
+    ],
+    "draft": true
+  },
+  {
+    "code": "OPS-01",
+    "version": "1.0-draf",
+    "title": "Pembukaan, koordinasi, dan penutupan operasional",
+    "division": "Operasional",
+    "roles": [
+      "operations_manager",
+      "branch_manager"
+    ],
+    "reviewers": [
+      "director",
+      "chief_executive"
+    ],
+    "purpose": "Memastikan layanan lintas divisi mempunyai petugas dan tindak lanjut yang jelas.",
+    "frequency": "Setiap shift",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "OPS-01-01",
+        "text": "Petugas, jadwal, dan unit layanan shift ini dikonfirmasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "OPS-01-02",
+        "text": "Antrean, kapasitas Lab/Klinik, dan komitmen yang berisiko ditinjau.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "OPS-01-03",
+        "text": "Kendala fasilitas diteruskan ke GA/IT tanpa membagikan isi medis.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "OPS-01-04",
+        "text": "CS dan Resepsionis memahami jalur eskalasi serta penanggung jawab shift.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "OPS-01-05",
+        "text": "Hasil serah terima shift dan masalah terbuka dicatat.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "OPS-01-06",
+        "text": "Insiden mempunyai pemilik tindakan, prioritas, dan tenggat.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form serah terima shift",
+      "Daftar kendala fasilitas"
+    ],
+    "draft": true
+  },
+  {
+    "code": "BIZ-01",
+    "version": "1.0-draf",
+    "title": "Penjajakan kerja sama dan klinik mitra",
+    "division": "Pengembangan Bisnis",
+    "roles": [
+      "business_development",
+      "corporate"
+    ],
+    "reviewers": [
+      "director",
+      "chief_executive"
+    ],
+    "purpose": "Menilai kerja sama sebelum akses atau pertukaran data diaktifkan.",
+    "frequency": "Setiap calon kerja sama",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "BIZ-01-01",
+        "text": "Identitas organisasi calon mitra dan kontak bisnisnya dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "BIZ-01-02",
+        "text": "Ruang lingkup layanan, kapasitas, dan rencana tarif diperiksa bersama pihak terkait.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "BIZ-01-03",
+        "text": "Peran pengendali data, penerima komunikasi, dan otorisasi kontak dibahas.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "BIZ-01-04",
+        "text": "Draf kerja sama serta daftar isu yang belum disepakati dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "BIZ-01-05",
+        "text": "Tidak ada akses tenant atau janji komersial final sebelum persetujuan berwenang.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "BIZ-01-06",
+        "text": "Serah terima ke Operasional/FAT/IT dicatat dengan batas akses yang disepakati.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Draf kerja sama sintetis",
+      "Checklist kesiapan mitra"
+    ],
+    "draft": true
+  },
+  {
+    "code": "COR-01",
+    "version": "1.0-draf",
+    "title": "Pengendalian dokumen corporate",
+    "division": "Corporate",
+    "roles": [
+      "corporate",
+      "general_affairs"
+    ],
+    "reviewers": [
+      "director"
+    ],
+    "purpose": "Menjaga versi, otorisasi, dan tindak lanjut dokumen perusahaan.",
+    "frequency": "Setiap perubahan dokumen",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "COR-01-01",
+        "text": "Nomor, jenis, versi, dan pemilik dokumen dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COR-01-02",
+        "text": "Kelengkapan administratif ditelaah oleh pihak yang sesuai.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COR-01-03",
+        "text": "Tanggal berlaku dan pengingat pembaruan dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COR-01-04",
+        "text": "Salinan draf yang sudah disamarkan dan daftar perubahan dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "COR-01-05",
+        "text": "Distribusi dibatasi kepada penerima yang memerlukan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COR-01-06",
+        "text": "Dokumen lama dipertahankan sebagai riwayat, bukan ditimpa.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Register dokumen",
+      "Riwayat revisi tanpa dokumen pribadi"
+    ],
+    "draft": true
+  },
+  {
+    "code": "HR-01",
+    "version": "1.0-draf",
+    "title": "Jadwal, kompetensi, dan serah terima personel",
+    "division": "HR",
+    "roles": [
+      "hr"
+    ],
+    "reviewers": [
+      "director",
+      "operations_manager"
+    ],
+    "purpose": "Memastikan penempatan tugas sesuai jadwal dan kompetensi yang diverifikasi.",
+    "frequency": "Harian / perubahan personel",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "HR-01-01",
+        "text": "Jadwal dan kehadiran petugas dikonfirmasi tanpa membuat absensi rekaan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HR-01-02",
+        "text": "Kebutuhan pengganti dan beban kerja unit dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HR-01-03",
+        "text": "Kompetensi dan kewenangan tugas diverifikasi oleh penanggung jawab terkait.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HR-01-04",
+        "text": "Pelatihan atau pembaruan kompetensi yang jatuh tempo ditindaklanjuti.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "HR-01-05",
+        "text": "Ringkasan perubahan jadwal atau hasil pemeriksaan shift dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "HR-01-06",
+        "text": "Onboarding/offboarding diteruskan ke IT untuk penyesuaian akses yang disetujui.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Jadwal petugas fiktif",
+      "Register pelatihan tanpa dokumen pribadi"
+    ],
+    "draft": true
+  },
+  {
+    "code": "GA-01",
+    "version": "1.0-draf",
+    "title": "Pemeriksaan fasilitas dan pemeliharaan",
+    "division": "General Affairs",
+    "roles": [
+      "general_affairs",
+      "housekeeping"
+    ],
+    "reviewers": [
+      "operations_manager",
+      "director"
+    ],
+    "purpose": "Mencatat kondisi fasilitas dan menindaklanjuti gangguan operasional.",
+    "frequency": "Setiap shift / saat gangguan",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "GA-01-01",
+        "text": "Area kerja, akses keluar, penerangan, dan fasilitas umum diperiksa.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "GA-01-02",
+        "text": "Peralatan yang rusak diberi penanda dan diteruskan kepada petugas berwenang.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "GA-01-03",
+        "text": "Pekerjaan pemeliharaan tidak mengganggu keamanan area dan data.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "GA-01-04",
+        "text": "Pihak luar yang masuk dicatat dan didampingi sesuai kebutuhan.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "GA-01-05",
+        "text": "Temuan atau hasil inspeksi fasilitas dilampirkan tanpa foto pasien.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "GA-01-06",
+        "text": "Tindak lanjut perbaikan dan pemeriksaan ulang dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Foto fasilitas kosong",
+      "Log pemeliharaan fiktif"
+    ],
+    "draft": true
+  },
+  {
+    "code": "HK-01",
+    "version": "1.0-draf",
+    "title": "Kebersihan area dan serah terima housekeeping",
+    "division": "General Affairs",
+    "roles": [
+      "housekeeping"
+    ],
+    "reviewers": [
+      "general_affairs",
+      "operations_manager"
+    ],
+    "purpose": "Memastikan pemeriksaan kebersihan tercatat dan masalah diarahkan ke petugas terkait.",
+    "frequency": "Setiap shift",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "HK-01-01",
+        "text": "Area dan jadwal pembersihan dikonfirmasi kepada penanggung jawab.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HK-01-02",
+        "text": "Perlengkapan tersedia dan digunakan sesuai prosedur fasilitas yang disahkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HK-01-03",
+        "text": "Area umum dan titik kontak diperiksa setelah dibersihkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HK-01-04",
+        "text": "Bahan, limbah, atau alat klinis hanya ditangani oleh petugas berwenang sesuai SOP klinis terpisah.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HK-01-05",
+        "text": "Hasil inspeksi area kosong dan kendala dicatat.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "HK-01-06",
+        "text": "Kebutuhan perlengkapan serta serah terima shift diteruskan ke GA.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Checklist area",
+      "Foto area tanpa orang atau dokumen pasien"
+    ],
+    "draft": true
+  },
+  {
+    "code": "IT-01",
+    "version": "1.0-draf",
+    "title": "Pemeriksaan layanan dan pengelolaan akses",
+    "division": "IT",
+    "roles": [
+      "it_admin"
+    ],
+    "reviewers": [
+      "director",
+      "auditor"
+    ],
+    "purpose": "Memelihara layanan dan akses tanpa membuka isi medis atau transkrip pasien.",
+    "frequency": "Harian / permintaan akses",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "IT-01-01",
+        "text": "Kesehatan layanan, kapasitas penyimpanan, dan log teknis diperiksa.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "IT-01-02",
+        "text": "Status backup diperiksa; keberhasilan pemulihan hanya ditandai setelah uji restore.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "IT-01-03",
+        "text": "Permintaan akses mempunyai pemohon, persetujuan, lingkup, dan masa berlaku.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "IT-01-04",
+        "text": "Hak akses mengikuti kebutuhan minimum; jabatan atasan tidak memberi akses medis otomatis.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "IT-01-05",
+        "text": "Bukti pemeriksaan teknis disamarkan dari token, kata sandi, dan data pasien.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "IT-01-06",
+        "text": "Gangguan, perubahan konfigurasi, dan rencana pemulihan dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Log kesehatan layanan yang disamarkan",
+      "Hasil uji restore sintetis"
+    ],
+    "draft": true
+  },
+  {
+    "code": "FO-01",
+    "version": "1.0-draf",
+    "title": "Registrasi dan pembukaan layanan pasien",
+    "division": "Front Office",
+    "roles": [
+      "reception"
+    ],
+    "reviewers": [
+      "operations_manager",
+      "clinic_head"
+    ],
+    "purpose": "Memastikan data administratif dan pilihan komunikasi tercatat dengan benar.",
+    "frequency": "Setiap registrasi / shift",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "FO-01-01",
+        "text": "Gunakan identitas fiktif; cocokkan referensi layanan sesuai prosedur verifikasi demo.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FO-01-02",
+        "text": "Jadwal dan dokter tujuan dikonfirmasi tanpa mengubah diagnosis.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FO-01-03",
+        "text": "Pilihan kanal serta frekuensi komunikasi dicatat; izin layanan dipisahkan dari pemasaran.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FO-01-04",
+        "text": "Status kontak dan izin diberi label simulasi, bukan dianggap verifikasi sungguhan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FO-01-05",
+        "text": "Penggantian dokter menunggu persetujuan pasien sebelum perubahan final.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "FO-01-06",
+        "text": "Kendala registrasi dan tindak lanjut dicatat tanpa rincian medis pada laporan umum.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form registrasi kosong/sintetis",
+      "Ringkasan antrean tanpa identitas"
+    ],
+    "draft": true
+  },
+  {
+    "code": "CLI-01",
+    "version": "1.0-draf",
+    "title": "Pemeriksaan administratif surat kerja dokter",
+    "division": "Klinik",
+    "roles": [
+      "dentist"
+    ],
+    "reviewers": [
+      "dentist"
+    ],
+    "purpose": "Memeriksa kelengkapan surat kerja; keputusan klinis tetap pada dokter berwenang.",
+    "frequency": "Setiap surat kerja",
+    "order_policy": "required",
+    "allowed_states": [
+      "submitted",
+      "assigned",
+      "rejected",
+      "accepted"
+    ],
+    "sensitive": true,
+    "items": [
+      {
+        "key": "CLI-01-01",
+        "text": "Kode order dan referensi pasien cocok dengan layanan dokter pembuat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-01-02",
+        "text": "Jenis pekerjaan dan instruksi telah ditulis oleh dokter yang berwenang.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-01-03",
+        "text": "Spesifikasi serta dokumen yang diperlukan diperiksa sesuai protokol klinis yang disahkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-01-04",
+        "text": "Janji layanan dicatat tanpa menjanjikan kapasitas Lab yang belum dikonfirmasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-01-05",
+        "text": "Salinan surat kerja sintetis atau lembar pengesahan administratif dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "CLI-01-06",
+        "text": "Revisi dikembalikan kepada dokter pembuat; riwayat instruksi tidak ditimpa.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Surat kerja fiktif",
+      "Catatan klarifikasi dokter"
+    ],
+    "draft": true
+  },
+  {
+    "code": "NUR-01",
+    "version": "1.0-draf",
+    "title": "Kesiapan ruang dan bantuan pelayanan",
+    "division": "Klinik",
+    "roles": [
+      "nurse"
+    ],
+    "reviewers": [
+      "clinic_head",
+      "dentist"
+    ],
+    "purpose": "Mendokumentasikan kesiapan ruang; tidak mengganti SOP tindakan klinis.",
+    "frequency": "Setiap shift",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "NUR-01-01",
+        "text": "Jadwal ruang dan petugas penanggung jawab dikonfirmasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "NUR-01-02",
+        "text": "Ketersediaan alat dan bahan diperiksa sesuai daftar yang disahkan penanggung jawab klinis.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "NUR-01-03",
+        "text": "Status kesiapan alat dikonfirmasi melalui catatan resmi; tidak mengarang proses sterilisasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "NUR-01-04",
+        "text": "Privasi area, dokumen, dan layar kerja diperiksa.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "NUR-01-05",
+        "text": "Kekurangan atau insiden diteruskan segera kepada penanggung jawab klinis.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "NUR-01-06",
+        "text": "Serah terima ruang dan kebutuhan bahan dicatat tanpa identitas pasien.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Checklist kesiapan ruang",
+      "Daftar kebutuhan bahan"
+    ],
+    "draft": true
+  },
+  {
+    "code": "LAB-01",
+    "version": "1.0-draf",
+    "title": "Penerimaan dan perencanaan order Lab",
+    "division": "Laboratorium",
+    "roles": [
+      "lab_supervisor"
+    ],
+    "reviewers": [
+      "lab_supervisor"
+    ],
+    "purpose": "Memastikan order diterima oleh PJ dan kapasitas rencana dapat ditelusuri.",
+    "frequency": "Setiap penerimaan order",
+    "order_policy": "required",
+    "allowed_states": [
+      "assigned",
+      "accepted"
+    ],
+    "sensitive": true,
+    "items": [
+      {
+        "key": "LAB-01-01",
+        "text": "Kode order, sumber internal/mitra, dan penugasan PJ sesuai.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-01-02",
+        "text": "Kelengkapan instruksi diperiksa; pertanyaan klinis dikembalikan ke dokter pengirim.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-01-03",
+        "text": "Kapasitas teknisi, jadwal, alat, dan kebutuhan material diperiksa.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-01-04",
+        "text": "Keputusan terima/tolak beserta alasan dicatat pada workflow order.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-01-05",
+        "text": "Rencana kerja dan estimasi awal dilampirkan sebagai bukti sintetis.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "LAB-01-06",
+        "text": "Tanggung jawab progres dan komunikasi sesudah penerimaan berada pada Lab.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Lembar penerimaan order fiktif",
+      "Rencana produksi"
+    ],
+    "draft": true
+  },
+  {
+    "code": "LAB-02",
+    "version": "1.0-draf",
+    "title": "Pengerjaan, bahan, dan progres produksi",
+    "division": "Laboratorium",
+    "roles": [
+      "technician"
+    ],
+    "reviewers": [
+      "lab_supervisor"
+    ],
+    "purpose": "Mencatat pekerjaan sesuai penugasan, instruksi, serta tahap produksi.",
+    "frequency": "Setiap tahap / shift",
+    "order_policy": "required",
+    "allowed_states": [
+      "design",
+      "production",
+      "finishing",
+      "rework",
+      "qc_pending"
+    ],
+    "sensitive": true,
+    "items": [
+      {
+        "key": "LAB-02-01",
+        "text": "Order yang dikerjakan sesuai penugasan teknisi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-02-02",
+        "text": "Versi instruksi dan desain acuan diperiksa sebelum bekerja.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-02-03",
+        "text": "Identitas bahan, lot/batch, dan kebutuhan penggantian dicatat bila relevan.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-02-04",
+        "text": "Progres sesuai hasil aktual; kendala atau ketidaksesuaian diteruskan ke PJ Lab.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "LAB-02-05",
+        "text": "Bukti hasil tahap kerja sintetis dilampirkan tanpa data pasien.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "LAB-02-06",
+        "text": "Serah terima ke tahap berikut/QC dicatat; teknisi tidak meluluskan hasilnya sendiri.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Foto model latihan",
+      "Log tahap produksi dan bahan fiktif"
+    ],
+    "draft": true
+  },
+  {
+    "code": "CAD-01",
+    "version": "1.0-draf",
+    "title": "Pengendalian desain CAD/CAM",
+    "division": "Laboratorium",
+    "roles": [
+      "cadcam"
+    ],
+    "reviewers": [
+      "lab_supervisor"
+    ],
+    "purpose": "Mencatat versi desain dan serah terima tanpa menimpa acuan lama.",
+    "frequency": "Setiap desain / revisi",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "CAD-01-01",
+        "text": "Kode referensi pekerjaan sintetis dan pemilik instruksi dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CAD-01-02",
+        "text": "Versi input serta spesifikasi acuan dikonfirmasi kepada PJ Lab.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CAD-01-03",
+        "text": "Hasil desain ditinjau terhadap daftar teknis yang disahkan PJ.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CAD-01-04",
+        "text": "Bukti tampilan desain latihan dan identitas revisinya dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "CAD-01-05",
+        "text": "Perubahan instruksi klinis menunggu dokter berwenang.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CAD-01-06",
+        "text": "Versi, kendala, dan penerima serah terima dicatat; file medis asli tidak diunggah.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Tangkapan layar desain latihan",
+      "Register revisi sintetis"
+    ],
+    "draft": true
+  },
+  {
+    "code": "QC-01",
+    "version": "1.0-draf",
+    "title": "Pemeriksaan teknis dan pencatatan ketidaksesuaian",
+    "division": "Quality Control",
+    "roles": [
+      "qc"
+    ],
+    "reviewers": [
+      "qc"
+    ],
+    "purpose": "Merekam bukti pemeriksaan; hasil QC bisnis tetap dilakukan pada workflow order.",
+    "frequency": "Setiap pemeriksaan QC",
+    "order_policy": "required",
+    "allowed_states": [
+      "qc_pending"
+    ],
+    "sensitive": true,
+    "items": [
+      {
+        "key": "QC-01-01",
+        "text": "Kode order, versi instruksi, dan tahap menunggu QC sesuai.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "QC-01-02",
+        "text": "Pemeriksa berbeda dari teknisi pembuat hasil.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "QC-01-03",
+        "text": "Kesesuaian spesifikasi, material, dan kriteria teknis diperiksa menurut daftar yang disahkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "QC-01-04",
+        "text": "Bukti pemeriksaan sintetis dan temuan dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "QC-01-05",
+        "text": "Ketidaksesuaian mempunyai alasan serta tindak lanjut rework yang dapat ditelusuri.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "QC-01-06",
+        "text": "Keputusan QC dicatat terpisah pada order; checklist ini bukan pengesahan klinis.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Lembar inspeksi teknis",
+      "Foto model latihan / temuan"
+    ],
+    "draft": true
+  },
+  {
+    "code": "ETA-01",
+    "version": "1.0-draf",
+    "title": "Keterlambatan dan usulan perubahan komitmen",
+    "division": "Laboratorium",
+    "roles": [
+      "lab_supervisor"
+    ],
+    "reviewers": [
+      "lab_supervisor"
+    ],
+    "purpose": "Mencatat dampak keterlambatan dan persetujuan pihak berwenang.",
+    "frequency": "Saat risiko keterlambatan",
+    "order_policy": "required",
+    "allowed_states": [
+      "accepted",
+      "design",
+      "production",
+      "finishing",
+      "rework",
+      "qc_pending"
+    ],
+    "sensitive": true,
+    "items": [
+      {
+        "key": "ETA-01-01",
+        "text": "Komitmen semula dan estimasi aktif dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "ETA-01-02",
+        "text": "Penyebab, dampak pada layanan, dan pilihan penanganan ditinjau.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "ETA-01-03",
+        "text": "Usulan tanggal, alasan, dan rencana tindak lanjut dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "ETA-01-04",
+        "text": "Usulan dibuat melalui workflow; tanggal lama tidak ditimpa sebelum persetujuan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "ETA-01-05",
+        "text": "Penerima sah adalah pasien internal atau klinik mitra sesuai sumber order.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "ETA-01-06",
+        "text": "Pesan dibaca tidak dianggap persetujuan; penolakan dan tindak lanjut tetap dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form revisi ETA fiktif",
+      "Ringkasan respons tanpa transkrip sensitif"
+    ],
+    "draft": true
+  },
+  {
+    "code": "HND-01",
+    "version": "1.0-draf",
+    "title": "Persiapan dan bukti serah terima hasil",
+    "division": "Front Office",
+    "roles": [
+      "reception",
+      "lab_supervisor"
+    ],
+    "reviewers": [
+      "operations_manager"
+    ],
+    "purpose": "Membedakan hasil siap diserahkan dengan hasil yang benar-benar telah diterima.",
+    "frequency": "Setiap serah terima",
+    "order_policy": "required",
+    "allowed_states": [
+      "ready",
+      "completed"
+    ],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "HND-01-01",
+        "text": "Order berstatus siap setelah QC pada sistem.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HND-01-02",
+        "text": "Penerima yang berwenang dan tujuan internal/mitra dikonfirmasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HND-01-03",
+        "text": "Kelengkapan paket dan dokumen diperiksa tanpa mengubah instruksi dokter.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HND-01-04",
+        "text": "Bukti serah terima sintetis mencatat waktu, pengirim, dan penerima.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "HND-01-05",
+        "text": "Hasil yang baru siap tidak dinyatakan sudah diterima; fitting tetap tanggung jawab klinis.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "HND-01-06",
+        "text": "Ketidaksesuaian saat penerimaan diteruskan ke PJ tanpa menghapus jejak sebelumnya.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form tanda terima fiktif",
+      "Checklist paket latihan"
+    ],
+    "draft": true
+  },
+  {
+    "code": "FIN-01",
+    "version": "1.0-draf",
+    "title": "Pencatatan tagihan dan penerimaan",
+    "division": "FAT",
+    "roles": [
+      "reception",
+      "finance"
+    ],
+    "reviewers": [
+      "finance"
+    ],
+    "purpose": "Mencatat transaksi dengan referensi dan pemisahan petugas penerima/pemeriksa.",
+    "frequency": "Setiap transaksi",
+    "order_policy": "required",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "FIN-01-01",
+        "text": "Order dan jenis biaya internal/invoice mitra telah sesuai.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-01-02",
+        "text": "Nilai serta metode penerimaan cocok dengan catatan transaksi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-01-03",
+        "text": "Bukti pencatatan transaksi fiktif dan referensinya dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "FIN-01-04",
+        "text": "Penerimaan belum terverifikasi tidak dihitung sebagai pelunasan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-01-05",
+        "text": "Penerima uang tidak memverifikasi transaksi yang dicatatnya sendiri.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-01-06",
+        "text": "Selisih, pembayaran sebagian, atau permintaan pengecualian diteruskan ke FAT.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Kuitansi fiktif",
+      "Rekap transaksi tanpa data rekening pribadi"
+    ],
+    "draft": true
+  },
+  {
+    "code": "FIN-02",
+    "version": "1.0-draf",
+    "title": "Verifikasi dan rekonsiliasi penerimaan demo",
+    "division": "FAT",
+    "roles": [
+      "finance"
+    ],
+    "reviewers": [
+      "director",
+      "auditor"
+    ],
+    "purpose": "Memisahkan bukti laporan dari verifikasi transaksi; seluruh proses masih simulasi.",
+    "frequency": "Setiap shift / rekonsiliasi",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "FIN-02-01",
+        "text": "Daftar transaksi dan periode rekonsiliasi ditetapkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-02-02",
+        "text": "Petugas pemeriksa berbeda dari pencatat penerimaan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-02-03",
+        "text": "QRIS/transfer/kartu tidak dinyatakan sukses hanya dari screenshot.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-02-04",
+        "text": "Rekap transaksi fiktif, sumber pemeriksaan, dan selisih dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "FIN-02-05",
+        "text": "Verifikasi di aplikasi diberi label manual demo; tidak digunakan untuk pembayaran nyata.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-02-06",
+        "text": "Selisih dan piutang ditindaklanjuti tanpa menghapus atau menimpa riwayat pembayaran.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Rekap rekonsiliasi sintetis",
+      "Daftar selisih dan tindak lanjut"
+    ],
+    "draft": true
+  },
+  {
+    "code": "INS-01",
+    "version": "1.0-draf",
+    "title": "Kelengkapan administrasi asuransi dan corporate",
+    "division": "Asuransi",
+    "roles": [
+      "insurance",
+      "finance"
+    ],
+    "reviewers": [
+      "finance",
+      "director"
+    ],
+    "purpose": "Memeriksa kelengkapan administratif tanpa menyatakan klaim disetujui.",
+    "frequency": "Setiap berkas klaim",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "INS-01-01",
+        "text": "Referensi klaim sintetis, penjamin, dan periode dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INS-01-02",
+        "text": "Kebutuhan dokumen dikonfirmasi sesuai perjanjian yang berlaku.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INS-01-03",
+        "text": "Dokumen medis hanya diproses melalui petugas dan kanal yang berwenang.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INS-01-04",
+        "text": "Daftar kelengkapan anonim dan status kekurangan dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "INS-01-05",
+        "text": "Berkas lengkap tidak dianggap persetujuan penjamin atau pelunasan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INS-01-06",
+        "text": "Tenggat, penerima tindak lanjut, dan respons penjamin dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form kelengkapan klaim kosong",
+      "Register klaim anonim"
+    ],
+    "draft": true
+  },
+  {
+    "code": "PRC-01",
+    "version": "1.0-draf",
+    "title": "Permintaan, pembelian, dan penerimaan barang",
+    "division": "Pengadaan",
+    "roles": [
+      "purchasing"
+    ],
+    "reviewers": [
+      "operations_manager",
+      "finance"
+    ],
+    "purpose": "Menjaga jejak kebutuhan, persetujuan, pembelian, dan penerimaan.",
+    "frequency": "Setiap permintaan pembelian",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "PRC-01-01",
+        "text": "Pemohon, kebutuhan, jumlah, dan tenggat dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "PRC-01-02",
+        "text": "Ketersediaan stok dicek sebelum pemesanan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "PRC-01-03",
+        "text": "Pemasok, penawaran, dan dasar pemilihan didokumentasikan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "PRC-01-04",
+        "text": "Permintaan serta bukti persetujuan administratif sintetis dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "PRC-01-05",
+        "text": "Pemesan dan pemeriksa penerimaan dipisahkan sesuai kewenangan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "PRC-01-06",
+        "text": "Selisih penerimaan dan tagihan diteruskan ke Gudang/FAT; checklist tidak menerbitkan PO otomatis.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form permintaan pembelian",
+      "Perbandingan penawaran fiktif"
+    ],
+    "draft": true
+  },
+  {
+    "code": "INV-01",
+    "version": "1.0-draf",
+    "title": "Pemeriksaan stok dan serah terima bahan",
+    "division": "Gudang",
+    "roles": [
+      "warehouse"
+    ],
+    "reviewers": [
+      "operations_manager",
+      "purchasing"
+    ],
+    "purpose": "Mencatat kondisi, jumlah, serta penelusuran bahan untuk tindak lanjut.",
+    "frequency": "Setiap shift / mutasi",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "INV-01-01",
+        "text": "Jenis bahan, lokasi, dan satuan cocok dengan catatan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INV-01-02",
+        "text": "Jumlah fisik diperiksa; selisih tidak ditutup dengan penyesuaian tanpa alasan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INV-01-03",
+        "text": "Lot/batch dan kedaluwarsa diperiksa bila relevan.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "INV-01-04",
+        "text": "Bahan rusak atau kedaluwarsa dipisahkan dan dilaporkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INV-01-05",
+        "text": "Lembar hitung atau serah terima bahan sintetis dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "INV-01-06",
+        "text": "Kebutuhan pembelian dan ketidaksesuaian diteruskan ke petugas terkait.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Lembar stok fiktif",
+      "Bukti serah terima bahan latihan"
+    ],
+    "draft": true
+  },
+  {
+    "code": "CS-01",
+    "version": "1.0-draf",
+    "title": "Bantuan asisten dan pengalihan ke petugas",
+    "division": "Layanan Pelanggan",
+    "roles": [
+      "customer_service"
+    ],
+    "reviewers": [
+      "operations_manager"
+    ],
+    "purpose": "Menjaga pengalihan layanan dan penyelesaian keluhan secara terkontrol.",
+    "frequency": "Setiap percakapan / shift",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "CS-01-01",
+        "text": "Percakapan dimulai dari asisten yang jelas diberi label simulasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CS-01-02",
+        "text": "Petugas mengambil percakapan melalui antrean sebelum membaca atau membalas.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CS-01-03",
+        "text": "Pertanyaan klinis diarahkan ke dokter; status produksi dikonfirmasi ke Lab.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CS-01-04",
+        "text": "CS tidak menyetujui perubahan tanggal, pembayaran, atau tindakan atas nama pasien.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CS-01-05",
+        "text": "Ringkasan anonim mencatat kebutuhan, tindak lanjut, dan referensi chat tanpa menyalin transkrip.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "CS-01-06",
+        "text": "Penutupan atau eskalasi dicatat; akses hanya pada percakapan yang ditugaskan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Ringkasan tiket anonim",
+      "Catatan eskalasi tanpa transkrip pasien"
+    ],
+    "draft": true
+  },
+  {
+    "code": "MKT-01",
+    "version": "1.0-draf",
+    "title": "Perencanaan dan peninjauan materi pemasaran",
+    "division": "Marketing & Sales",
+    "roles": [
+      "marketing",
+      "content_planner"
+    ],
+    "reviewers": [
+      "director",
+      "corporate"
+    ],
+    "purpose": "Memastikan materi mempunyai tujuan, sumber, dan persetujuan sebelum dipublikasikan.",
+    "frequency": "Setiap kampanye / materi",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "MKT-01-01",
+        "text": "Tujuan, audiens, kanal, dan jadwal materi dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "MKT-01-02",
+        "text": "Sumber angka dan pernyataan layanan diperiksa bersama pemilik informasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "MKT-01-03",
+        "text": "Foto, testimoni, dan data pribadi tidak digunakan tanpa izin terpisah yang sah.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "MKT-01-04",
+        "text": "Draf materi dan daftar sumber/izin sintetis dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "MKT-01-05",
+        "text": "Pemeriksa serta status persetujuan publikasi dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "MKT-01-06",
+        "text": "Hasil evaluasi dicatat dari data yang tersedia; tidak mengarang capaian.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Kalender konten",
+      "Draf materi tanpa data pasien"
+    ],
+    "draft": true
+  },
+  {
+    "code": "EDT-01",
+    "version": "1.0-draf",
+    "title": "Pemeriksaan dan revisi materi kreatif",
+    "division": "Marketing & Sales",
+    "roles": [
+      "editor"
+    ],
+    "reviewers": [
+      "marketing"
+    ],
+    "purpose": "Memastikan hasil suntingan mengikuti brief dan riwayat revisinya jelas.",
+    "frequency": "Setiap materi kreatif",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "EDT-01-01",
+        "text": "Brief, ukuran, kanal, dan versi sumber dikonfirmasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "EDT-01-02",
+        "text": "Nama merek, logo, warna, dan ejaan diperiksa.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "EDT-01-03",
+        "text": "Hak penggunaan aset dan privasi subjek diperiksa.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "EDT-01-04",
+        "text": "Pratinjau hasil dan nomor revisi dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "EDT-01-05",
+        "text": "Persetujuan pemilik konten dicatat sebelum publikasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "EDT-01-06",
+        "text": "Berkas sumber dan versi sebelumnya dipertahankan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Pratinjau materi latihan",
+      "Daftar revisi"
+    ],
+    "draft": true
+  },
+  {
+    "code": "SLS-01",
+    "version": "1.0-draf",
+    "title": "Tindak lanjut prospek dan penawaran",
+    "division": "Marketing & Sales",
+    "roles": [
+      "sales",
+      "business_development"
+    ],
+    "reviewers": [
+      "marketing",
+      "director"
+    ],
+    "purpose": "Mencatat komunikasi bisnis dan serah terima prospek tanpa akses medis.",
+    "frequency": "Setiap prospek / shift",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "SLS-01-01",
+        "text": "Sumber prospek dan izin komunikasi pemasaran dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "SLS-01-02",
+        "text": "Kebutuhan layanan bisnis diklarifikasi tanpa meminta rincian medis.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "SLS-01-03",
+        "text": "Penawaran menggunakan tarif serta ketentuan yang berwenang.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "SLS-01-04",
+        "text": "Diskon atau pengecualian menunggu persetujuan dan tidak dijanjikan terlebih dahulu.",
+        "allow_na": true,
+        "evidence_required": false
+      },
+      {
+        "key": "SLS-01-05",
+        "text": "Ringkasan penawaran anonim serta tindak lanjut dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "SLS-01-06",
+        "text": "Prospek yang diteruskan ke Operasional mempunyai pemilik dan tenggat.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Penawaran fiktif",
+      "Register prospek anonim"
+    ],
+    "draft": true
+  },
+  {
+    "code": "CLI-02",
+    "version": "1.0-draf",
+    "title": "Koordinasi dan kesiapan pelayanan Klinik",
+    "division": "Klinik",
+    "roles": [
+      "clinic_head"
+    ],
+    "reviewers": [
+      "operations_manager",
+      "director"
+    ],
+    "purpose": "Memeriksa kesiapan administratif Klinik tanpa mengganti keputusan klinis dokter.",
+    "frequency": "Setiap shift",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "CLI-02-01",
+        "text": "Jadwal ruang, dokter, dan petugas pendamping dikonfirmasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-02-02",
+        "text": "Kewenangan serta kompetensi petugas dikonfirmasi melalui penanggung jawab yang sah.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-02-03",
+        "text": "Daftar kesiapan ruang dan kendala dari Perawat ditinjau.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-02-04",
+        "text": "Risiko antrean dan serah terima dengan Lab ditindaklanjuti.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CLI-02-05",
+        "text": "Ringkasan kesiapan anonim dan daftar tindakan operasional dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "CLI-02-06",
+        "text": "Keputusan klinis tetap pada dokter; manajemen hanya menerima ringkasan yang diperlukan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Ringkasan kesiapan Klinik",
+      "Daftar tindak lanjut fasilitas"
+    ],
+    "draft": true
+  },
+  {
+    "code": "FIN-03",
+    "version": "1.0-draf",
+    "title": "Permintaan pengecualian keuangan dan koreksi",
+    "division": "FAT",
+    "roles": [
+      "finance"
+    ],
+    "reviewers": [
+      "director"
+    ],
+    "purpose": "Mendokumentasikan permintaan kredit, koreksi, refund, atau penghapusan sebelum keputusan berwenang.",
+    "frequency": "Setiap permintaan pengecualian",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "FIN-03-01",
+        "text": "Jenis permintaan, nilai fiktif, dan alasan dicatat dengan referensi transaksi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-03-02",
+        "text": "Bukti dan dampak terhadap saldo diperiksa oleh FAT.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-03-03",
+        "text": "Pemohon, pemeriksa, dan pemberi keputusan dipisahkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-03-04",
+        "text": "Draf permintaan dan hasil penelaahan administratif dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "FIN-03-05",
+        "text": "Batas nominal dan kebijakan yang belum disahkan tidak diasumsikan berlaku.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "FIN-03-06",
+        "text": "Checklist ini tidak menjalankan refund, memberi kredit, atau menghapus piutang; riwayat transaksi dipertahankan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form pengecualian keuangan fiktif",
+      "Register keputusan belum/sudah ditelaah"
+    ],
+    "draft": true
+  },
+  {
+    "code": "COM-01",
+    "version": "1.0-draf",
+    "title": "Pemeriksaan izin dan komunikasi layanan",
+    "division": "Layanan Pelanggan",
+    "roles": [
+      "reception",
+      "customer_service",
+      "lab_supervisor"
+    ],
+    "reviewers": [
+      "operations_manager"
+    ],
+    "purpose": "Memastikan penerima komunikasi, preferensi, dan tindak lanjut tercatat tanpa menyalin pesan sensitif.",
+    "frequency": "Setiap shift / kendala komunikasi",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "COM-01-01",
+        "text": "Penerima utama mengikuti sumber layanan: pasien internal atau klinik mitra.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COM-01-02",
+        "text": "Kontak, izin, kanal, dan frekuensi diperiksa melalui petugas berwenang; verifikasi tetap simulasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COM-01-03",
+        "text": "Tidak mengirim data medis melalui kanal umum atau menghubungi pasien eksternal tanpa otorisasi yang tervalidasi.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COM-01-04",
+        "text": "Pilihan notifikasi minimal tidak menghapus komunikasi layanan yang wajib.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "COM-01-05",
+        "text": "Ringkasan anonim dari pemberitahuan tertunda/gagal atau hasil pemeriksaan dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "COM-01-06",
+        "text": "Perubahan janji memerlukan respons tegas; pesan dibaca tidak dianggap persetujuan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Register tindak lanjut komunikasi anonim",
+      "Form pilihan komunikasi kosong"
+    ],
+    "draft": true
+  },
+  {
+    "code": "CMP-01",
+    "version": "1.0-draf",
+    "title": "Pencatatan keluhan dan tindak lanjut layanan",
+    "division": "Layanan Pelanggan",
+    "roles": [
+      "customer_service",
+      "operations_manager"
+    ],
+    "reviewers": [
+      "director"
+    ],
+    "purpose": "Menetapkan pemilik penanganan keluhan dan menelusuri penyelesaiannya.",
+    "frequency": "Setiap keluhan",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "CMP-01-01",
+        "text": "Waktu, referensi anonim, dan kebutuhan pelapor dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CMP-01-02",
+        "text": "Keluhan klinis diteruskan ke dokter; produksi ke Lab; transaksi ke FAT.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CMP-01-03",
+        "text": "Dampak dan urgensi ditinjau tanpa menyampaikan janji di luar kewenangan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CMP-01-04",
+        "text": "Ringkasan keluhan yang disamarkan dan bukti tindak lanjut dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "CMP-01-05",
+        "text": "Pemilik tindakan, tenggat, dan penerima pembaruan ditetapkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "CMP-01-06",
+        "text": "Hasil penanganan dikonfirmasi; penutupan tidak menghapus temuan atau riwayat keluhan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form keluhan anonim",
+      "Rencana dan bukti perbaikan layanan"
+    ],
+    "draft": true
+  },
+  {
+    "code": "INC-01",
+    "version": "1.0-draf",
+    "title": "Pencatatan insiden dan tindakan perbaikan",
+    "division": "Lintas Divisi",
+    "roles": [
+      "reception",
+      "dentist",
+      "lab_supervisor",
+      "technician",
+      "qc",
+      "finance",
+      "nurse",
+      "cadcam",
+      "customer_service",
+      "warehouse",
+      "purchasing",
+      "hr",
+      "marketing",
+      "it_admin",
+      "director",
+      "commissioner",
+      "chief_executive",
+      "auditor",
+      "corporate",
+      "business_development",
+      "general_affairs",
+      "insurance",
+      "operations_manager",
+      "branch_manager",
+      "clinic_head",
+      "editor",
+      "content_planner",
+      "sales",
+      "housekeeping"
+    ],
+    "reviewers": [
+      "operations_manager",
+      "director"
+    ],
+    "purpose": "Mencatat insiden operasional tanpa menyebarkan data sensitif.",
+    "frequency": "Setiap insiden",
+    "order_policy": "none",
+    "allowed_states": [],
+    "sensitive": false,
+    "items": [
+      {
+        "key": "INC-01-01",
+        "text": "Waktu, lokasi/unit, dan dampak layanan dicatat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INC-01-02",
+        "text": "Tindakan awal berada dalam kewenangan petugas; kebutuhan klinis diteruskan ke dokter.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INC-01-03",
+        "text": "Bukti insiden yang telah disamarkan dilampirkan.",
+        "allow_na": false,
+        "evidence_required": true
+      },
+      {
+        "key": "INC-01-04",
+        "text": "Penanggung jawab eskalasi dan prioritas ditetapkan.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INC-01-05",
+        "text": "Rencana perbaikan mempunyai pemilik serta tenggat.",
+        "allow_na": false,
+        "evidence_required": false
+      },
+      {
+        "key": "INC-01-06",
+        "text": "Pemeriksaan ulang dan bukti penutupan dicatat; riwayat insiden dipertahankan.",
+        "allow_na": false,
+        "evidence_required": false
+      }
+    ],
+    "evidence_examples": [
+      "Form insiden anonim",
+      "Rencana tindakan perbaikan"
+    ],
+    "draft": true
+  }
+]

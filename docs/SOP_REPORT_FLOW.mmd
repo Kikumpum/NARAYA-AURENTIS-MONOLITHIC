@@ -1,0 +1,25 @@
+flowchart TD
+    A[Masuk dengan akun petugas] --> B[SOP sesuai peran]
+    B --> C{Perlu order?}
+    C -->|Ya| D[Backend memeriksa tenant, penugasan dan tahap]
+    C -->|Tidak| E[Laporan administratif tanpa rincian medis]
+    D --> F[Draf laporan dengan snapshot versi SOP]
+    E --> F
+    F --> G[Isi hasil setiap item]
+    G --> H{Ada temuan?}
+    H -->|Ya| I[Uraian, tindakan, penanggung jawab, tenggat]
+    H -->|Tidak| J[Sesuai atau N/A dengan alasan bila diizinkan]
+    I --> K[Lampiran bukti per item]
+    J --> K
+    K --> L{Lengkap dan tahap order masih sesuai?}
+    L -->|Belum| F
+    L -->|Ya| M[Ajukan: snapshot pengajuan disimpan]
+    M --> N{Petugas lain dengan izin peninjauan tersedia?}
+    N -->|Belum| O[Tetap menunggu peninjau]
+    N -->|Ya| P[Ditinjau atau dikembalikan dengan catatan]
+    P -->|Perlu perbaikan| F
+    P -->|Ditinjau| Q[Laporan terkunci]
+    M --> R[Ekspor laporan, lampiran dan riwayat sesuai akses]
+    Q --> R
+    R --> S[Audit unduhan dan ekspor]
+    P -. Tidak mengubah hasil QC, pembayaran atau persetujuan klinis .-> T[Workflow bisnis tetap terpisah]

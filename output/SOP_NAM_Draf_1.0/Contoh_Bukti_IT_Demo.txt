@@ -1,0 +1,18 @@
+NAM DMS — CONTOH BUKTI PEMERIKSAAN LOKAL
+Tanggal: 20 Oktober 2026
+Konteks: IT-01, uji alur laporan SOP (data fiktif).
+
+Hasil yang sudah diamati:
+- Halaman lokal dapat dibuka dan menu SOP, laporan, serta struktur tampil.
+- 35 tes modul SOP lulus pada database pengujian sintetis.
+- 52 tes regresi awal lulus setelah modul ditambahkan.
+- Pembatasan tenant, peran, penugasan order, pemeriksa berbeda,
+  konflik revisi, audit, unggahan dan akses unduh telah diuji otomatis.
+
+Temuan terbuka:
+- Uji restore backup untuk penggunaan nyata belum dilakukan.
+- Rencana: lakukan latihan pemulihan terpisah dan simpan bukti hasilnya.
+- Penanggung jawab simulasi: IT Demo; tenggat simulasi: 21 Oktober 2026.
+
+Berkas tidak memuat nama pasien, transkrip, kontak, token, atau kata sandi.
+Ini bukan bukti kesiapan produksi, pemindaian malware, atau persetujuan SOP.

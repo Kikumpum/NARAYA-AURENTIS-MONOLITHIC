@@ -1,0 +1,18 @@
+flowchart TD
+  P[Pasien membuka /pasien] --> L[Login ID pasien dan kata sandi]
+  L --> V{Akun aktif, pasien internal, rekam tertaut}
+  V -->|Valid| S[Sesi audience patient]
+  V -->|Tidak valid| X[Tolak akses]
+  S --> O[Layanan, jadwal dan pemberitahuan milik sendiri]
+  O --> D{Ada usulan perubahan}
+  D -->|Ya| A[Pasien menyetujui atau menolak secara eksplisit]
+  A --> H[Riwayat dan audit disimpan]
+  S --> C[Asisten layanan simulasi lokal]
+  C --> R[Pasien meminta petugas]
+  R --> Q[Antrean CS tanpa isi transkrip]
+  Q --> T[Satu petugas mengambil percakapan]
+  T --> B[Balasan petugas dan penutupan]
+  E[Pegawai membuka ruang kerja] --> W[Sesi audience workspace]
+  W --> M[Materi divisi sesuai peran]
+  W --> CS[Kotak masuk khusus petugas CS]
+  CS --> T

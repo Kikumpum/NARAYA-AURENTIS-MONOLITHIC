@@ -1,0 +1,3 @@
+NAM DMS — DRAF / DATA FIKTIF
+Nomor laporan | Item SOP | Nama berkas / Versi | Isi bukti anonim | Pengunggah | Waktu | SHA-256
+[ ] Fiktif [ ] Sesuai item [ ] Dapat dibaca [ ] Tanpa data pasien asli

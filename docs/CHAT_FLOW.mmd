@@ -1,0 +1,17 @@
+flowchart TD
+    Login[Pasien klinik internal terautentikasi di portal pasien] --> Scope[Pilih konteks umum atau layanan sendiri]
+    Scope --> AI[Asisten layanan mock lokal]
+    AI --> Request[Pasien memilih Hubungi petugas]
+    Request --> Queue[Waiting: antrean metadata layanan]
+    Queue --> Claim[CS Naraya mengambil secara atomik]
+    Claim --> Grant[Periksa role organisasi dan penugasan]
+    Grant --> Human[Human: transkrip dan balasan petugas]
+    Human --> Close[Closed: percakapan ditutup]
+    Close --> History[Riwayat tetap tersimpan sesuai scope]
+    AI -.-> Audit[Audit metadata tanpa isi pesan]
+    Queue -.-> Audit
+    Human -.-> Audit
+    Close -.-> Audit
+    Staff[Pegawai terautentikasi] --> Learn[Materi divisi sesuai peran dan draf SOP]
+    Staff --> CS[Hanya CS memperoleh kotak masuk pasien]
+    CS --> Claim
