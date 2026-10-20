@@ -1,0 +1,36 @@
+flowchart TD
+    A([LOGIN portal netral]) --> B{Akun terautentikasi}
+    B -->|Pasien| C[Portal pasien]
+    B -->|Pegawai| D[Ruang kerja sesuai peran]
+    C --> E[Pilih tujuan, dokter, tanggal dan waktu]
+    E --> F{Terkait pengerjaan sendiri?}
+    F -->|Ya| G[Periksa tenant, kepemilikan dan dokter penanggung jawab]
+    F -->|Tidak| H[Periksa dokter aktif dan jadwal bertugas]
+    G --> I{Pemasangan hasil Lab?}
+    I -->|Ya| J{Hasil lolos QC dan ready?}
+    J -->|Belum| K[Pemasangan belum dapat dijadwalkan]
+    J -->|Ya| H
+    I -->|Kontrol atau konsultasi| H
+    H --> L[Kunci reservasi dan cek benturan pasien/dokter/pengganti]
+    L --> M{Slot tersedia?}
+    M -->|Tidak| E
+    M -->|Ya| N[Simpan kunjungan, receipt dan audit]
+    N --> O[Terlihat oleh pasien dan dokter klinik]
+    N --> P[Kabar jadwal di kotak pemberitahuan]
+    D --> Q[Dokter klinik membuat instruksi dan permintaan Lab]
+    Q --> R[Lab menerima dan menetapkan estimasi]
+    R --> S[Desain / pengerjaan / penyelesaian]
+    S --> T{Pemeriksaan QC}
+    T -->|Perlu perbaikan| S
+    T -->|Lolos| U[Siap diserahkan]
+    U --> E
+    R --> V[Progres layanan milik pasien]
+    S --> V
+    T --> V
+    V --> P
+    P --> W[Tandai dibaca tanpa mengubah persetujuan]
+    P --> X{Usulan tanggal atau dokter?}
+    X -->|Ya| Y[Pasien meninjau dan menyetujui / menolak]
+    Y --> Z[Simpan keputusan, tanggal semula dan audit]
+    C --> AA[Asisten layanan simulasi]
+    AA --> AB[Bantuan petugas CS]

@@ -11,6 +11,8 @@ from backend.models import LabOrder, Notification, Patient, User
 
 def queue_notice(db: Session, o: LabOrder, kind: str, text: str):
     patient = db.get(Patient, o.patient_id)
+    if o.source=='internal' and kind=='progress' and patient.notification_level=='minimal':
+        return
     if o.source == 'internal' and patient.contact_verified and patient.service_consent:
         db.add(Notification(patient_id=patient.id, org_id=o.org_id, order_id=o.id, channel=patient.preferred_channel, kind=kind, message=text, status='queued'))
     elif o.source == 'external':

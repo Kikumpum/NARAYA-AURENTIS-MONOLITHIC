@@ -51,8 +51,10 @@ def logout(request: Request, response: Response, user: User = Depends(current_pa
     return {'ok': True}
 
 
-def service_view(o):
+def service_view(o, db):
+    doctor=db.get(User,o.dentist_id) if o.dentist_id else None
     return {'id':o.id, 'code':o.code, 'category':o.category, 'status':o.status,
+            'clinic_doctor':{'id':doctor.id,'name':doctor.display_name} if doctor and doctor.active and doctor.org_id==o.org_id and doctor.role=='dentist' else None,
             'estimated_due':str(o.estimated_due) if o.estimated_due else None,
             'promised_due':str(o.promised_due) if o.promised_due else None,
             'proposed_due':str(o.proposed_due) if o.proposed_due else None,
@@ -65,7 +67,7 @@ def orders(user: User = Depends(current_patient), db: Session = Depends(get_db))
     patient = patient_record(db, user)
     rows = db.scalars(select(LabOrder).where(LabOrder.patient_id == patient.id, LabOrder.org_id == user.org_id,
                                            LabOrder.source == 'internal').order_by(LabOrder.id.desc())).all()
-    return [service_view(o) for o in rows]
+    return [service_view(o,db) for o in rows]
 
 
 @router.get('/orders/{oid}')
@@ -82,6 +84,10 @@ def order_detail(oid: int, user: User = Depends(current_patient), db: Session = 
     for row in rows:
         detail = json.loads(row.detail)
         item = {'label':labels[row.event], 'at':chat.timestamp(row.occurred_at)}
+        if row.event == 'lab_order.progress':
+            stages = {'design':'Desain sedang disiapkan', 'production':'Pengerjaan di Lab berlangsung',
+                      'finishing':'Penyelesaian akhir', 'qc_pending':'Menunggu pemeriksaan QC'}
+            item['label'] = stages.get(detail.get('new'), item['label'])
         if row.event == 'lab_order.delay_proposed':
             item.update(previous_due=detail.get('old'), proposed_due=detail.get('new'))
         if row.event == 'lab_order.delay_decided':
@@ -89,7 +95,7 @@ def order_detail(oid: int, user: User = Depends(current_patient), db: Session = 
         history.append(item)
     audit(db, user, 'patient_portal.service_viewed', 'order', oid)
     db.commit()
-    return {**service_view(order), 'history':history}
+    return {**service_view(order,db), 'history':history}
 
 
 @router.post('/orders/{oid}/delay/respond')
@@ -109,27 +115,14 @@ def own_appointment(db, user, aid):
 def appointments(user: User = Depends(current_patient), db: Session = Depends(get_db)):
     patient = patient_record(db, user)
     rows = db.scalars(select(Appointment).where(Appointment.patient_id == patient.id).order_by(Appointment.scheduled_at.desc())).all()
-    result = []
-    for row in rows:
-        doctor = db.get(User, row.dentist_id)
-        pending = db.get(User, row.pending_dentist_id) if row.pending_dentist_id else None
-        result.append({'id':row.id, 'dentist':doctor.display_name, 'scheduled_at':chat.timestamp(row.scheduled_at),
-                       'status':row.status, 'proposed_dentist':pending.display_name if pending else None})
-    return result
+    from backend.modules.patient_visits import appointment_view
+    return [appointment_view(db,row) for row in rows]
 
 
 @router.post('/appointments/{aid}/respond')
 def appointment_response(aid: int, data: DecisionIn, user: User = Depends(current_patient), db: Session = Depends(get_db)):
     own_appointment(db, user, aid)
     return clinic.appointment_response(aid, data, user, db)
-
-
-@router.get('/notifications')
-def notifications(user: User = Depends(current_patient), db: Session = Depends(get_db)):
-    patient = patient_record(db, user)
-    rows = db.scalars(select(Notification).where(Notification.patient_id == patient.id, Notification.org_id == user.org_id)
-                      .order_by(Notification.id.desc()).limit(100)).all()
-    return [{'id':n.id, 'order_id':n.order_id, 'message':n.message, 'created_at':chat.timestamp(n.created_at)} for n in rows]
 
 
 @router.get('/chat/conversations')

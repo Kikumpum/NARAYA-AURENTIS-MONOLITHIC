@@ -70,6 +70,42 @@ class Appointment(Base):
     status: Mapped[str] = mapped_column(String(25), default='confirmed')
 
 
+class VisitDetails(Base):
+    __tablename__ = 'patient_visit_details'
+    id: Mapped[int] = mapped_column(primary_key=True)
+    appointment_id: Mapped[int] = mapped_column(ForeignKey('appointments.id'), unique=True)
+    owner_id: Mapped[int] = mapped_column(ForeignKey('users.id'))
+    org_id: Mapped[int] = mapped_column(ForeignKey('organizations.id'))
+    purpose: Mapped[str] = mapped_column(String(24))
+    interest: Mapped[str] = mapped_column(String(24), default='general')
+    order_id: Mapped[int | None] = mapped_column(ForeignKey('lab_orders.id'), nullable=True)
+
+
+class PatientUpdate(Base):
+    __tablename__ = 'patient_updates'
+    id: Mapped[int] = mapped_column(primary_key=True)
+    patient_id: Mapped[int] = mapped_column(ForeignKey('patients.id'))
+    org_id: Mapped[int] = mapped_column(ForeignKey('organizations.id'))
+    kind: Mapped[str] = mapped_column(String(32))
+    title: Mapped[str] = mapped_column(String(120))
+    message: Mapped[str] = mapped_column(String(400))
+    order_id: Mapped[int | None] = mapped_column(ForeignKey('lab_orders.id'), nullable=True)
+    appointment_id: Mapped[int | None] = mapped_column(ForeignKey('appointments.id'), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+class PatientNoticeRead(Base):
+    __tablename__ = 'patient_notice_reads'
+    id: Mapped[int] = mapped_column(primary_key=True)
+    owner_id: Mapped[int] = mapped_column(ForeignKey('users.id'))
+    org_id: Mapped[int] = mapped_column(ForeignKey('organizations.id'))
+    source: Mapped[str] = mapped_column(String(16))
+    notice_id: Mapped[int] = mapped_column(Integer)
+    read_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    __table_args__ = (UniqueConstraint('owner_id', 'source', 'notice_id', name='uq_patient_notice_read'),
+                      CheckConstraint("source IN ('service','visit')", name='ck_patient_notice_source'))
+
+
 class LabOrder(Base):
     __tablename__ = 'lab_orders'
     id: Mapped[int] = mapped_column(primary_key=True)

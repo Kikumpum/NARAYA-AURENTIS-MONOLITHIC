@@ -185,7 +185,7 @@ with TestClient(app,base_url='https://testserver') as c:
     assert c.get('/api/me').status_code==401
     assert c.get('/api/patient/orders/2').status_code==404
     with database.engine.connect() as connection:
-        assert connection.scalar(text('select version_num from alembic_version'))=='0004'
+        assert connection.scalar(text('select version_num from alembic_version'))=='0005'
 assert 'do-not-connect' not in DATABASE_URL
 '''
     result=subprocess.run([sys.executable,'-c',script],env=env,cwd=tmp_path,capture_output=True,text=True,timeout=30)

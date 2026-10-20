@@ -38,6 +38,7 @@ class DemoRuntime:
     deployment: str = 'local'
     shared_database_enabled: bool = False
     shared_database_url: str = field(default='', repr=False)
+    direct_database_url: str = field(default='', repr=False)
 
     @classmethod
     def from_env(cls, env: Mapping[str, str] | None = None):
@@ -54,7 +55,24 @@ class DemoRuntime:
                    access_password=env.get('NAM_DEMO_ACCESS_PASSWORD', ''), expires_at=expires,
                    deployment=env.get('VERCEL_URL', 'temporary-demo'),
                    shared_database_enabled=env.get('NAM_DEMO_SHARED_DATABASE') == '1',
-                   shared_database_url=env.get('NAM_DEMO_DATABASE_URL', ''))
+                   shared_database_url=env.get('NAM_DEMO_DATABASE_URL', ''),
+                   direct_database_url=env.get('NAM_DEMO_DATABASE_URL_UNPOOLED', ''))
+
+    def migration_url(self):
+        """Only a direct connection to the same authorized demo database may migrate."""
+        if not self.hosted or not self.shared_database_enabled:
+            return None
+        try:
+            pooled, direct = make_url(self.shared_database_url), make_url(self.direct_database_url)
+            if (self.valid_shared_database() and direct.drivername in ('postgres','postgresql','postgresql+psycopg')
+                and direct.host == pooled.host.replace('-pooler.', '.')
+                and (direct.database,direct.username,direct.password,direct.port) ==
+                    (pooled.database,pooled.username,pooled.password,pooled.port)
+                and direct.query.get('sslmode') in ('require','verify-ca','verify-full')):
+                return direct.set(drivername='postgresql+psycopg').render_as_string(hide_password=False)
+        except (ArgumentError, ValueError, TypeError, AttributeError):
+            pass
+        raise RuntimeError('A matching direct demo database connection is required for migrations.')
 
     def valid_shared_database(self):
         try:

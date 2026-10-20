@@ -69,6 +69,7 @@ def create_order(data: OrderIn, user: User = Depends(current_user), db: Session 
         raise HTTPException(400,'Pasien tidak ada pada organisasi berwenang')
     o=LabOrder(code='LAB-'+secrets.token_hex(5).upper(),source='internal' if user.role=='dentist' else 'external',org_id=1 if user.role=='dentist' else user.org_id,patient_id=patient.id,dentist_id=user.id if user.role=='dentist' else None,title=data.title,instruction=data.instruction,category=data.category,status='submitted',promised_due=data.promised_due)
     db.add(o);db.flush();audit(db,user,'lab_order.submitted','order',o.id,source=o.source)
+    queue_notice(db,o,'submitted','Permintaan pengerjaan gigi Anda sudah tercatat. Dokter dan tim Lab akan menindaklanjutinya.')
     db.commit();return {'id':o.id,'code':o.code,'status':o.status}
 
 
@@ -158,6 +159,8 @@ def progress(oid:int,data:ProgressIn,user:User=Depends(current_user),db:Session=
     allowed={'production':['design','finishing','qc_pending'], 'design':['production','finishing','qc_pending'], 'finishing':['qc_pending'],'rework':['design','production','finishing','qc_pending']}
     if data.status not in allowed.get(o.status,[]):raise HTTPException(409,'Perpindahan status produksi tidak valid')
     before=o.status;o.status=data.status;o.updated_at=utcnow();audit(db,user,'lab_order.progress','order',o.id,previous=before,new=data.status)
+    stage={'design':'tahap desain','production':'tahap pengerjaan','finishing':'penyelesaian akhir','qc_pending':'pemeriksaan hasil'}[data.status]
+    queue_notice(db,o,'progress',f'Pengerjaan gigi Anda masuk ke {stage}. Perkembangan terbaru tersedia di portal.')
     db.commit();return {'status':o.status}
 
 
@@ -175,6 +178,7 @@ def quality(oid:int,data:QcIn,user:User=Depends(current_user),db:Session=Depends
     o.status='ready' if data.passed else 'rework';o.updated_at=utcnow()
     audit(db,user,'lab_order.qc_passed' if data.passed else 'lab_order.qc_failed','order',o.id,reason=data.reason)
     if data.passed: queue_notice(db,o,'ready','Pekerjaan laboratorium Anda telah selesai. Silakan lihat portal untuk informasi penyerahan.')
+    else: queue_notice(db,o,'rework','Hasil sedang disempurnakan oleh tim Lab setelah pemeriksaan QC. Anda dapat melihat perkembangannya di portal.')
     db.commit();return {'status':o.status}
 
 

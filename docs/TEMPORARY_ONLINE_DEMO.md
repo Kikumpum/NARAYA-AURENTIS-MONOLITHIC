@@ -25,6 +25,7 @@ Demo online hanya aktif jika seluruh pengaturan berikut sah:
 | `NAM_DEMO_EXPIRES_AT` | Waktu ISO 8601 dengan zona waktu, maksimal 31 hari ke depan; disarankan tujuh hari |
 | `NAM_DEMO_SHARED_DATABASE` | `1` untuk database demo bersama yang telah diizinkan |
 | `NAM_DEMO_DATABASE_URL` | URL PostgreSQL khusus demo, TLS `sslmode=require`/`verify-ca`/`verify-full`; diisi integrasi Neon, jangan commit |
+| `NAM_DEMO_DATABASE_URL_UNPOOLED` | Koneksi langsung untuk migrasi; harus cocok dengan database, akun dan host pooler demo, memakai TLS |
 
 Halaman `/` langsung memperlihatkan desain hijau/krem/emas dengan bahasa netral: **Portal Naraya Aurentis**, **Masuk menggunakan akun Anda**, tombol **LOGIN**. Contoh akun internal tidak ditampilkan. Backend memverifikasi kredensial melalui `/api/access/resolve` dan memilih portal yang sesuai; endpoint login pasien atau workspace tetap menerbitkan cookie audience masing-masing. Halaman `/pasien` tetap dapat dibuka langsung tanpa memuat navigasi divisi. Setelah nama pengguna dan sandi diisi, dialog kecil meminta kunci akses demo apabila browser belum memiliki izin. Kunci hanya diberikan kepada penguji yang diundang. Sesudah kunci diterima, login akun dilanjutkan dan kewenangan akun tetap diperiksa.
 

@@ -100,6 +100,7 @@ def appointments(user: User = Depends(current_user), db: Session = Depends(get_d
     out = []
     for a in rows:
         p = db.get(Patient,a.patient_id)
+        if not p or p.org_id != user.org_id: continue
         if user.role == 'patient' and p.user_id != user.id: continue
         if user.role == 'dentist' and a.dentist_id != user.id and a.pending_dentist_id != user.id: continue
         out.append({'id':a.id,'patient':p.display_name if user.role!='patient' else 'Saya','dentist':db.get(User,a.dentist_id).display_name,'scheduled_at':str(a.scheduled_at),'status':a.status,'pending_dentist_id':a.pending_dentist_id})
@@ -113,10 +114,14 @@ def create_appointment(data: AppointmentIn, user: User = Depends(current_user), 
     doctor = db.get(User,data.dentist_id)
     if not patient or patient.org_id!=user.org_id or not doctor or not doctor.active or doctor.role!='dentist' or doctor.org_id!=user.org_id:
         raise HTTPException(400,'Pasien atau dokter tidak valid')
+    from backend.modules.patient_visits import lock_patient, check_reservation, visit_update
+    lock_patient(db,patient)
+    check_reservation(db,patient,doctor.id,data.scheduled_at)
     if not db.scalar(select(Shift).where(Shift.user_id==doctor.id,Shift.shift_day==appointment_day(data.scheduled_at),Shift.available==True)):
         raise HTTPException(409,'Dokter tidak bertugas pada tanggal tersebut')
     a=Appointment(patient_id=patient.id,dentist_id=doctor.id,scheduled_at=data.scheduled_at.astimezone(timezone.utc),status='confirmed')
     db.add(a);db.flush();audit(db,user,'appointment.created','appointment',a.id)
+    visit_update(db,patient,a,'appointment_booked','Jadwal kunjungan baru','Petugas telah mencatat jadwal kunjungan Anda. Periksa nama dokter dan waktu kunjungan.')
     db.commit();return {'id':a.id,'status':a.status}
 
 
@@ -130,10 +135,20 @@ def replacement(aid: int, data: ReplacementIn, user: User = Depends(current_user
     a=db.get(Appointment,aid);target=db.get(User,data.dentist_id)
     if not a or not target or not target.active or target.org_id!=user.org_id or target.role!='dentist' or target.id==a.dentist_id:
         raise HTTPException(400,'Penggantian tidak valid')
+    patient=db.get(Patient,a.patient_id)
+    if not patient or patient.org_id!=user.org_id or a.status=='cancelled':
+        raise HTTPException(404,'Jadwal tidak ditemukan')
+    from backend.modules.patient_visits import lock_patient, check_reservation, visit_update
+    lock_patient(db,patient)
+    db.refresh(a)
+    if a.status=='cancelled' or target.id==a.dentist_id:
+        raise HTTPException(409,'Jadwal telah berubah. Muat ulang sebelum mengusulkan pengganti.')
+    check_reservation(db,patient,target.id,a.scheduled_at,exclude=a.id)
     if not db.scalar(select(Shift).where(Shift.user_id==target.id,Shift.shift_day==appointment_day(a.scheduled_at),Shift.available==True)):
         raise HTTPException(409,'Dokter pengganti tidak tersedia')
     a.pending_dentist_id=target.id;a.status='awaiting_patient'
     audit(db,user,'appointment.replacement_requested','appointment',a.id,candidate=target.id)
+    visit_update(db,patient,a,'appointment_change','Tinjau usulan dokter pengganti','Ada usulan dokter pengganti. Membaca pesan ini tidak berarti Anda menyetujui perubahan.')
     db.commit();return {'status':a.status}
 
 
@@ -147,7 +162,17 @@ def appointment_response(aid: int, data: DecisionIn, user: User = Depends(curren
         raise HTTPException(404,'Jadwal tidak ditemukan')
     if a.status!='awaiting_patient' or not a.pending_dentist_id:
         raise HTTPException(409,'Tidak ada perubahan yang perlu disetujui')
+    from backend.modules.patient_visits import lock_patient, check_reservation, visit_update
+    patient=db.get(Patient,a.patient_id)
+    if patient.org_id!=user.org_id:raise HTTPException(404,'Jadwal tidak ditemukan')
+    lock_patient(db,patient)
+    # Re-read workflow state after acquiring the patient's reservation lock.
+    db.refresh(a)
+    if a.status!='awaiting_patient' or not a.pending_dentist_id:
+        raise HTTPException(409,'Tidak ada perubahan yang perlu disetujui')
+    if data.approved:check_reservation(db,patient,a.pending_dentist_id,a.scheduled_at,exclude=a.id)
     if data.approved: a.dentist_id=a.pending_dentist_id
     a.pending_dentist_id=None;a.status='confirmed' if data.approved else 'replacement_rejected'
     audit(db,user,'appointment.replacement_responded','appointment',a.id,approved=data.approved)
+    visit_update(db,patient,a,'appointment_response','Respons pergantian dokter dicatat','Anda menyetujui dokter pengganti.' if data.approved else 'Anda menolak usulan dokter pengganti. Petugas dapat membantu tindak lanjut.')
     db.commit();return {'status':a.status}

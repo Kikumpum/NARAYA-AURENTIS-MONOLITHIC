@@ -33,8 +33,8 @@ def upgrade_schema(connection=None):
 def bootstrap_demo(seed, seed_structure, seed_accounts=None):
     """Serialize shared database initialization across Vercel instances.
 
-    The transaction-scoped advisory lock also works through Neon's transaction
-    pooler. Migrations and synthetic fixtures commit together; retries preserve
+    Migrations use the supplied direct connection; normal queries use the pooler.
+    Migrations and synthetic fixtures commit together; retries preserve
     existing sessions, workflow data and audit history.
     """
     if engine.dialect.name != 'postgresql':
@@ -45,7 +45,19 @@ def bootstrap_demo(seed, seed_structure, seed_accounts=None):
                 seed_accounts(db)
             seed_structure(db)
         return
-    with engine.begin() as connection:
+    from backend.config import runtime
+    direct_url = runtime.migration_url()
+    migration_engine = create_engine(direct_url, poolclass=NullPool, hide_parameters=True,
+        connect_args={'connect_timeout':15}) if direct_url else engine
+    try:
+        _bootstrap_postgres(migration_engine, seed, seed_structure, seed_accounts)
+    finally:
+        if migration_engine is not engine:
+            migration_engine.dispose()
+
+
+def _bootstrap_postgres(migration_engine, seed, seed_structure, seed_accounts):
+    with migration_engine.begin() as connection:
         connection.execute(text('SELECT pg_advisory_xact_lock(734061992014)'))
         upgrade_schema(connection)
         with Session(bind=connection, expire_on_commit=False) as db:
