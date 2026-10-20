@@ -1,0 +1,3 @@
+[tool.vercel.fastapi.static]
+# Static pages, JS and images stay behind the temporary demo access gate.
+cdn = false

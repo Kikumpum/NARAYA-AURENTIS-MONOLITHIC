@@ -144,3 +144,7 @@ Portal pasien khusus tersedia di http://127.0.0.1:8000/pasien dengan akun fiktif
 
 [PDF enam halaman](output/flowchart/NAM_Flowchart_Lengkap_Demo_0.4.pdf) memisahkan akses pasien/pegawai/mitra, Klinik-Lab-QC, persetujuan perubahan, chat pasien, keuangan, serta SOP dan laporan. Tersedia [paket PNG dan SVG yang dapat disunting](output/NAM_Flowchart_Demo_0.4.zip). Lihat [panduan diagram](docs/FLOWCHART_DEMO_0.4.md) untuk rincian dan cara membuat ulang.
 
+## Demo online sementara
+
+Atas permintaan pengguna, konfigurasi Vercel tersedia untuk pengujian terbatas dengan data fiktif. Gerbang kunci akses privat dan masa berlaku wajib diatur; login pasien/pegawai serta seluruh batas peran tetap berlaku. Data latihan online berada di scratch per instance dan **dapat ter-reset atau berbeda antar-instance**, sehingga bukan penyimpanan bersama yang persisten. PPT dan bahan presentasi tetap berupa berkas lokal. Lihat [pengaturan dan batas demo sementara](docs/TEMPORARY_ONLINE_DEMO.md). Mode produksi tetap diblokir.
+

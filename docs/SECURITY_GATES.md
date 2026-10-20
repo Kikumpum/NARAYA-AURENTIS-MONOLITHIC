@@ -28,6 +28,8 @@
 
 ## Known limitations PROTOTIPE saat ini
 
+- Atas izin eksplisit pengguna, mode demo online sementara dapat diaktifkan dengan gerbang kunci privat dan masa berlaku. Ini tidak meluluskan gate produksi. SQLite scratch bersifat per instance, sehingga sesi/data dapat hilang atau berbeda antar-instance; jangan dipakai untuk uji multiuser yang memerlukan konsistensi atau penyimpanan operasional. Lihat `TEMPORARY_ONLINE_DEMO.md`.
+
 - Demo 0.3 memiliki jabatan/pemetaan akun dan SOP/laporan berbukti dengan scope, versi, audit, idempotensi dan peninjau berbeda. Struktur dan SOP tetap draf; persetujuan laporan tidak menjalankan persetujuan bisnis atau klinis.
 - Lampiran disimpan sebagai blob DB privat dan hanya diunduh setelah otorisasi. Pembatasan format/ukuran serta fitur aktif dasar belum menggantikan antivirus, CDR, object storage terenkripsi, pengelolaan kunci dan retensi sebelum go-live.
 

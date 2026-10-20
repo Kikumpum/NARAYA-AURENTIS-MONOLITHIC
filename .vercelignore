@@ -1,0 +1,16 @@
+.venv/
+.runtime-tmp/
+.pytest_cache/
+__pycache__/
+**/__pycache__/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+.env
+.env.*
+*.key
+*.pem
+*.log
+output/
+docs/

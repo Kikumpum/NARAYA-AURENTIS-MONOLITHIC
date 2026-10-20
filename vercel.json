@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "fastapi",
+  "functions": {
+    "app.py": {
+      "maxDuration": 60,
+      "includeFiles": "{frontend/**,backend/migrations/**,alembic.ini}",
+      "excludeFiles": "{.venv/**,.runtime-tmp/**,.pytest_cache/**,output/**,docs/**,backend/tests/**,scripts/**,**/*.db,**/*.sqlite,**/*.sqlite3}"
+    }
+  }
+}

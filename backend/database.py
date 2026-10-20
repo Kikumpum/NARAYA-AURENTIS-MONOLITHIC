@@ -17,6 +17,7 @@ def upgrade_schema():
     from alembic.config import Config
     from backend.config import BASE_DIR
     config = Config(str(BASE_DIR / 'alembic.ini'))
+    config.set_main_option('script_location', str(BASE_DIR / 'backend' / 'migrations'))
     with engine.begin() as connection:
         config.attributes['connection'] = connection
         command.upgrade(config, 'head')

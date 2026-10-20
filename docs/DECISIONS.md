@@ -43,3 +43,7 @@ SOP adalah draf pencatatan operasional untuk ditelaah pemilik proses. Tidak meng
 ## Pembaruan demo 0.4 — 20 Oktober 2026
 
 Pengguna meminta portal pasien sepenuhnya terpisah dari akun divisi, lalu membatasi live chat untuk pasien dan meminta materi belajar bagi pegawai. Portal `/pasien` kini memakai bundle, form masuk, sesi audience dan API khusus. Daftar akun di login pegawai dihapus. Live chat personal pegawai/mitra ditolak backend; CS tetap melayani antrean pasien. Materi pegawai berasal dari draf SOP sesuai peran, dengan ringkasan tujuan divisi lain. Tidak ada klaim kelulusan pelatihan atau kewenangan baru. Rincian dan batas kompatibilitas API lama: `WORKSPACE_DEMO_0.4.md`.
+
+## Uji online sementara - 20 Oktober 2026
+
+Pengguna mengoreksi pilihan halaman presentasi: presentasi/PPT tetap lokal, aplikasi ingin diakses online sementara sebelum mempertimbangkan hosting berbayar. Disediakan entrypoint Vercel dan mode demo sementara yang memerlukan kunci akses privat serta masa berlaku. Login pasien/pegawai, RBAC, organisasi, state, CSRF dan audit tidak dilewati. SQLite online hanya scratch per instance; data/sesi dapat ter-reset atau berbeda antar-instance dan tidak menjanjikan demo multiuser yang konsisten. Database lokal maupun DATABASE_URL eksternal tidak dipakai oleh mode ini. Mode produksi dan data nyata tetap diblokir. Rincian: `TEMPORARY_ONLINE_DEMO.md`.
