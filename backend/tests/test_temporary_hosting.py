@@ -70,19 +70,20 @@ def test_missing_configuration_skips_database_startup(monkeypatch):
         raise AssertionError('Blocked hosting must never open or migrate a database')
     monkeypatch.setattr(database,'upgrade_schema',forbidden)
     with TestClient(appmod.app) as c:
-        assert c.get('/').status_code == 503
+        assert c.get('/').status_code == 200
         assert c.get('/api/health').status_code == 503
-        assert c.get('/static/app.js').status_code == 503
+        assert c.get('/static/app.js').status_code == 200
+        assert not c.get('/api/demo/status').json()['available']
 
 
 @pytest.mark.parametrize('header',['','Bearer ignored','Basic !!!','Basic ZGVtbw==',credentials('wrong'),'Basic '+'a'*3000])
-def test_outer_gate_protects_pages_assets_and_mutations(client,monkeypatch,header):
+def test_outer_gate_protects_data_and_mutations(client,monkeypatch,header):
     monkeypatch.setattr(appmod,'runtime',configured())
     headers={'Authorization':header} if header else {}
-    for path in ['/','/pasien','/static/app.js','/static/portal.js','/api/health','/api/orders']:
+    for path in ['/api/health','/api/orders','/api/me','/api/patient/orders','/api/sop-reports','/api/organization','/static/not-public.txt']:
         r=client.get(path,headers=headers)
         assert r.status_code == 401
-        assert r.headers['www-authenticate'].startswith('Basic ')
+        assert 'www-authenticate' not in r.headers
         assert r.headers['cache-control'] == 'no-store'
         assert 'noindex' in r.headers['x-robots-tag']
         assert 'DemoNAM2026!' not in r.text
@@ -141,7 +142,8 @@ def test_expiry_blocks_existing_sessions_without_deleting_audit(client,monkeypat
     login(client,'it')
     monkeypatch.setattr(appmod,'runtime',replace(runtime,expires_at=datetime.now(timezone.utc)-timedelta(seconds=1)))
     assert client.get('/api/me').status_code==410
-    assert client.get('/').status_code==410
+    assert client.get('/').status_code==200
+    assert not client.get('/api/demo/status').json()['available']
     with database.SessionLocal() as db:
         assert db.scalar(select(func.count()).select_from(Audit).where(Audit.event=='auth.login'))==1
 
@@ -172,7 +174,7 @@ from backend.config import runtime, DATABASE_URL
 from backend import database
 from sqlalchemy import text
 with TestClient(app,base_url='https://testserver') as c:
-    assert c.get('/').status_code==401
+    assert c.get('/').status_code==200
     c.auth=('demo',runtime.access_password)
     assert c.get('/').status_code==200
     assert c.get('/static/runtime.js').status_code==200

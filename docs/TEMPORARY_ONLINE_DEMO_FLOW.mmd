@@ -1,14 +1,17 @@
 flowchart TD
-    H[Request menuju deployment Vercel] --> C{Mode demo, kunci privat dan masa berlaku sah?}
-    C -->|Konfigurasi belum lengkap| U[503: akses ditutup; startup tidak membuka DB]
-    C -->|Sudah kedaluwarsa| E[410: demo berakhir; riwayat tidak dihapus]
-    C -->|Ya| G{Kunci gerbang benar?}
-    G -->|Tidak| X[401: minta autentikasi browser]
-    G -->|Ya| L[Halaman login pasien atau pegawai]
-    L --> A[Autentikasi aplikasi dan sesi audience terpisah]
-    A --> R[Periksa role, organisasi, kepemilikan dan tahap workflow]
+    H[Pengguna membuka tautan online] --> L[Halaman login asli pasien atau pegawai langsung tampil]
+    L --> C{Mode demo dan masa berlaku sah?}
+    C -->|Belum lengkap| U[API ditutup 503; startup tidak membuka DB]
+    C -->|Kedaluwarsa| E[API ditutup 410; halaman menjelaskan akses berakhir]
+    C -->|Ya| G{Cookie gerbang masih sah?}
+    G -->|Tidak| K[Dialog kunci akses demo saat masuk]
+    K --> O[POST dengan Origin sama; verifikasi kunci di backend]
+    O -->|Salah| X[401; dialog memberi pesan dan bisa dicoba lagi]
+    O -->|Benar| T[Cookie Secure HttpOnly SameSite Strict; signature, audience, deployment dan expiry]
+    G -->|Ya| A[Login akun pasien atau pegawai]
+    T --> A
+    A --> R[Periksa sesi akun, peran, organisasi, object dan tahap]
     R --> S[CSRF dan Origin wajib untuk perubahan]
-    S --> W[Workflow bisnis, idempotensi dan audit tetap berlaku]
-    W --> D[SQLite scratch per instance; bukan database persisten bersama]
-    D --> N[UI memberi keterangan data atau sesi bisa ter-reset dan berbeda antar-instance]
-    P[PPT dan materi presentasi di komputer lokal] -. Tidak disajikan oleh aplikasi .-> H
+    S --> W[Workflow, idempotensi dan audit tetap berlaku]
+    W --> D[SQLite sementara per instance; data atau sesi bisa ter-reset]
+    P[PPT dan presentasi tetap di komputer lokal] -. Tidak menjadi halaman gerbang .-> H

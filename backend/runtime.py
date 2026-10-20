@@ -5,6 +5,8 @@ import base64
 import hashlib
 import hmac
 import os
+import json
+import secrets
 import tempfile
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
@@ -14,6 +16,15 @@ from typing import Mapping
 
 from fastapi import Request
 from fastapi.responses import HTMLResponse, JSONResponse
+
+DEMO_COOKIE = 'nam_demo_access'
+PUBLIC_PAGES = frozenset(('/', '/pasien', '/pasien/'))
+# Login presentation assets are public; data and application sessions are protected.
+PUBLIC_ASSETS = frozenset('/static/' + path for path in (
+    'styles.css', 'portal.css', 'runtime.css', 'runtime.js', 'app.js', 'views.js',
+    'actions.js', 'chat.js', 'sop.js', 'training.js', 'portal.js',
+    'assets/naraya-aurentis-transparent.png',
+))
 
 
 @dataclass(frozen=True)
@@ -68,35 +79,72 @@ class DemoRuntime:
                 'expires_at': self.expires_at.isoformat() if self.hosted and self.expires_at else None}
 
 
-def gate_response(request: Request, status: int, message: str, *, challenge=False):
-    headers = {'WWW-Authenticate': 'Basic realm="NAM Demo Sementara", charset="UTF-8"'} if challenge else {}
+def gate_response(request: Request, status: int, message: str):
     if request.url.path.startswith('/api/') or 'application/json' in request.headers.get('accept', ''):
-        return JSONResponse({'detail': message}, status_code=status, headers=headers)
+        return JSONResponse({'detail': message}, status_code=status)
     return HTMLResponse('<!doctype html><html lang="id"><meta charset="utf-8">'
                         '<meta name="viewport" content="width=device-width,initial-scale=1">'
                         '<title>Naraya Aurentis - Demo sementara</title><main><h1>Demo Naraya Aurentis</h1><p>'
                         + escape(message) + '</p><p>Demo dengan data fiktif. Bukan layanan pasien sungguhan.</p></main></html>',
-                        status_code=status, headers=headers)
+                        status_code=status)
+
+
+def _signature(runtime: DemoRuntime, encoded: str):
+    return hmac.new(runtime.access_password.encode(), ('nam-demo-gate:' + encoded).encode(), hashlib.sha256).hexdigest()
+
+
+def gate_cookie(runtime: DemoRuntime):
+    now = datetime.now(timezone.utc)
+    until = min(int((now + timedelta(hours=8)).timestamp()), int(runtime.expires_at.timestamp()))
+    payload = {'aud': 'temporary_demo', 'exp': until, 'deployment': runtime.deployment,
+               'nonce': secrets.token_urlsafe(18)}
+    encoded = base64.urlsafe_b64encode(json.dumps(payload, separators=(',', ':')).encode()).decode().rstrip('=')
+    return encoded + '.' + _signature(runtime, encoded), max(1, until - int(now.timestamp()))
+
+
+def has_demo_access(request: Request, runtime: DemoRuntime):
+    token = request.cookies.get(DEMO_COOKIE, '')
+    if token and len(token) < 2048:
+        try:
+            encoded, signature = token.split('.', 1)
+            if hmac.compare_digest(signature, _signature(runtime, encoded)):
+                data = json.loads(base64.urlsafe_b64decode(encoded + '=' * (-len(encoded) % 4)))
+                if (isinstance(data, dict) and data.get('aud') == 'temporary_demo'
+                    and data.get('deployment') == runtime.deployment
+                    and isinstance(data.get('exp'), int)
+                    and datetime.now(timezone.utc).timestamp() < data['exp'] <= runtime.expires_at.timestamp()):
+                    return True
+        except (ValueError, UnicodeError, TypeError, AttributeError):
+            pass
+    return has_basic_access(request, runtime)
+
+
+def has_basic_access(request: Request, runtime: DemoRuntime):
+    # Compatibility for CLI/API checks; browser access uses the form and cookie.
+    authorization = request.headers.get('authorization', '')
+    if len(authorization) < 2048:
+        try:
+            scheme, raw = authorization.split(' ', 1)
+            username, password = base64.b64decode(raw, validate=True).split(b':', 1)
+            return (scheme.lower() == 'basic' and hmac.compare_digest(username, b'demo')
+                    and hmac.compare_digest(password, runtime.access_password.encode()))
+        except (ValueError, UnicodeError):
+            pass
+    return False
 
 
 def demo_access_gate(request: Request, runtime: DemoRuntime):
     if not runtime.hosted:
+        return None
+    if request.method in ('GET', 'HEAD') and request.url.path in PUBLIC_PAGES | PUBLIC_ASSETS | {'/api/demo/status'}:
         return None
     problem = runtime.problem()
     if problem:
         message = ('Masa akses demo sementara telah berakhir. Hubungi pemilik proyek.' if problem == 'expired'
                    else 'Demo online belum diaktifkan dengan akses terbatas. Pemilik proyek perlu melengkapi konfigurasi deployment.')
         return gate_response(request, 410 if problem == 'expired' else 503, message)
-    authorization = request.headers.get('authorization', '')
-    valid = False
-    if len(authorization) < 2048:
-        try:
-            scheme, raw = authorization.split(' ', 1)
-            username, password = base64.b64decode(raw, validate=True).split(b':', 1)
-            valid = (scheme.lower() == 'basic' and hmac.compare_digest(username, b'demo')
-                     and hmac.compare_digest(password, runtime.access_password.encode()))
-        except (ValueError, UnicodeError):
-            pass
-    if not valid:
-        return gate_response(request, 401, 'Masuk dengan nama pengguna demo dan kunci akses yang diberikan pemilik proyek.', challenge=True)
+    if request.method == 'POST' and request.url.path == '/api/demo/access':
+        return None
+    if not has_demo_access(request, runtime):
+        return gate_response(request, 401, 'Masukkan kunci akses demo melalui halaman masuk aplikasi.')
     return None

@@ -122,7 +122,7 @@ function renderLogin(message = '') {
   $('#loginform').onsubmit = async event => {
     event.preventDefault(); const button = event.target.querySelector('[type="submit"]'); if (button.disabled) return;
     button.disabled = true; button.textContent = 'Sedang masuk…'; $('#login-error').textContent = '';
-    try {const fields = new FormData(event.target); const data = await api('/workspace/login','POST',{username:fields.get('username'),password:fields.get('password')}); clearSession(); Object.assign(state,{user:data.user,csrf:data.csrf,page:'dashboard',orderFilter:'all',sourceFilter:'all'}); await refresh();}
+    try {const fields = new FormData(event.target); await window.NAMDemo.unlock(); const data = await api('/workspace/login','POST',{username:fields.get('username'),password:fields.get('password')}); clearSession(); Object.assign(state,{user:data.user,csrf:data.csrf,page:'dashboard',orderFilter:'all',sourceFilter:'all'}); await refresh();}
     catch (error) {$('#login-error').textContent = error.message; button.disabled = false; button.innerHTML = `Masuk ke ruang kerja ${icon('arrow')}`;}
   };
 }
