@@ -154,3 +154,38 @@ def test_hosted_config_always_enables_secure_cookies_and_keeps_production_blocke
     assert result.returncode==0,result.stderr
     result=subprocess.run([sys.executable,'-c','import backend.config'],env={**env,'NAM_ENV':'production'},cwd=root,capture_output=True,text=True)
     assert result.returncode!=0 and 'intentionally blocked in production' in result.stderr
+
+
+def test_real_cloud_entrypoint_cold_start_from_another_directory(tmp_path):
+    """Exercise real config, scratch DB, migrations, fixtures, static files and HTTPS login."""
+    import os
+    runtime=configured()
+    root=Path(__file__).resolve().parents[2]
+    env={**os.environ,'PYTHONPATH':str(root),'VERCEL':'1','VERCEL_URL':tmp_path.name+'.vercel.app',
+         'NAM_ENV':'demo','NAM_ONLINE_DEMO':'1','NAM_DEMO_ACCESS_PASSWORD':runtime.access_password,
+         'NAM_DEMO_EXPIRES_AT':runtime.expires_at.isoformat(),'DATABASE_URL':'postgresql://do-not-connect',
+         'TEMP':str(tmp_path),'TMP':str(tmp_path),'COOKIE_SECURE':'false'}
+    script='''
+from app import app
+from fastapi.testclient import TestClient
+from backend.config import runtime, DATABASE_URL
+from backend import database
+from sqlalchemy import text
+with TestClient(app,base_url='https://testserver') as c:
+    assert c.get('/').status_code==401
+    c.auth=('demo',runtime.access_password)
+    assert c.get('/').status_code==200
+    assert c.get('/static/runtime.js').status_code==200
+    assert c.get('/api/health').json()['storage']=='ephemeral_per_instance'
+    response=c.post('/api/patient/login',json={'username':'DEMO-P-001','password':'DemoNAM2026!'})
+    assert response.status_code==200,response.text
+    assert c.get('/api/patient/me').status_code==200
+    assert c.get('/api/me').status_code==401
+    assert c.get('/api/patient/orders/2').status_code==404
+    with database.engine.connect() as connection:
+        assert connection.scalar(text('select version_num from alembic_version'))=='0004'
+assert 'do-not-connect' not in DATABASE_URL
+'''
+    result=subprocess.run([sys.executable,'-c',script],env=env,cwd=tmp_path,capture_output=True,text=True,timeout=30)
+    assert result.returncode==0,result.stderr
+    assert list(tmp_path.glob('nam-demo-*.sqlite3'))

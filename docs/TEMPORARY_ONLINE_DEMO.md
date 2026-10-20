@@ -47,7 +47,7 @@ Jangan menyimpan token Vercel atau kunci gerbang di GitHub. Jangan menonaktifkan
 
 ## Verifikasi
 
-Jalankan `python -m pytest -q backend/tests`. Seluruh 142 tes backend lulus pada 20 Oktober 2026. Tes hosting mencakup konfigurasi fail closed, startup tanpa DB pada konfigurasi gagal, perlindungan aset dan API, cookie Secure, masa akses, larangan IT membaca order, batas resepsionis, CSRF, idempotensi chat dan audit. Hasil lokal bukan bukti deployment Vercel sudah berhasil; URL dan log runtime perlu diperiksa setelah deployment. Diagram: `TEMPORARY_ONLINE_DEMO_FLOW.mmd`.
+Jalankan `python -m pytest -q backend/tests`. Seluruh 143 tes backend lulus pada 20 Oktober 2026. Tes hosting mencakup konfigurasi fail closed, startup tanpa DB pada konfigurasi gagal, perlindungan aset dan API, cookie Secure, masa akses, larangan IT membaca order, batas resepsionis, CSRF, idempotensi chat dan audit. Startup entrypoint asli juga diuji dari direktori berbeda dengan migrasi, seed, scratch DB dan login HTTPS. Hasil lokal bukan bukti deployment Vercel sudah berhasil; URL dan log runtime perlu diperiksa setelah deployment. Diagram: `TEMPORARY_ONLINE_DEMO_FLOW.mmd`.
 
 Sebelum hosting operasional atau berbayar untuk pemakaian nyata, selesaikan `docs/SECURITY_GATES.md`, database persisten, identitas dan kredensial individual, layanan audit/backup serta validasi klinis dan keuangan. Membayar hosting tidak otomatis memenuhi persyaratan tersebut.
 
