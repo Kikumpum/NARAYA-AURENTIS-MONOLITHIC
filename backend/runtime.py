@@ -16,6 +16,8 @@ from typing import Mapping
 
 from fastapi import Request
 from fastapi.responses import HTMLResponse, JSONResponse
+from sqlalchemy.engine import make_url
+from sqlalchemy.exc import ArgumentError
 
 DEMO_COOKIE = 'nam_demo_access'
 PUBLIC_PAGES = frozenset(('/', '/pasien', '/pasien/'))
@@ -34,6 +36,8 @@ class DemoRuntime:
     access_password: str = field(default='', repr=False)
     expires_at: datetime | None = None
     deployment: str = 'local'
+    shared_database_enabled: bool = False
+    shared_database_url: str = field(default='', repr=False)
 
     @classmethod
     def from_env(cls, env: Mapping[str, str] | None = None):
@@ -48,7 +52,18 @@ class DemoRuntime:
         opted_in = env.get('NAM_ONLINE_DEMO') == '1'
         return cls(hosted=env.get('VERCEL') == '1' or opted_in, opted_in=opted_in,
                    access_password=env.get('NAM_DEMO_ACCESS_PASSWORD', ''), expires_at=expires,
-                   deployment=env.get('VERCEL_URL', 'temporary-demo'))
+                   deployment=env.get('VERCEL_URL', 'temporary-demo'),
+                   shared_database_enabled=env.get('NAM_DEMO_SHARED_DATABASE') == '1',
+                   shared_database_url=env.get('NAM_DEMO_DATABASE_URL', ''))
+
+    def valid_shared_database(self):
+        try:
+            url = make_url(self.shared_database_url)
+            return (url.drivername in ('postgres', 'postgresql', 'postgresql+psycopg')
+                    and bool(url.host and url.database and url.username and url.password)
+                    and url.query.get('sslmode') in ('require', 'verify-ca', 'verify-full'))
+        except (ArgumentError, ValueError, TypeError):
+            return False
 
     def problem(self, now: datetime | None = None):
         if not self.hosted:
@@ -62,11 +77,17 @@ class DemoRuntime:
             return 'invalid_expiry'
         if self.expires_at <= now:
             return 'expired'
+        if self.shared_database_enabled and not self.valid_shared_database():
+            return 'invalid_shared_database'
         return None
 
     def database_url(self, local_url: str):
         if not self.hosted:
             return local_url
+        if self.shared_database_enabled and self.valid_shared_database():
+            # Only the explicitly authorized demo URL is eligible. Never fall
+            # back to a general DATABASE_URL that might point to real data.
+            return make_url(self.shared_database_url).set(drivername='postgresql+psycopg').render_as_string(hide_password=False)
         # A hosted demo never opens a configured production/external database.
         # Each deployment/access-key pair has separate disposable scratch data.
         fingerprint = hashlib.sha256((self.deployment + '|' + self.access_password).encode()).hexdigest()[:24]
@@ -75,7 +96,8 @@ class DemoRuntime:
 
     def metadata(self):
         return {'mode': 'temporary_online_demo' if self.hosted else 'local_demo',
-                'storage': 'ephemeral_per_instance' if self.hosted else 'local_sqlite',
+                'storage': ('shared_postgresql' if self.shared_database_enabled and self.valid_shared_database()
+                            else 'ephemeral_per_instance') if self.hosted else 'local_sqlite',
                 'expires_at': self.expires_at.isoformat() if self.hosted and self.expires_at else None}
 
 

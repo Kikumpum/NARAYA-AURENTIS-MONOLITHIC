@@ -8,8 +8,9 @@ from backend.utils import pwd_hash, utcnow
 
 def seed(db: Session):
     if db.scalar(select(func.count()).select_from(User)):
-        return
+        return False
     db.add_all([Org(id=1, name='Klinik Naraya (DEMO)', kind='internal'), Org(id=2, name='Klinik Mitra Contoh (DEMO)', kind='partner')])
+    db.flush()
     people = [
         (1,'resepsionis','Resepsionis Demo','reception',1), (2,'dokter','Dokter Klinik Demo','dentist',1),
         (3,'lab','Supervisor Lab Demo','lab_supervisor',1), (4,'teknisi','Teknisi Demo','technician',1),
@@ -25,10 +26,12 @@ def seed(db: Session):
     demo_hash = pwd_hash(DEMO_PASSWORD)
     for ident, uname, name, role, org in people:
         db.add(User(id=ident, username=uname, display_name=name, role=role, org_id=org, password_hash=demo_hash, active=True))
+    db.flush()
     db.add_all([
         Patient(id=1, public_id='DEMO-P-001', display_name='Pasien Demo Satu', phone='+620000000001', org_id=1, user_id=9, contact_verified=True, service_consent=True, preferred_channel='portal', notification_level='standard'),
         Patient(id=2, public_id='DEMO-P-002', display_name='Pasien Demo Dua', phone='+620000000002', org_id=2, contact_verified=False, service_consent=False),
     ])
+    db.flush()
     day = date.today()
     for uid in (2,3,4,5,11,12):
         for offset in range(0, 31):
@@ -39,3 +42,4 @@ def seed(db: Session):
     ])
     db.add(Appointment(id=1, patient_id=1, dentist_id=2, scheduled_at=utcnow()+timedelta(days=7), status='confirmed'))
     db.commit()
+    return True

@@ -22,6 +22,10 @@ python -m uvicorn backend.app:app --reload --host 127.0.0.1 --port 8000
 
 Buka **http://127.0.0.1:8000**. API demo: **http://127.0.0.1:8000/api/docs** (perlu akses CDN untuk interaktif Swagger bawaan; endpoint tetap bekerja tanpa CDN).
 
+Halaman awal memakai bahasa netral **Portal Naraya Aurentis** dan tombol **LOGIN**. Akun pasien (`pasien` atau `DEMO-P-001`) diarahkan ke portal pasien setelah masuk. Akun karyawan/mitra membuka halaman sesuai kewenangannya. Contoh akun internal tidak ditampilkan pada halaman login.
+
+Atas izin pengguna, tersedia demo online sementara melalui GitHub → Vercel dengan database Neon Free khusus data fiktif. Presentasi tetap lokal. Konfigurasi dan batasnya dijelaskan pada [panduan demo online](docs/TEMPORARY_ONLINE_DEMO.md).
+
 **Akun login DEMO** menggunakan kata sandi sama: `DemoNAM2026!`
 
 | Login | Divisi | Login | Divisi |

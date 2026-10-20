@@ -33,7 +33,7 @@ def test_original_login_and_patient_design_are_directly_available(client,monkeyp
     assert 'www-authenticate' not in page.headers
     assert 'Demo Naraya Aurentis</h1>' not in page.text
     assert '/static/app.js' in page.text
-    assert 'Manajemen Klinik' in client.get('/static/app.js').text
+    assert 'Portal<br>Naraya Aurentis' in client.get('/static/app.js').text
     patient=client.get('/pasien')
     assert patient.status_code==200 and '/static/portal.js' in patient.text
     assert '/static/app.js' not in patient.text

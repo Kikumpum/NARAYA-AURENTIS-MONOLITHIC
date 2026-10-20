@@ -67,16 +67,17 @@ function pop(message, error = false) {
   document.body.append(toast); setTimeout(() => toast.remove(),5000);
 }
 async function api(path, method = 'GET', body = null) {
+  const requestUser = state.user;
   const headers = {Accept:'application/json'};
   if (body !== null) headers['Content-Type'] = 'application/json';
   if (method !== 'GET' && state.csrf) headers['X-CSRF-Token'] = state.csrf;
   let response;
   try { response = await fetch('/api'+path,{method,credentials:'same-origin',headers,body:body === null ? undefined : JSON.stringify(body)}); }
-  catch { throw new Error('Server lokal tidak dapat dihubungi. Periksa apakah demo masih berjalan.'); }
+  catch { throw new Error('Koneksi ke portal terputus. Periksa koneksi Anda, lalu coba lagi.'); }
   let data;
   try { data = await response.json(); } catch { throw new Error('Respons server tidak dapat dibaca. Coba muat ulang.'); }
   if (!response.ok) {
-    if (response.status === 401 && path !== '/login') {clearSession(); renderLogin('Sesi berakhir. Silakan masuk kembali.');}
+    if (response.status === 401 && !['/login','/workspace/login','/patient/login','/access/resolve'].includes(path) && requestUser && state.user === requestUser) {clearSession(); renderLogin('Sesi berakhir. Silakan masuk kembali.');}
     const detail = Array.isArray(data.detail) ? data.detail.map(item => `${item.loc?.slice(1).join('.') || 'Data'}: ${item.msg}`).join('; ') : data.detail;
     throw new Error(detail || 'Permintaan tidak dapat diproses.');
   }
@@ -116,14 +117,26 @@ async function refresh() {
   } finally {state.refreshing = false;}
 }
 function renderLogin(message = '') {
-  $('#app').innerHTML = `<div class="login-wrap"><section class="login-story" aria-label="Naraya Aurentis Monolithic"><img class="login-logo" src="/static/assets/naraya-aurentis-transparent.png" alt="Naraya Aurentis Monolithic" width="376" height="202"><div class="login-copy"><span class="eyebrow">KLINIK & LABORATORIUM</span><h1>Manajemen Klinik<br>dan Laboratorium</h1><p>Kelola layanan pasien dan pekerjaan Lab dalam ruang kerja yang sama.</p><div class="brand-rule"></div><span class="login-caption">Dental Management System</span></div><div class="login-story-footer"><span>NARAYA AURENTIS MONOLITHIC</span><span>01 / RUANG KERJA</span></div></section>
-    <section class="login-panel"><div class="login-card"><div class="login-kicker"> DEMO LOKAL</div><h2>Masuk ke ruang kerja</h2><p class="login-intro">Gunakan akun kerja yang diberikan kepada Anda.</p><form id="loginform"><div class="form-row"><label for="login-user">Nama pengguna</label><input id="login-user" name="username" autocomplete="username" required placeholder="Masukkan nama pengguna"></div><div class="form-row"><label for="login-password">Kata sandi</label><div class="password-field"><input id="login-password" name="password" type="password" required autocomplete="current-password"><button class="icon-button" type="button" id="toggle-password" aria-label="Tampilkan kata sandi">${icon('eye')}</button></div></div><div class="form-error" id="login-error" role="alert">${esc(message)}</div><button class="primary login-submit" type="submit">Masuk ke ruang kerja ${icon('arrow')}</button></form><div class="login-demo-info">${icon('shield')}<div><strong>Ruang simulasi dengan data fiktif</strong><p>Akun latihan: <code>resepsionis</code>, sandi <code>DemoNAM2026!</code>. Data pasien dan pembayaran nyata tidak diperbolehkan.</p></div></div><div class="login-panel-footer"><span>NAM DMS</span><span>Versi demo 0.4</span></div></div></section></div>`;
+  $('#app').innerHTML = `<div class="login-wrap"><section class="login-story" aria-label="Naraya Aurentis Monolithic"><img class="login-logo" src="/static/assets/naraya-aurentis-transparent.png" alt="Naraya Aurentis Monolithic" width="376" height="202"><div class="login-copy"><span class="eyebrow">SELAMAT DATANG</span><h1>Portal<br>Naraya Aurentis</h1><p>Akses layanan dan informasi Anda melalui satu portal.</p><div class="brand-rule"></div><span class="login-caption">Naraya Aurentis Monolithic</span></div><div class="login-story-footer"><span>NARAYA AURENTIS MONOLITHIC</span><span>01 / PORTAL</span></div></section>
+    <section class="login-panel"><div class="login-card"><div class="login-kicker"> DEMO LOKAL</div><h2>LOGIN</h2><p class="login-intro">Masuk menggunakan akun Anda.</p><form id="loginform"><div class="form-row"><label for="login-user">ID atau nama pengguna</label><input id="login-user" name="username" autocomplete="username" required placeholder="Masukkan ID atau nama pengguna"></div><div class="form-row"><label for="login-password">Kata sandi</label><div class="password-field"><input id="login-password" name="password" type="password" required autocomplete="current-password"><button class="icon-button" type="button" id="toggle-password" aria-label="Tampilkan kata sandi">${icon('eye')}</button></div></div><div class="form-error" id="login-error" role="alert">${esc(message)}</div><button class="primary login-submit" type="submit">LOGIN ${icon('arrow')}</button></form><div class="login-demo-info">${icon('shield')}<div><strong>Demo dengan data fiktif</strong><p>Gunakan akun latihan yang diberikan kepada Anda. Jangan masukkan data pribadi atau pembayaran nyata.</p></div></div><div class="login-panel-footer"><span>NAM DMS</span><span>Versi demo 0.4</span></div></div></section></div>`;
   $('#toggle-password').onclick = () => {const input = $('#login-password'); input.type = input.type === 'password' ? 'text' : 'password'; $('#toggle-password').setAttribute('aria-label',input.type === 'password' ? 'Tampilkan kata sandi' : 'Sembunyikan kata sandi');};
   $('#loginform').onsubmit = async event => {
     event.preventDefault(); const button = event.target.querySelector('[type="submit"]'); if (button.disabled) return;
     button.disabled = true; button.textContent = 'Sedang masuk…'; $('#login-error').textContent = '';
-    try {const fields = new FormData(event.target); await window.NAMDemo.unlock(); const data = await api('/workspace/login','POST',{username:fields.get('username'),password:fields.get('password')}); clearSession(); Object.assign(state,{user:data.user,csrf:data.csrf,page:'dashboard',orderFilter:'all',sourceFilter:'all'}); await refresh();}
-    catch (error) {$('#login-error').textContent = error.message; button.disabled = false; button.innerHTML = `Masuk ke ruang kerja ${icon('arrow')}`;}
+    try {
+      const fields = new FormData(event.target);
+      const credentials = {username:String(fields.get('username')).trim(),password:fields.get('password')};
+      await window.NAMDemo.unlock();
+      const access = await api('/access/resolve','POST',credentials);
+      if (access.portal === 'patient') {
+        await api('/patient/login','POST',credentials);
+        window.location.assign('/pasien'); return;
+      }
+      const data = await api('/workspace/login','POST',credentials);
+      clearSession(); Object.assign(state,{user:data.user,csrf:data.csrf,page:'dashboard',orderFilter:'all',sourceFilter:'all'});
+      await refresh();
+    }
+    catch (error) {$('#login-error').textContent = error.message; button.disabled = false; button.innerHTML = `LOGIN ${icon('arrow')}`;}
   };
 }
 function renderShell() {

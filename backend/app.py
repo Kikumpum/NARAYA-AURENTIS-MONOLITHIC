@@ -20,10 +20,7 @@ async def lifespan(app: FastAPI):
     if runtime.hosted and runtime.problem():
         yield
         return
-    database.upgrade_schema()
-    with database.SessionLocal() as db:
-        seed(db)
-        organization.seed_structure(db)
+    database.bootstrap_demo(seed, organization.seed_structure)
     yield
 
 

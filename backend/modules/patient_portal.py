@@ -26,10 +26,7 @@ def profile(db, user):
 @router.post('/login')
 def login(payload: auth.LoginIn, request: Request, response: Response, db: Session = Depends(get_db)):
     # A patient reference is an identifier, never an authentication secret.
-    reference = db.scalar(select(Patient).where(Patient.public_id == payload.username, Patient.org_id == 1))
-    linked = db.get(User, reference.user_id) if reference and reference.user_id else None
-    credentials = payload.model_copy(update={'username': linked.username}) if linked else payload
-    user = auth.verify_credentials(credentials, request, db)
+    user = auth.verify_credentials(auth.patient_credentials(payload, db), request, db)
     patient_record(db, user)
     csrf = auth.issue_session(user, request, response, db, cookie=COOKIE, audience='patient', path=PATH)
     return {**profile(db, user), 'csrf': csrf, 'demo': True}

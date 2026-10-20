@@ -13,8 +13,8 @@ from datetime import timedelta
 from fastapi import Request, Response
 from pydantic import BaseModel
 from backend.config import COOKIE_SECURE
-from backend.models import Org, User, UserSession
-from backend.security import session_csrf
+from backend.models import Org, Patient, User, UserSession
+from backend.security import patient_record, session_csrf
 from backend.modules.audit import audit
 from backend.utils import pwd_valid, utcnow
 
@@ -37,6 +37,30 @@ def verify_credentials(payload: LoginIn, request: Request, db: Session):
         raise HTTPException(401, 'Username atau kata sandi salah')
     _failed_logins.pop(ip, None)
     return user
+
+
+def patient_credentials(payload: LoginIn, db: Session):
+    reference = db.scalar(select(Patient).where(Patient.public_id == payload.username, Patient.org_id == 1))
+    linked = db.get(User, reference.user_id) if reference and reference.user_id else None
+    return payload.model_copy(update={'username': linked.username}) if linked else payload
+
+
+@router.post('/api/access/resolve')
+def resolve_access(payload: LoginIn, request: Request, db: Session = Depends(get_db)):
+    """Choose a portal after authentication; never trust a client-supplied role.
+
+    The actual login still uses its audience-specific endpoint, so the browser
+    sends the correctly scoped existing cookie and re-login revokes that session.
+    This lookup creates no session and exposes no organization or role roster.
+    """
+    origin = request.headers.get('origin')
+    if ((origin and origin != str(request.base_url).rstrip('/'))
+        or request.headers.get('sec-fetch-site') == 'cross-site'):
+        raise HTTPException(403, 'Asal permintaan tidak diizinkan')
+    user = verify_credentials(patient_credentials(payload, db), request, db)
+    if user.role == 'patient':
+        patient_record(db, user)
+    return {'portal': 'patient' if user.role == 'patient' else 'workspace'}
 
 
 def issue_session(user, request, response, db, *, cookie='nam_session', audience='workspace', path='/'):

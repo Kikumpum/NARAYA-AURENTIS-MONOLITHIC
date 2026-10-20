@@ -1,5 +1,5 @@
 flowchart TD
-    H[Pengguna membuka tautan online] --> L[Halaman login asli pasien atau pegawai langsung tampil]
+    H[Pengguna membuka tautan online] --> L[Portal Naraya Aurentis dengan bahasa netral dan tombol LOGIN]
     L --> C{Mode demo dan masa berlaku sah?}
     C -->|Belum lengkap| U[API ditutup 503; startup tidak membuka DB]
     C -->|Kedaluwarsa| E[API ditutup 410; halaman menjelaskan akses berakhir]
@@ -8,10 +8,15 @@ flowchart TD
     K --> O[POST dengan Origin sama; verifikasi kunci di backend]
     O -->|Salah| X[401; dialog memberi pesan dan bisa dicoba lagi]
     O -->|Benar| T[Cookie Secure HttpOnly SameSite Strict; signature, audience, deployment dan expiry]
-    G -->|Ya| A[Login akun pasien atau pegawai]
+    G -->|Ya| A[Verifikasi ID atau nama pengguna dan sandi]
     T --> A
-    A --> R[Periksa sesi akun, peran, organisasi, object dan tahap]
+    A --> P1{Jenis akun ditentukan backend}
+    P1 -->|Pasien| P2[Login pasien; cookie audience patient; arahkan ke portal pasien]
+    P1 -->|Karyawan atau mitra| P3[Login workspace; cookie audience workspace; menu sesuai kewenangan]
+    P2 --> R[Periksa sesi akun, peran, organisasi, object dan tahap]
+    P3 --> R
     R --> S[CSRF dan Origin wajib untuk perubahan]
     S --> W[Workflow, idempotensi dan audit tetap berlaku]
-    W --> D[SQLite sementara per instance; data atau sesi bisa ter-reset]
+    W --> D[Database PostgreSQL demo bersama; sesi terbaca antar-instance]
+    D --> B[Startup dikunci transaksi; migrasi dan seed idempotent; riwayat dipertahankan]
     P[PPT dan presentasi tetap di komputer lokal] -. Tidak menjadi halaman gerbang .-> H

@@ -50,7 +50,9 @@ window.NAMDemo = (() => {
   document.addEventListener('DOMContentLoaded', async () => {
     try {
       const info = await status(); if (info.mode !== 'temporary_online_demo') return;
-      const text = 'Data latihan bersifat sementara dan dapat ter-reset. Simpan laporan penting di komputer Anda.';
+      const text = info.storage === 'shared_postgresql'
+        ? 'Data latihan tersimpan pada database demo. Gunakan data fiktif dan simpan ekspor laporan yang diperlukan.'
+        : 'Data latihan bersifat sementara dan dapat ter-reset. Simpan laporan penting di komputer Anda.';
       const update = () => {
         document.querySelectorAll('.side-footer strong,.login-kicker').forEach(node => {
           if (/Demo lokal|DEMO LOKAL/.test(node.textContent)) node.textContent = 'Demo sementara';
