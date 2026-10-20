@@ -9,6 +9,7 @@ Ini pengecualian terbatas atas batas demo lokal, bukan persetujuan produksi atau
 - `app.py` adalah entrypoint ASGI di root repositori.
 - `requirements.txt` root merujuk dependency backend; Python 3.12 ditetapkan secara eksplisit.
 - `vercel.json` memilih framework FastAPI dan menyertakan frontend serta migrasi. PPT, PDF, dokumen, database dan berkas development tidak disajikan sebagai aset deployment.
+- Fungsi ditempatkan pada satu region `sin1` (Singapura), sama dengan database demo, untuk menghindari perjalanan query ke server di Amerika. Paket hosting tidak ditingkatkan.
 - `pyproject.toml` menonaktifkan promosi static mount ke CDN agar middleware tetap memeriksa setiap jalur. Allowlist eksplisit membuka hanya halaman login, aset presentasi yang diperlukan dan status akses minimal; API data tetap tertutup.
 - Migrasi memakai lokasi absolut terhadap root proyek, bukan direktori kerja proses.
 
