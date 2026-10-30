@@ -59,7 +59,10 @@ window.NAMDemo = (() => {
         });
         document.querySelectorAll('.demo-strip').forEach(node => {
           const message = 'Demo sementara dengan data fiktif. ' + text;
-          if (node.textContent !== message) node.textContent = message;
+          const label = node.querySelector('.demo-runtime-message');
+          if (label) {
+            if (label.textContent !== message) label.textContent = message;
+          } else if (!node.childElementCount && node.textContent !== message) node.textContent = message;
         });
         document.querySelectorAll('.login-demo-info>div,.demo-note,.demo-bar').forEach(host => {
           if (host.querySelector('.demo-runtime-note')) return;
