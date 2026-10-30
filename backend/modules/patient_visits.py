@@ -28,7 +28,9 @@ def lock_patient(db, patient):
     # SQLite ignores FOR UPDATE; serialize its local-demo writers explicitly.
     if db.bind.dialect.name == 'sqlite':
         db.connection().exec_driver_sql('BEGIN IMMEDIATE')
-    db.scalar(select(Patient).where(Patient.id == patient.id).with_for_update())
+    # Serialize changes without blocking FK key-share locks from another
+    # patient's notification transaction on PostgreSQL.
+    db.scalar(select(Patient).where(Patient.id == patient.id).with_for_update(key_share=True))
 
 
 def valid_day(day):
@@ -40,7 +42,7 @@ def valid_day(day):
 def doctor_for(db, org_id, doctor_id, locking=False):
     statement = select(User).where(User.id == doctor_id, User.org_id == org_id,
                                    User.role == 'dentist', User.active == True)
-    doctor = db.scalar(statement.with_for_update() if locking else statement)
+    doctor = db.scalar(statement.with_for_update(key_share=True) if locking else statement)
     if not doctor:
         raise HTTPException(404, 'Dokter tidak tersedia pada klinik Anda.')
     return doctor
@@ -78,6 +80,7 @@ def visit_update(db, patient, appointment, kind, title, message, order_id=None):
 
 
 def appointment_view(db, row):
+    from backend.modules.visit_queue import forecast, timing_active
     patient = db.get(Patient, row.patient_id)
     doctor = db.get(User, row.dentist_id)
     pending = db.get(User, row.pending_dentist_id) if row.pending_dentist_id else None
@@ -91,7 +94,8 @@ def appointment_view(db, row):
             'purpose':details.purpose if details else 'consultation',
             'interest':details.interest if details else 'general',
             'order_id':order.id if order else None, 'order_code':order.code if order else None,
-            'can_cancel':row.status != 'cancelled' and utc(row.scheduled_at) > utcnow()}
+            'can_cancel':row.status != 'cancelled' and utc(row.scheduled_at) > utcnow() and not timing_active(db,row.id),
+            'timing':forecast(db,row,patient.org_id)}
 
 
 @router.get('/doctors')
@@ -179,6 +183,8 @@ def cancel(aid: int, data: CancelIn, user: User = Depends(current_patient), db: 
     if prior is not None:
         return prior
     if row.status != 'cancelled':
+        from backend.modules.visit_queue import timing_active
+        if timing_active(db,aid):raise HTTPException(409,'Kunjungan yang sudah diproses perlu ditinjau petugas.')
         if utc(row.scheduled_at) <= utcnow():
             raise HTTPException(409, 'Kunjungan yang sudah lewat perlu ditinjau petugas.')
         row.status = 'cancelled'; row.pending_dentist_id = None

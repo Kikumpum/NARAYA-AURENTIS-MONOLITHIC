@@ -1,0 +1,19 @@
+flowchart TD
+    A[Pasien memilih jadwal] --> B[Jadwal semula disimpan]
+    B --> C[Portal menampilkan perkiraan mulai dan selesai]
+    D[Dokter mulai kunjungan pertama] --> E[Catat waktu aktual dan estimasi durasi]
+    E --> F[Hitung ulang perkiraan kunjungan berikutnya]
+    F --> G[Kabar privat di portal pasien terkait]
+    E --> H{Perlu waktu tambahan?}
+    H -->|Ya| I[Dokter memperbarui menit tersisa dan alasan]
+    I --> F
+    H -->|Selesai| J[Dokter mencatat selesai aktual]
+    J --> F
+    E --> K{Estimasi lewat tanpa pembaruan?}
+    K -->|Ya| L[Tampilkan perlu konfirmasi tanpa menebak waktu selesai]
+    G --> M{WhatsApp dipilih, kontak dan izin sah?}
+    M -->|Ya| N[Outbox menunggu konfigurasi]
+    N --> O[Provider, nomor, template, secret dan uji belum tersedia]
+    J --> P[Laporan waktu kunjungan dan audit]
+    P --> Q[Ekspor CSV sesuai kewenangan]
+    B --> R[Perkiraan tidak mengganti janji atau persetujuan pasien]

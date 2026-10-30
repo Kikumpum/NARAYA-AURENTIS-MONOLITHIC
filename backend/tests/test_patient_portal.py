@@ -175,7 +175,7 @@ def test_training_role_scope_repeat_read_and_audit(client):
 
 def test_session_migration_preserves_legacy_values_and_is_repeatable(client):
     with database.engine.begin() as connection:
-        for table in ('patient_notice_reads','patient_updates','patient_visit_details'):
+        for table in ('whatsapp_outbox','visit_timings','patient_notice_reads','patient_updates','patient_visit_details'):
             connection.execute(text('DROP TABLE '+table))
         connection.execute(text('ALTER TABLE sessions DROP COLUMN audience'))
         connection.execute(text("UPDATE alembic_version SET version_num='0003'"))

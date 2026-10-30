@@ -11,7 +11,7 @@ from backend.config import BASE_DIR, runtime
 from backend.runtime import DEMO_COOKIE, demo_access_gate, gate_cookie, has_demo_access
 from backend.demo import seed, seed_staff_accounts
 from backend.modules import auth, clinic, lab, finance, communication, operations, audit, chat, organization, sop_reports
-from backend.modules import patient_portal, patient_visits, patient_inbox, training
+from backend.modules import patient_portal, patient_visits, patient_inbox, training, visit_queue
 
 
 @asynccontextmanager
@@ -41,7 +41,7 @@ async def security_headers(request: Request, call_next):
     response.headers.setdefault('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
     return response
 
-for domain in (auth, clinic, lab, finance, communication, operations, audit, chat, organization, sop_reports, patient_portal, patient_visits, patient_inbox, training):
+for domain in (auth, clinic, lab, finance, communication, operations, audit, chat, organization, sop_reports, patient_portal, patient_visits, patient_inbox, training, visit_queue):
     app.include_router(domain.router)
 
 

@@ -11,7 +11,7 @@ import secrets
 from datetime import date, datetime, timedelta, timezone
 from typing import Literal
 from pydantic import AwareDatetime, BaseModel, Field
-from backend.models import Appointment, LabOrder, Patient, Shift, User
+from backend.models import Appointment, LabOrder, Patient, Shift, User, VisitTiming
 from backend.modules.audit import audit
 from backend.schemas import DecisionIn
 
@@ -97,13 +97,25 @@ def appointment_day(value: datetime) -> date:
 def appointments(user: User = Depends(current_user), db: Session = Depends(get_db)):
     role_only(user,'reception','dentist','director','patient')
     rows = db.scalars(select(Appointment).order_by(Appointment.scheduled_at.desc())).all()
+    from backend.modules.patient_visits import utc
+    from backend.utils import utcnow
+    now=utcnow()
+    active_doctors=set(db.scalars(select(Appointment.dentist_id).join(VisitTiming,VisitTiming.appointment_id==Appointment.id)
+        .where(VisitTiming.org_id==user.org_id,VisitTiming.state=='in_service')))
     out = []
     for a in rows:
         p = db.get(Patient,a.patient_id)
         if not p or p.org_id != user.org_id: continue
         if user.role == 'patient' and p.user_id != user.id: continue
         if user.role == 'dentist' and a.dentist_id != user.id and a.pending_dentist_id != user.id: continue
-        out.append({'id':a.id,'patient':p.display_name if user.role!='patient' else 'Saya','dentist':db.get(User,a.dentist_id).display_name,'scheduled_at':str(a.scheduled_at),'status':a.status,'pending_dentist_id':a.pending_dentist_id})
+        from backend.modules.visit_queue import forecast
+        timing=forecast(db,a,p.org_id)
+        processed=bool(timing and timing['state'] in ('in_service','finished','not_attended') or timing and timing['started_at'])
+        eligible=a.status in ('confirmed','replacement_rejected') and not processed
+        out.append({'id':a.id,'patient':p.display_name if user.role!='patient' else 'Saya','dentist':db.get(User,a.dentist_id).display_name,'scheduled_at':utc(a.scheduled_at).isoformat(),'status':a.status,'pending_dentist_id':a.pending_dentist_id,
+            'timing':timing,'can_record_timing':user.role=='dentist' and a.dentist_id==user.id,
+            'can_start_visit':user.role=='dentist' and a.dentist_id==user.id and a.dentist_id not in active_doctors and eligible and appointment_day(a.scheduled_at)==now.astimezone(WIB).date(),
+            'can_record_absence':user.role in ('dentist','reception') and eligible and utc(a.scheduled_at)<=now})
     return out
 
 
@@ -141,6 +153,8 @@ def replacement(aid: int, data: ReplacementIn, user: User = Depends(current_user
     from backend.modules.patient_visits import lock_patient, check_reservation, visit_update
     lock_patient(db,patient)
     db.refresh(a)
+    from backend.modules.visit_queue import timing_active
+    if timing_active(db,aid):raise HTTPException(409,'Dokter tidak dapat diganti setelah kunjungan diproses.')
     if a.status=='cancelled' or target.id==a.dentist_id:
         raise HTTPException(409,'Jadwal telah berubah. Muat ulang sebelum mengusulkan pengganti.')
     check_reservation(db,patient,target.id,a.scheduled_at,exclude=a.id)

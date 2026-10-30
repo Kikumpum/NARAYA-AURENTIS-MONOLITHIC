@@ -9,3 +9,5 @@
 
 .refresh-data{float:right;font-size:11px;font-weight:400;padding:0 0 0 16px}
 @media(max-width:760px){.portal-header .nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 18px;overflow:visible}.nav button{white-space:normal;text-align:left;padding:11px 0;font-size:11px}.demo-strip{min-height:32px}.refresh-data{font-size:10px}}
+
+.visit-forecast{margin:18px 0 12px;padding:16px;border:1px solid #d9dfcc;background:#f0f3e9;border-radius:3px}.visit-forecast.uncertain{background:#f7f0df;border-color:#e1d2ad}.visit-forecast .eyebrow{font-size:9px}.visit-forecast dl{margin:12px 0}.visit-forecast dl div{margin:9px 0}.visit-forecast dt{font-size:11px;color:#69785d}.visit-forecast dd{margin:3px 0;font-size:13px;font-weight:600}.visit-forecast p{font-size:11px;line-height:1.7;margin:8px 0 0}.visit-forecast .attention{font-size:11px;padding:7px}

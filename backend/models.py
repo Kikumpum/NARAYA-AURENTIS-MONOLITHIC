@@ -70,6 +70,33 @@ class Appointment(Base):
     status: Mapped[str] = mapped_column(String(25), default='confirmed')
 
 
+class VisitTiming(Base):
+    __tablename__ = 'visit_timings'
+    appointment_id: Mapped[int] = mapped_column(ForeignKey('appointments.id'), primary_key=True)
+    org_id: Mapped[int] = mapped_column(ForeignKey('organizations.id'))
+    state: Mapped[str] = mapped_column(String(24), default='not_started')
+    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    expected_finish_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    revision: Mapped[int] = mapped_column(Integer, default=0)
+    __table_args__ = (CheckConstraint("state IN ('not_started','in_service','finished','not_attended')", name='ck_visit_timing_state'),)
+
+
+class WhatsappOutbox(Base):
+    __tablename__ = 'whatsapp_outbox'
+    id: Mapped[int] = mapped_column(primary_key=True)
+    update_id: Mapped[int] = mapped_column(ForeignKey('patient_updates.id'), unique=True)
+    patient_id: Mapped[int] = mapped_column(ForeignKey('patients.id'))
+    appointment_id: Mapped[int] = mapped_column(ForeignKey('appointments.id'))
+    org_id: Mapped[int] = mapped_column(ForeignKey('organizations.id'))
+    template_key: Mapped[str] = mapped_column(String(60))
+    payload: Mapped[str] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(String(32), default='awaiting_configuration')
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    __table_args__ = (CheckConstraint("status = 'awaiting_configuration'", name='ck_whatsapp_not_enabled'),)
+
+
 class VisitDetails(Base):
     __tablename__ = 'patient_visit_details'
     id: Mapped[int] = mapped_column(primary_key=True)

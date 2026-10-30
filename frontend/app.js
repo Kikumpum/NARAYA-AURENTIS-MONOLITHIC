@@ -9,7 +9,7 @@ const state = {
 };
 const roleNames = {reception:'Front Office',dentist:'Dokter Klinik',lab_supervisor:'Supervisor Lab',technician:'Teknisi Lab',qc:'Quality Control',finance:'Finance & FAT',director:'Direktur',partner:'Klinik Mitra',patient:'Pasien',it_admin:'Administrator IT',nurse:'Perawat',cadcam:'CAD/CAM',customer_service:'Customer Service',warehouse:'Gudang',purchasing:'Pembelian',hr:'HRD',marketing:'Marketing'};
 Object.assign(roleNames,{commissioner:'Komisaris',chief_executive:'Direktur Utama',auditor:'Auditor',corporate:'Corporate',business_development:'Business Development',general_affairs:'IC / GA',insurance:'Insurance',operations_manager:'Operation',branch_manager:'Branch Manager',clinic_head:'Kepala Klinik',editor:'Editor',content_planner:'Content Planner',sales:'Sales',housekeeping:'Housekeeping'});
-const statusNames = {
+const statusNames = {visit_finished:'Kunjungan selesai',visit_absent:'Tidak hadir',visit_active:'Sedang dilayani',
   submitted:'Menunggu penugasan',assigned:'Menunggu penerimaan',accepted:'Diterima Lab',design:'Desain',production:'Produksi',finishing:'Finishing',qc_pending:'Menunggu QC',ready:'Siap diserahkan',completed:'Selesai',rejected:'Ditolak',rework:'Perlu perbaikan',paid:'Lunas',partial:'Dibayar sebagian',unpaid:'Belum dibayar',verified:'Terverifikasi',pending_verification:'Menunggu FAT',confirmed:'Terjadwal',awaiting_patient:'Menunggu pasien',replacement_rejected:'Pengganti ditolak',queued:'Antrean demo',pending:'Menunggu respons',approved:'Disetujui',
 };
 const eventNames = {

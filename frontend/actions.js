@@ -74,6 +74,8 @@ async function handle(action,id) {
 }
 async function performAction(action,id) {
   const order = state.orders.find(row => row.id === id), today = jakartaDate();
+  if(['visitStart','visitEstimate','visitFinish','visitAbsent'].includes(action))return visitTimingDialog(action,id);
+  if(action==='whatsappStatus')return showWhatsappSetup();
   if (action === 'refresh') {await refresh(); if (!state.loadErrors.length) pop('Data berhasil diperbarui.'); return;}
   if (action === 'partnerPatient') return showModal('Tambah referensi mitra',[{key:'reference',label:'Kode kasus anonim',minlength:3,maxlength:120}],data => api('/partner/patients','POST',data),'Gunakan kode kasus tanpa nama lengkap, kontak, atau data medis asli.');
   if (action === 'patient') return showModal('Registrasi pasien simulasi',[
@@ -125,4 +127,22 @@ async function performAction(action,id) {
     return;
   }
   if (action === 'newReport') return startSopReport();
+}
+
+function visitTimingDialog(action,id){
+  const a=state.appts.find(x=>x.id===id);if(!a)return;
+  const verb={visitStart:'start',visitEstimate:'estimate',visitFinish:'finish',visitAbsent:'not_attended'}[action];
+  const titles={start:'Mulai kunjungan',estimate:'Perbarui perkiraan selesai',finish:'Catat kunjungan selesai',not_attended:'Catat pasien tidak hadir'};
+  const fields=[...(['start','estimate'].includes(verb)?[{key:'minutes',label:verb==='start'?'Perkiraan durasi (menit)':'Perkiraan menit tersisa',type:'number',min:5,max:180,value:30}]:[]),{key:'reason',label:'Catatan pembaruan',minlength:5,maxlength:300,wide:true,value:verb==='finish'?'Kunjungan selesai ditangani.':verb==='start'?'Kunjungan dimulai oleh dokter.':''}];
+  let pending=null;
+  return showModal(titles[verb],fields,data=>{
+    const body={action:verb,minutes:data.minutes?Number(data.minutes):null,reason:data.reason,expected_revision:a.timing?.revision||0};
+    const signature=JSON.stringify(body);if(!pending||pending.signature!==signature)pending={signature,key:requestKey()};
+    return api(`/appointments/${id}/timing`,'POST',{...body,request_key:pending.key});
+  },'Perubahan memperbarui perkiraan pasien dan dicatat audit. Jadwal awal tidak diganti. Jangan menulis diagnosis atau data medis dalam catatan waktu.');
+}
+async function showWhatsappSetup(){
+  const [setup,rows]=await Promise.all([api('/whatsapp/status'),api('/whatsapp/outbox')]);
+  const dialog=mountDialog(`${dialogHeading('Persiapan WhatsApp','NOTIFIKASI KUNJUNGAN')}<div class="order-detail-body"><p>${esc(setup.message)}</p><h3>Yang perlu disiapkan</h3><ul>${setup.required.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><h3>Pesan menunggu aktivasi</h3>${rows.length?rows.map(r=>`<article class="visit-queue-note"><strong>Kunjungan #${r.appointment_id}</strong><p>${esc(r.message)}</p><small>Belum dikirim · ${dateText(r.created_at,true)} WIB</small></article>`).join(''):'<p>Belum ada pesan untuk kontak WhatsApp yang telah diverifikasi dan memiliki izin layanan.</p>'}</div><div class="modal-footer"><button class="secondary" data-close>Tutup</button></div>`);
+  dialog.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>dialog.close());
 }

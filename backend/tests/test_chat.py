@@ -156,7 +156,7 @@ def test_csrf_and_empty_message_validation(client):
 
 def test_migration_adopts_existing_demo_and_preserves_data(tmp_path,monkeypatch):
     engine=create_engine(f'sqlite:///{tmp_path}/legacy.db')
-    legacy=[table for table in Base.metadata.sorted_tables if not table.name.startswith(('chat_','patient_'))]
+    legacy=[table for table in Base.metadata.sorted_tables if not table.name.startswith(('chat_','patient_','visit_','whatsapp_'))]
     Base.metadata.create_all(engine,tables=legacy)
     with engine.begin() as connection:
         connection.execute(Org.__table__.insert(),{'id':1,'name':'Data demo tersimpan','kind':'internal'})
